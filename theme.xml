@@ -1512,29 +1512,30 @@ div.cookie-choices-info {bottom:0;top:auto!important}
     <meta expr:content='data:post.id'/>
 
 
-      <b:if cond='data:blog.homepageUrl != data:blog.url'> 
-      <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
-        <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span><i class='fa fa-file-text-o'/> <data:blog.pageName/></span>
-	    </div>
-      <b:else/>
-        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+<b:if cond='data:blog.homepageUrl != data:blog.url'> 
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
 
+<div class='breadcrumbs'>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>
+<span><i class='fa fa-file-text-o'/><data:blog.pageName/></span>
+</div>
 
-        <b:loop values='data:posts' var='post'>
-        <b:if cond='data:post.labels'>
-        <div class='breadcrumbs'>
+<b:else/>
 
-<!--start of breadcrumbs-->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:post.labels'>
+<div class='breadcrumbs'>
 
 <span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
 <a expr:href='data:blog.homepageUrl' itemprop='url'>
 <span itemprop='title'>Home</span>
 </a>
 
-
 <b:loop values='data:post.labels' var='label'>
-			<b:if cond='data:label.name != &quot;detect&quot;'>
-			<b:if cond='data:label.name != &quot;Presentation&quot;'>
+<b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;Presentation&quot;'>
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
 <a expr:href='data:label.url + &quot;?max-results=7&quot;' itemprop='url'>
@@ -1546,23 +1547,20 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 </b:if>
 </b:if>
-
 </b:loop>
-
-
 
 </span>
 
-<span><i class='fa fa-file-text-o'/></span>
 </div>
+
 <b:else/>
-<div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span>Uncategories</span></div>
+<div class='breadcrumbs'>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'/></span>
+<span>Uncategories</span>
+</div>
 </b:if>
+
 </b:loop>
-
-
-
-
 
 
 <b:loop values='data:posts' var='post'>
@@ -1575,32 +1573,42 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 </b:if>
 </b:loop>
 
+<b:else/>
 
+<b:if cond='data:blog.pageType == &quot;archive&quot;'>
+<div class='breadcrumbs'>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span>
+<span>Archive for <data:blog.pageName/></span>
+</div>
 
+<b:else/>
 
+<b:if cond='data:blog.searchQuery'>
 
-      <b:else/>
-        <b:if cond='data:blog.pageType == &quot;archive&quot;'>
-        <div class='breadcrumbs'> <span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span><i class='fa fa-file-text-o'/> Archive for <data:blog.pageName/></span> 
-	    </div> 
-      <b:else/>
-        <b:if cond='data:blog.searchQuery'>
-        <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span><i class='fa fa-file-text-o'/> <data:blog.pageName/></span>
-	    </div>
-      <b:else/>
-        <b:if cond='data:blog.pageType == &quot;index&quot;'> 
-        <div class='breadcrumbs'>
-	    <b:if cond='data:blog.pageName == &quot;&quot;'>
-        <b:else/>
-        <span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span><i class='fa fa-file-text-o'/> </span> 
-        </b:if>
-        </div>
-      </b:if>
-      </b:if>
-      </b:if>
-      </b:if>
-      </b:if>
-      </b:if>
+<div class='breadcrumbs'>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span>
+<span><data:blog.pageName/></span>
+</div>
+
+<b:else/>
+
+<b:if cond='data:blog.pageType == &quot;index&quot;'> 
+
+<div class='breadcrumbs'>
+<b:if cond='data:blog.pageName == &quot;&quot;'>
+<b:else/>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span>
+</b:if>
+</div>
+
+</b:if>
+
+</b:if>
+</b:if>
+</b:if>
+
+</b:if>
+</b:if>
 
 
 
