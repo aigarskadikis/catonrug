@@ -1533,6 +1533,9 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 
 <b:loop values='data:post.labels' var='label'>
+			<b:if cond='data:label.name != &quot;detect&quot;'>
+			<b:if cond='data:label.name != &quot;Presentation&quot;'>
+
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
 <a expr:href='data:label.url + &quot;?max-results=7&quot;' itemprop='url'>
 <span itemprop='title'><data:label.name/></span>
@@ -1540,6 +1543,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 </span>
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
+
+</b:if>
+</b:if>
+
 </b:loop>
 
 
@@ -1750,7 +1757,11 @@ div.cookie-choices-info {bottom:0;top:auto!important}
         <b:if cond='data:top.showPostLabels and data:post.labels'>
           <data:postLabelsLabel/>
           <b:loop values='data:post.labels' var='label'>
+			<b:if cond='data:label.name != &quot;detect&quot;'>
+			<b:if cond='data:label.name != &quot;Presentation&quot;'>
             <a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
+			</b:if>
+			</b:if>
           </b:loop>
         </b:if>
       </span>
