@@ -682,6 +682,7 @@ body {min-width:1002px}
 .main-inner .columns{padding-right:0}
 }
 
+
 @media only screen and (max-width:960px){
 body {min-width:850px}
 .content-outer{min-width:850px;max-width:850px}
@@ -690,6 +691,17 @@ body {min-width:850px}
 .main-inner .fauxcolumn-left-outer{width:0}
 .main-inner .columns{padding-left:0}
  }
+
+
+@media only screen and (max-width:800px){
+body {min-width:760px}
+.content-outer{min-width:760px;max-width:760px}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0}
+.main-inner .fauxcolumn-left-outer{width:0}
+.main-inner .columns{padding-left:0}
+ }
+
 
 
 div.widget h2 {margin-left:16px}
@@ -709,8 +721,6 @@ div.widget-content {padding:0 16px 16px 16px}
 
 .main-inner {padding-top:0px;}
 
-div.breadcrumbs{}
-
 .column-left-outer {padding-top:16px}
 .column-center-outer {}
 .fauxcolumn-left-outer {background-color:#f9f9f9}
@@ -721,6 +731,8 @@ div.breadcrumbs {padding-top:16px; display:none}
 }
 
 span.snipeto{color:#aaa}
+
+div.cookie-choices-info {bottom:0;top:auto!important}
 
       ]]>
     </b:template-skin>
@@ -734,6 +746,13 @@ span.snipeto{color:#aaa}
 
 
     <b:include data='blog' name='google-analytics'/>
+
+<style type='text/css'>
+<![CDATA[
+
+]]>
+</style>
+
   </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
