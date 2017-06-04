@@ -8,7 +8,12 @@
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 <meta content='a15ad3fa3ac32db7f097' name='wot-verification'/>
     <b:include data='blog' name='all-head-content'/>
-    <title><data:blog.pageName/></title>
+
+
+<title>
+<data:view.title.escaped/>
+</title>
+    
 
     <b:skin><![CDATA[/*
 -----------------------------------------------
@@ -670,7 +675,7 @@ code,pre{color:#444;font-family:'Lucida Console',Monaco,monospace;white-space:pr
 .content-inner{padding:0}
 body{padding:0}
 ul {list-style: none;}
-.post-body img{max-width:100%;margin:0 auto;height:auto}
+.post-body img, .post-body video{max-width:100%;margin:0 auto;height:auto}
 
 
 @media only screen and (max-width:1260px){
@@ -813,9 +818,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
   <div class='content-inner'>
 
 
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
 
-    <header>
+    <header itemscope='itemscope' itemtype='https://schema.org/WPHeader' style='display:none'>
     <div class='header-outer'>
     <div class='header-cap-top cap-top'>
       <div class='cap-left'/>
@@ -911,7 +915,6 @@ div.cookie-choices-info {bottom:0;top:auto!important}
     </div>
     </header>
 
-</b:if>
 
     <div class='main-outer'>
     <div class='main-cap-top cap-top'>
@@ -1494,6 +1497,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
       </span>
     </b:if>
+
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
 
         <b:if cond='data:mobileLinkUrl'>
       <div class='blog-mobile-link'>
@@ -2194,22 +2199,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
         <macro:param default='false' name='includeBottom'/>
       </macro:include>
       <!-- outside of the include in order to lock Attribution widget -->
-      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'>
-        <b:widget id='Attribution1' locked='false' title='' type='Attribution'>
-          <b:widget-settings>
-            <b:widget-setting name='copyright'/>
-          </b:widget-settings>
-          <b:includable id='main'>
-    <div class='widget-content' style='text-align: center;'>
-      <b:if cond='data:attribution != &quot;&quot;'>
-       <data:attribution/>
-      </b:if>
-    </div>
-
-    <b:include name='quickedit'/>
-  </b:includable>
-        </b:widget>
-      </b:section>
+      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'/>
     </div>
     </div>
     <div class='footer-cap-bottom cap-bottom'>
