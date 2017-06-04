@@ -670,12 +670,12 @@ code,pre{color:#444;font-family:'Lucida Console',Monaco,monospace;white-space:pr
 .content-inner{padding:0}
 body{padding:0}
 ul {list-style: none;}
-.post-body img{max-width:98%;margin:0 auto;height:auto}
+.post-body img{max-width:100%;margin:0 auto;height:auto}
 
 
 @media only screen and (max-width:1260px){
-body {min-width:1002px}
-.content-outer{min-width:1002px;max-width:1002px}
+body {min-width:1006px}
+.content-outer{min-width:1006px;max-width:1006px}
 .main-inner .column-right-outer{width:100%;left:0;margin-right:0;}
 .column-right-outer{margin-left:0}
 .main-inner .fauxcolumn-right-outer{width:0}
@@ -734,6 +734,12 @@ span.snipeto{color:#aaa}
 
 div.cookie-choices-info {bottom:0;top:auto!important}
 
+.post-body ul {list-style-type: circle}
+
+.post-labels{font-size:2em}
+
+.post-footer{margin:0;padding:0}
+
       ]]>
     </b:template-skin>
 
@@ -746,12 +752,6 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 
     <b:include data='blog' name='google-analytics'/>
-
-<style type='text/css'>
-<![CDATA[
-
-]]>
-</style>
 
   </head>
 
@@ -983,7 +983,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>false</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#222222</b:widget-setting>
-                <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+                <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='authorLabel'>By</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#666666</b:widget-setting>
@@ -995,6 +995,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
                 <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                 <b:widget-setting name='showLabels'>true</b:widget-setting>
                 <b:widget-setting name='showLocation'>false</b:widget-setting>
+                <b:widget-setting name='postLabelsLabel'>Check out more from</b:widget-setting>
                 <b:widget-setting name='showTimestamp'>false</b:widget-setting>
                 <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                 <b:widget-setting name='showBacklinks'>false</b:widget-setting>
@@ -1559,8 +1560,12 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <b:if cond='data:label.name == &quot;office2016&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=7&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;adobereader11&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
+<b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
@@ -1571,9 +1576,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if>
-
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -1819,9 +1822,16 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <b:if cond='data:label.name == &quot;office2016&quot;'>
 <a expr:href='&quot;/search/label/Office%202016?max-results=7&quot;' rel='tag'>Office 2016</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;adobereader11&quot;'>
+<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' rel='tag'>Adobe Reader 11</a>
+<b:else/>
 <b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
-<a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
+<a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a>
+<!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2355,195 +2365,11 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='Label3' locked='false' title='Productive' type='Label' version='1'>
+  <b:widget id='Label3' locked='false' title='Apps' type='Label' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>ActivePresenter,ConEmu,Ditto,Everything,Greenshot,KeePass,NotepadPlusPlus,Paint.NET,Process Monitor,VirtualBox</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label6' locked='false' title='Internet' type='Label' version='1'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Deluge,Dropbox,Firefox,Google Chrome,Google Drive,HTTrack Website Copier,Skype</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label5' locked='false' title='Media' type='Label' version='1'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>4K Video Downloader,ActivePresenter,FreeRip,HandBrake,MKVToolNix,MPlayer,VLC Media Player</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label7' locked='false' title='Secure' type='Label' version='1'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Cisco AnyConnect,Cisco VPN,PuTTY,TrueCrypt,WinPcap,WinSCP,Wireshark</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label2' locked='false' title='PDF' type='Label' version='1'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Acrobat Reader DC,Adobe Reader 11,Adobe Reader 9,PDF Split and Merge,PDFCreator,SumatraPDF</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>4K Video Downloader,7-Zip,Acrobat Reader DC,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Audacity,CCleaner,Chrome,Cisco VPN,Citrix,Classic Shell,ConEmu,DAEMON Tools,DOSBox,Deluge,Ditto,Dropbox,Everything,Firefox,Flash Player,GanttProject,Google Drive,Gpg4win,Greenshot,HEAT,HTTrack,HandBrake,HashMyFiles,HxD Hex Editor,ImgBurn,Java 8,KMSPico,KeePass,MKVToolNix,NotepadPlusPlus,PDFCreator,PDFSaM,Paint.NET,Partition Wizard,Picasa,Process Monitor,ProjectLibre,PuTTY,RAM Disk,Silverlight,Skype,SumatraPDF,TeamViewer,TightVNC,Total Commander,VLC Media Player,VideoPad,VirtualBox,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Wireshark,eParakstitajs</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
