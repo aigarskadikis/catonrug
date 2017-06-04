@@ -1013,8 +1013,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
       <b:include data='top' name='status-message'/>
 
-    <!-- navigation -->
-    <b:include name='nextprev'/>
+    <!-- navigation
+    <b:include name='nextprev'/> -->
 
       <b:loop values='data:posts' var='post'>
 
@@ -1054,6 +1054,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
     <b:include name='nextprev'/>
 
 
+
+
+
+
       <b:if cond='data:numPosts != 0'>
         &lt;/div&gt;&lt;/div&gt;
       </b:if>
@@ -1069,6 +1073,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
   </b:if>
 
   <b:include cond='data:top.showPlusOne' name='googlePlusBootstrap'/>
+
+
+
+
 </b:includable>
               <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
@@ -1299,6 +1307,11 @@ div.cookie-choices-info {bottom:0;top:auto!important}
     </b:if>
   </b:if>
 </b:includable>
+              <b:includable id='maino'>
+  <b:loop index='index' values='posts' var='p'>
+    <b:include cond='index &lt; 10' data='p' name='posto'/>
+  </b:loop>
+</b:includable>
               <b:includable id='mobile-index-post' var='post'>
   <div class='mobile-date-outer date-outer'>
     <b:if cond='data:post.dateHeader'>
@@ -1481,6 +1494,11 @@ div.cookie-choices-info {bottom:0;top:auto!important}
       </div>
     </div>
   </div>
+</b:includable>
+              <b:includable id='nextPageLink'>
+          <a class='blog-pager-older-link flat-button ripple' expr:href='data:olderPageUrl' expr:title='data:messages.morePosts'>
+            <data:messages.morePosts/>
+          </a>
 </b:includable>
               <b:includable id='nextprev'>
   <div class='blog-pager' id='blog-pager'>
@@ -1880,6 +1898,13 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
   </div>
 </b:includable>
+              <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
               <b:includable id='postQuickEdit' var='post'>
   <b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
@@ -1889,6 +1914,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
     </span>
   </b:if>
 </b:includable>
+              <b:includable id='posto' var='post'>
+  Title: <data:post.title/>
+</b:includable>
+              <b:includable id='previousPageLink'><b:comment>Don&#39;t show</b:comment></b:includable>
               <b:includable id='shareButtons' var='post'>
   <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showPinterestButton'><a class='goog-inline-block share-button sb-pinterest' expr:href='data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:top.shareToPinterestMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToPinterestMsg/></span></a></b:if><b:if cond='data:top.showPlusOne'><div class='goog-inline-block google-plus-share-container'><data:post.googlePlusShareTag/></div></b:if>
 </b:includable>
@@ -2144,6 +2173,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
         <div class='column-left-outer'>
         <div class='column-left-inner'>
+
+
+
+
           <aside itemscope='itemscope' itemtype='http://schema.org/WPSideBar'>
           <macro:include id='main-column-left-sections' name='sections'>
             <macro:param default='0' name='num' value='1'/>
