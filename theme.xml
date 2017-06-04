@@ -2139,7 +2139,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
         <div class='column-left-outer'>
         <div class='column-left-inner'>
-          <aside>
+          <aside itemscope='itemscope' itemtype='http://schema.org/WPSideBar'>
           <macro:include id='main-column-left-sections' name='sections'>
             <macro:param default='0' name='num' value='1'/>
             <macro:param default='sidebar-left' name='idPrefix'/>
@@ -2289,7 +2289,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </macro:includable>
 
 <b:section-contents id='sidebar-left-1'>
-  <b:widget id='BlogSearch1' locked='false' title='Find' type='BlogSearch'>
+  <b:widget id='BlogSearch1' locked='false' title='Find' type='BlogSearch' version='1'>
     <b:includable id='main'>
     <!-- only display title if it's non-empty -->
     <b:if cond='data:title != &quot;&quot;'>
@@ -2298,13 +2298,14 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
     <div class='widget-content'>
       <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
-        <form class='gsc-search-box' expr:action='data:blog.searchUrl'>
+        <form class='gsc-search-box' expr:action='data:blog.searchUrl' itemprop='potentialAction' itemscope='itemscope' itemtype='http://schema.org/SearchAction'>
+	      <meta expr:content='data:blog.searchUrl + &quot;?={q}&quot;' itemprop='target'/>
           <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
           <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
             <tbody>
               <tr>
                 <td class='gsc-input'>
-                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='10' title='search' type='text'/>
+                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' itemprop='query-input' name='q' placeholder='' size='10' title='search' type='search'/>
                 </td>
                 <td class='gsc-search-button'>
                   <input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/>
