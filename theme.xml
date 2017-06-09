@@ -1013,8 +1013,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
       <b:include data='top' name='status-message'/>
 
-    <!-- navigation
-    <b:include name='nextprev'/> -->
+    <!-- navigation -->
+    <b:include name='nextprev'/>
 
       <b:loop values='data:posts' var='post'>
 
@@ -1587,9 +1587,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
 
-<b:if cond='data:label.name != &quot;detect&quot;'>
-<b:if cond='data:label.name != &quot;upgrade&quot;'>
-<b:if cond='data:label.name != &quot;Presentation&quot;'>
+<b:if cond='data:label.name != {&quot;detect&quot;,&quot;upgrade&quot;,&quot;Presentation&quot;}'>
+
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
 <a expr:href='data:label.url + &quot;?max-results=7&quot;' itemprop='url'>
@@ -1599,7 +1598,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -1708,7 +1707,11 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 
 <abbr itemprop='publisher' itemscope='itemscope' itemtype='http://schema.org/Organization'>
-  <abbr itemprop='name'><data:blog.title/></abbr>
+
+  <abbr itemprop='name'>CatOnRug</abbr>
+  <abbr itemprop='description'>solve, automate, speed up</abbr>
+  <abbr itemprop='url'><data:blog.homepageUrl/></abbr>
+
 <abbr itemprop='logo' itemscope='itemscope' itemtype='http://schema.org/ImageObject'>
   <img itemprop='url' src='http://lh3.googleusercontent.com/-K-Wa489ZkJ8/VMUqTubjxtI/AAAAAAAATas/TGA9uGQV490/s300-Ic42/catonrug-net-logo.png'/>
   </abbr>
