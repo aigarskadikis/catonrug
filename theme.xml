@@ -1427,6 +1427,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
             </h3>
           </b:if>
 
+
+
           <div class='post-header'>
             <div class='post-header-line-1'/>
           </div>
@@ -1587,7 +1589,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
 
-<b:if cond='data:label.name != {&quot;detect&quot;,&quot;upgrade&quot;,&quot;Presentation&quot;}'>
+<b:if cond='data:label.name != {&quot;detect&quot;,&quot;upgrade&quot;,&quot;install&quot;,&quot;remove&quot;,&quot;Presentation&quot;}'>
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
@@ -1674,7 +1676,20 @@ div.cookie-choices-info {bottom:0;top:auto!important}
       <b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url)'>
         <a expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
       <b:else/>
+
+
+
         <data:post.title/>
+
+  <b:if cond='data:post.editUrl'>
+
+    <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
+      <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
+        <img alt='' class='icon-action' height='18' src='https://resources.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+      </a>
+    </span>
+
+  </b:if>
 
 <abbr expr:content='data:blog.metaDescription' itemprop='description'/>
 
@@ -1691,6 +1706,10 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+
+
+
 
     <div class='post-header'>
     <div class='post-header-line-1'/>
@@ -1853,9 +1872,13 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <b:else/>
 <b:if cond='data:label.name != &quot;detect&quot;'>
 <b:if cond='data:label.name != &quot;upgrade&quot;'>
+<b:if cond='data:label.name != &quot;install&quot;'>
+<b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
