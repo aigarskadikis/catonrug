@@ -29,7 +29,7 @@ URL:      www.blogger.com
 
    <Group description="Page Text" selector="body">
      <Variable name="body.font" description="Font" type="font"
-         default="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+         default="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal .8em Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
      <Variable name="body.text.color" description="Text Color" type="color" default="#222222" value="#222222"/>
    </Group>
 
@@ -87,15 +87,14 @@ URL:      www.blogger.com
 
    <Group description="Post Footer" selector=".post-footer">
      <Variable name="post.footer.text.color" description="Text Color" type="color" default="#666666" value="#666666"/>
-     <Variable name="post.footer.background.color" description="Background Color" type="color"
-         default="#f9f9f9" value="#f9f9f9"/>
+     <Variable name="post.footer.background.color" description="Background Color" type="color" default="#f9f9f9" value="#f9f9f9"/>
      <Variable name="post.footer.border.color" description="Shadow Color" type="color" default="#eeeeee" value="#eeeeee"/>
    </Group>
 
    <Group description="Gadgets" selector="h2">
      <Variable name="widget.title.font" description="Title Font" type="font"
-         default="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
-     <Variable name="widget.title.text.color" description="Title Color" type="color" default="#000000" value="#000000"/>
+         default="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal bold 1.2em Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+     <Variable name="widget.title.text.color" description="Title Color" type="color" default="#000000" value="#666666"/>
      <Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#999999" value="#999999"/>
    </Group>
 
@@ -193,7 +192,7 @@ html body $(page.width.selector) {
 }
 
 h2 {
-  font-size: 22px;
+ 
 }
 
 a:link,a:visited {
@@ -339,7 +338,7 @@ $(content.background.color.selector) {
 ----------------------------------------------- */
 div.widget > h2,
 div.widget h2.title {
-  margin: 0 0 1em 0;
+  margin: 0 0 0 .4em;
 
   font: $(widget.title.font);
   color: $(widget.title.text.color);
@@ -501,7 +500,7 @@ border-bottom: 1px solid $(post.footer.border.color); */
 .blog-pager-older-link, .home-link,
 .blog-pager-newer-link {
   background-color: $(content.background.color);
-  padding: 5px;
+  padding: 0px;
 }
 
 .footer-outer {
@@ -677,35 +676,73 @@ body{padding:0}
 ul {list-style: none;}
 .post-body img, .post-body video{max-width:100%;margin:0 auto;height:auto}
 
+#blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
 
-@media only screen and (max-width:1260px){
-body {min-width:1006px}
-.content-outer{min-width:1006px;max-width:1006px}
-.main-inner .column-right-outer{width:100%;left:0;margin-right:0;}
-.column-right-outer{margin-left:0}
-.main-inner .fauxcolumn-right-outer{width:0}
-.main-inner .columns{padding-right:0}
+
+
+@media only screen and (max-width:800px) {
+body{min-width:98%; font-size:1.5em}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+}
+
+@media only screen and (min-width:800px) {
+body{min-width:728px}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:728px;max-width:728px;_width:728px;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
 }
 
 
-@media only screen and (max-width:960px){
-body {min-width:850px}
-.content-outer{min-width:850px;max-width:850px}
-.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
-.column-left-outer{margin-left:0}
-.main-inner .fauxcolumn-left-outer{width:0}
-.main-inner .columns{padding-left:0}
- }
+@media only screen and (min-width:940px) {
+body{min-width:880px}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:880px;max-width:880px;_width:880px;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+}
 
 
-@media only screen and (max-width:800px){
-body {min-width:760px}
-.content-outer{min-width:760px;max-width:760px}
-.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
-.column-left-outer{margin-left:0}
-.main-inner .fauxcolumn-left-outer{width:0}
-.main-inner .columns{padding-left:0}
- }
+@media only screen and (min-width:1024px) {
+body{min-width:1002px}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:1002px;max-width:1002px;_width:1002px;}
+.main-inner .column-left-outer {width: 160px; right: 100%; margin-left: -160px;}
+.column-left-outer { margin-left: -100%;}
+.main-inner .fauxcolumn-left-outer {    width: 160px;}
+.main-inner .columns {padding-left: 160px;  padding-right: 0px;}
+span.snipeto{display:none}
+}
+
+
+@media only screen and (min-resolution: 128dpi) and (min-width:480px) {
+body{min-width:98%; font-size:2em}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
+div.post-body{font-size:1.4em!important}
+#comments{display:none}
+.post-body pre.md5,pre.sha1{font-size:.8em!important}
+}
+
+
+
+
+
+
+
 
 
 
@@ -1391,9 +1428,7 @@ a.firstletter:first-letter{text-transform: capitalize;}
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
     </div>
 
-    <div class='mobile-desktop-link'>
-      <a class='home-link' expr:href='data:desktopLinkUrl'><data:desktopLinkMsg/></a>
-    </div>
+
 
   </div>
   <div class='clear'/>
@@ -1522,12 +1557,6 @@ a.firstletter:first-letter{text-transform: capitalize;}
     </b:if>
 
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
-
-        <b:if cond='data:mobileLinkUrl'>
-      <div class='blog-mobile-link'>
-        <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
-      </div>
-    </b:if>
 
   </div>
   <div class='clear'/>
@@ -2298,7 +2327,22 @@ a.firstletter:first-letter{text-transform: capitalize;}
         <macro:param default='false' name='includeBottom'/>
       </macro:include>
       <!-- outside of the include in order to lock Attribution widget -->
-      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'/>
+      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'>
+        <b:widget id='Attribution1' locked='false' title='' type='Attribution'>
+          <b:widget-settings>
+            <b:widget-setting name='copyright'/>
+          </b:widget-settings>
+          <b:includable id='main'>
+    <div class='widget-content' style='text-align: center;'>
+      <b:if cond='data:attribution != &quot;&quot;'>
+       <data:attribution/>
+      </b:if>
+    </div>
+
+    <b:include name='quickedit'/>
+  </b:includable>
+        </b:widget>
+      </b:section>
     </div>
     </div>
     <div class='footer-cap-bottom cap-bottom'>
@@ -2545,6 +2589,41 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     </b:if>
     <b:include name='quickedit'/>
   </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar' version='1'>
+    <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d3325322079154148081\x26blogName\x3dsolve,+automate,+speed+up\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://www.catonrug.net/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttp://www.catonrug.net/\x26vt\x3d-9024894000748668678&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
 </b:includable>
   </b:widget>
 </b:section-contents><b:section-contents id='footer-1'>
