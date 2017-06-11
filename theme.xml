@@ -724,7 +724,10 @@ span.snipeto{display:none}
 }
 
 
-@media only screen and (min-resolution: 128dpi) and (min-width:480px) {
+
+
+/* iPhone5 portrait */
+@media (min-resolution: 192dpi) and (min-device-width:320px) {
 body{min-width:98%; font-size:2em}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
 .main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
@@ -733,18 +736,56 @@ body{min-width:98%; font-size:2em}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
 h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
-div.post-body{font-size:1.4em!important}
+div.post-body{font-size:2em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
 }
 
 
 
+/* Moto Play landscape */
+@media (min-resolution: 192dpi) and (min-device-width:592px) {
+body{min-width:98%; font-size:2em}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.2em!important}
+div.post-body{font-size:1.2em!important}
+#comments{display:none}
+.post-body pre.md5,pre.sha1{font-size:.8em!important}
+}
 
+/* S5 */
+@media (min-resolution: 280dpi) and (min-device-width:360px) {
+body{min-width:98%; font-size:2em}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
+div.post-body{font-size:2em!important}
+#comments{display:none}
+.post-body pre.md5,pre.sha1{font-size:.8em!important}
+}
 
-
-
-
+@media (min-resolution: 280dpi) and (min-device-width:640px) {
+body{min-width:98%; font-size:2em}
+.content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
+.column-left-outer { margin-left:0;}
+.main-inner .fauxcolumn-left-outer {    width: 0px;}
+.main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
+span.snipeto{display:none}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.4em!important}
+div.post-body{font-size:1.4em!important}
+#comments{display:none}
+.post-body pre.md5,pre.sha1{font-size:.8em!important}
+}
 
 
 div.widget h2 {margin-left:16px}
@@ -1050,6 +1091,13 @@ a.firstletter:first-letter{text-transform: capitalize;}
                 <b:widget-setting name='showReactions'>false</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main' var='top'>
+
+<script type='text/javascript'>
+  numPosts = <data:numPosts/>;
+</script>
+
+
+
   <b:if cond='!data:mobile'>
     <!-- posts -->
     <div class='blog-posts hfeed'>
@@ -2381,7 +2429,9 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </script>
 </b:if>
 
-
+<script type='text/javascript'>
+  document.title = document.title + &quot; (viewing &quot; + numPosts + &quot; posts)&quot;;
+</script> 
 
 
 </body>
