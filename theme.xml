@@ -10,6 +10,7 @@
     <b:include data='blog' name='all-head-content'/>
 
 
+
 <title>
 <data:view.title.escaped/>
 </title>
@@ -795,6 +796,8 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
+  <link href='http://fontawesome.io/assets/font-awesome/css/font-awesome.css' rel='stylesheet'/>
+
 
     <b:include data='blog' name='google-analytics'/>
 
@@ -1556,7 +1559,8 @@ a.firstletter:first-letter{text-transform: capitalize;}
       </span>
     </b:if>
 
-    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+    <a class='home-link' expr:href='data:blog.homepageUrl'><i aria-hidden='true' class='fa fa-home fa-2'/></a>
+<!-- <data:homeMsg/> -->
 
   </div>
   <div class='clear'/>
@@ -1628,7 +1632,7 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
-<a expr:href='data:label.url + &quot;?max-results=7&quot;' itemprop='url'>
+<a expr:href='data:label.url + &quot;?max-results=10&quot;' itemprop='url'>
 <span itemprop='title'><data:label.name/></span>
 </a>
 </span>
@@ -1930,7 +1934,7 @@ a.firstletter:first-letter{text-transform: capitalize;}
 <b:if cond='data:label.name != &quot;driver&quot;'>
 <b:if cond='data:label.name != &quot;start&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
-<a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a>
+<a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
 </b:if>
 </b:if>
@@ -2473,7 +2477,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -2487,7 +2491,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -2519,7 +2523,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -2533,7 +2537,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -2565,7 +2569,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -2579,7 +2583,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -2647,7 +2651,7 @@ head.appendChild(script);
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -2661,7 +2665,7 @@ head.appendChild(script);
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
