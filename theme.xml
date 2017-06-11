@@ -842,6 +842,33 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
     <b:include data='blog' name='google-analytics'/>
 
+
+
+
+
+<script type='text/javascript'>
+//<![CDATA[
+ 
+if(typeof document.getElementsByClassName !== 'function') {
+  document.getElementsByClassName = function(clsName){
+    if(!clsName)
+      return [];
+    var retVal = [];
+    var elements = document.getElementsByTagName("*");
+    var expr = new RegExp('(^| )' + clsName + '( |$)');
+    for(var i=0 ; i<elements.length ; i++)
+        if(expr.test(elements[i].className))
+            retVal.push(elements[i]);
+    return retVal;
+  }
+}
+ 
+//]]>
+</script>
+
+
+
+
   </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
@@ -1097,7 +1124,6 @@ a.firstletter:first-letter{text-transform: capitalize;}
 </script>
 
 
-
   <b:if cond='!data:mobile'>
     <!-- posts -->
     <div class='blog-posts hfeed'>
@@ -1142,7 +1168,7 @@ a.firstletter:first-letter{text-transform: capitalize;}
         </b:if>
       </b:loop>
 
-    <b:include name='nextprev'/>
+
 
 
 
@@ -2070,10 +2096,16 @@ a.firstletter:first-letter{text-transform: capitalize;}
 </b:includable>
               <b:includable id='status-message'>
   <b:if cond='data:navMessage'>
-
-
-
-
+  <div class='status-msg-wrap'>
+    <div class='status-msg-body'>
+      <data:navMessage/>
+    </div>
+    <div class='status-msg-border'>
+      <div class='status-msg-bg'>
+        <div class='status-msg-hidden'><data:navMessage/></div>
+      </div>
+    </div>
+  </div>
   <div style='clear: both;'/>
   </b:if>
 </b:includable>
@@ -2429,10 +2461,46 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </script>
 </b:if>
 
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<script type='text/javascript'>
+//<![CDATA[
+// remove unnecessary links in label searches / mspotilas 2011
+  var pageUrl = window.location.href;
+  if(pageUrl.indexOf('/search/label/') > -1) {
+    var d = document.getElementsByClassName('status-msg-body');
+    if(d && d.length == 1) {
+      d = d[0].firstChild;
+      while(d && (d.nodeType != 1 || d.nodeName.toLowerCase() != 'a' || d.href.indexOf('/search/label/') < 0))
+        d = d.nextSibling;
+      if(d) d.parentNode.removeChild(d);
+    }
+    d = document.getElementById('blog-pager-newer-link');
+    if(d && d.firstChild) {
+      d = d.firstChild;
+      while(d && d.nodeType != 1 && d.nextSibling)
+        d = d.nextSibling;
+      var backUrl = d.href;
+      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0)
+        d.parentNode.removeChild(d);
+    }
+ 
+    var regex = /[\?&]max-results=(\d+)/;
+    var numMax = regex.exec(pageUrl);
+    if(numMax) numMax = parseInt(numMax[1]);
+    if(!numMax) numMax = 20;
+ 
+    if(numPosts < numMax) {
+      d = document.getElementById('blog-pager-older-link');
+      if(d) d.parentNode.removeChild(d);
+    }
+  }
+//]]>
+</script>
+</b:if>
+
 <script type='text/javascript'>
   document.title = document.title + &quot; (viewing &quot; + numPosts + &quot; posts)&quot;;
 </script> 
-
 
 </body>
 
