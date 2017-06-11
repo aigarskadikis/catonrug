@@ -679,7 +679,7 @@ ul {list-style: none;}
 
 #blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
 
-
+div.status-msg-wrap{display:none}
 
 @media only screen and (max-width:800px) {
 body{min-width:98%; font-size:1.5em}
@@ -1171,6 +1171,45 @@ if(typeof document.getElementsByClassName !== 'function') {
 
 
 
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<script type='text/javascript'>
+//<![CDATA[
+// remove unnecessary links in label searches / mspotilas 2011
+  var pageUrl = window.location.href;
+  if(pageUrl.indexOf('/search/label/') > -1) {
+    var d = document.getElementsByClassName('status-msg-body');
+    if(d && d.length == 1) {
+      d = d[0].firstChild;
+      while(d && (d.nodeType != 1 || d.nodeName.toLowerCase() != 'a' || d.href.indexOf('/search/label/') < 0))
+        d = d.nextSibling;
+      if(d) d.parentNode.removeChild(d);
+    }
+    d = document.getElementById('blog-pager-newer-link');
+    if(d && d.firstChild) {
+      d = d.firstChild;
+      while(d && d.nodeType != 1 && d.nextSibling)
+        d = d.nextSibling;
+      var backUrl = d.href;
+      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0)
+        d.parentNode.removeChild(d);
+    }
+ 
+    var regex = /[\?&]max-results=(\d+)/;
+    var numMax = regex.exec(pageUrl);
+    if(numMax) numMax = parseInt(numMax[1]);
+    if(!numMax) numMax = 20;
+ 
+    if(numPosts < numMax) {
+      d = document.getElementById('blog-pager-older-link');
+      if(d) d.parentNode.removeChild(d);
+    }
+  }
+//]]>
+</script>
+</b:if>
+
+
+
 
 
 
@@ -1179,8 +1218,6 @@ if(typeof document.getElementsByClassName !== 'function') {
         &lt;/div&gt;&lt;/div&gt;
       </b:if>
     </div>
-
-
 
     <!-- feed links -->
     <b:include name='feedLinks'/>
@@ -2461,42 +2498,8 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </script>
 </b:if>
 
-<b:if cond='data:blog.pageType == &quot;index&quot;'>
-<script type='text/javascript'>
-//<![CDATA[
-// remove unnecessary links in label searches / mspotilas 2011
-  var pageUrl = window.location.href;
-  if(pageUrl.indexOf('/search/label/') > -1) {
-    var d = document.getElementsByClassName('status-msg-body');
-    if(d && d.length == 1) {
-      d = d[0].firstChild;
-      while(d && (d.nodeType != 1 || d.nodeName.toLowerCase() != 'a' || d.href.indexOf('/search/label/') < 0))
-        d = d.nextSibling;
-      if(d) d.parentNode.removeChild(d);
-    }
-    d = document.getElementById('blog-pager-newer-link');
-    if(d && d.firstChild) {
-      d = d.firstChild;
-      while(d && d.nodeType != 1 && d.nextSibling)
-        d = d.nextSibling;
-      var backUrl = d.href;
-      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0)
-        d.parentNode.removeChild(d);
-    }
- 
-    var regex = /[\?&]max-results=(\d+)/;
-    var numMax = regex.exec(pageUrl);
-    if(numMax) numMax = parseInt(numMax[1]);
-    if(!numMax) numMax = 20;
- 
-    if(numPosts < numMax) {
-      d = document.getElementById('blog-pager-older-link');
-      if(d) d.parentNode.removeChild(d);
-    }
-  }
-//]]>
-</script>
-</b:if>
+
+
 
 <script type='text/javascript'>
   document.title = document.title + &quot; (viewing &quot; + numPosts + &quot; posts)&quot;;
