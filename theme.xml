@@ -745,6 +745,9 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 .post-footer{margin:0;padding:0}
 
+a.firstletter {display:inline-block;}
+a.firstletter:first-letter{text-transform: capitalize;}
+
       ]]>
     </b:template-skin>
 
@@ -1588,8 +1591,11 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-dism&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=7&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
+<b:else/>
 
-<b:if cond='data:label.name != {&quot;detect&quot;,&quot;upgrade&quot;,&quot;install&quot;,&quot;remove&quot;,&quot;Presentation&quot;}'>
+<b:if cond='data:label.name != {&quot;detect&quot;,&quot;clean&quot;,&quot;compress&quot;,&quot;convert&quot;,&quot;headless&quot;,&quot;trial&quot;,&quot;integrate&quot;,&quot;unattended&quot;,&quot;offline&quot;,&quot;upgrade&quot;,&quot;install&quot;,&quot;remove&quot;,&quot;deploy&quot;,&quot;boot&quot;,&quot;slipstream&quot;,&quot;driver&quot;,&quot;start&quot;,&quot;Presentation&quot;}'>
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
@@ -1600,7 +1606,7 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -1870,13 +1876,47 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
 <a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=7&quot;' rel='tag'>Adobe Reader 11</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-dism&quot;'>
+<a expr:href='&quot;/search/label/DISM?max-results=7&quot;' rel='tag'>DISM</a>
+<b:else/>
+
+
+
+
 <b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;compress&quot;'>
+<b:if cond='data:label.name != &quot;clean&quot;'>
+<b:if cond='data:label.name != &quot;headless&quot;'>
+<b:if cond='data:label.name != &quot;trial&quot;'>
+<b:if cond='data:label.name != &quot;integrate&quot;'>
+<b:if cond='data:label.name != &quot;convert&quot;'>
+<b:if cond='data:label.name != &quot;unattended&quot;'>
+<b:if cond='data:label.name != &quot;offline&quot;'>
 <b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;install&quot;'>
+<b:if cond='data:label.name != &quot;deploy&quot;'>
+<b:if cond='data:label.name != &quot;boot&quot;'>
+<b:if cond='data:label.name != &quot;slipstream&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
+<b:if cond='data:label.name != &quot;driver&quot;'>
+<b:if cond='data:label.name != &quot;start&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=7&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2368,6 +2408,52 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
     <b:include name='quickedit'/>
   </b:includable>
+  </b:widget>
+  <b:widget id='Label2' locked='false' title='Action' type='Label' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>install,remove,slipstream,upgrade</b:widget-setting>
+      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=7&quot;'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
   </b:widget>
   <b:widget id='Label8' locked='false' title='MicroSoft' type='Label' version='1'>
     <b:widget-settings>
