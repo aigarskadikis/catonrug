@@ -679,7 +679,7 @@ ul {list-style: none;}
 
 #blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
 
-div.status-msg-wrap{display:none}
+div.status-msg-wrap{margin-top:0;font-size:1.4em}
 
 @media only screen and (max-width:800px) {
 body{min-width:98%; font-size:1.5em}
@@ -826,6 +826,9 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 a.firstletter {display:inline-block;}
 a.firstletter:first-letter{text-transform: capitalize;}
+
+.status-msg-border{border:0}
+.status-msg-bg{background:0}
 
       ]]>
     </b:template-skin>
@@ -1128,7 +1131,10 @@ if(typeof document.getElementsByClassName !== 'function') {
     <!-- posts -->
     <div class='blog-posts hfeed'>
 
+
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'>
       <b:include data='top' name='status-message'/>
+      </b:if>
 
     <!-- navigation -->
     <b:include name='nextprev'/>
