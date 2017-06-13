@@ -666,7 +666,7 @@ html * {max-height:1000000px;}
 
 code,pre{color:#444;font-family:'Lucida Console',Monaco,monospace;white-space:pre;overflow:auto;word-wrap:normal}
 .post-body pre{background:#f9f9f9;border:1px dashed #2288bb;padding:.7em 1em;margin:.5em 0 1em}
-.post-body pre.md5,.post-body pre.sha1{margin:0;padding:0;border:0;background:white}
+.post-body pre.md5,.post-body pre.sha1{margin:0;padding:0;border:0;background:white;font-size:.8em}
 
 
 .section{margin:0}
@@ -2507,9 +2507,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
 
 
-<script type='text/javascript'>
-  document.title = document.title + &quot; (viewing &quot; + numPosts + &quot; posts)&quot;;
-</script> 
+
 
 </body>
 
