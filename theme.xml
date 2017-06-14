@@ -832,6 +832,12 @@ a.firstletter:first-letter{text-transform: capitalize;}
 .status-msg-border{border:0}
 .status-msg-bg{background:0}
 
+/*span#blog-pager-older-link a.blog-pager-older-link{display:none}*/
+
+.disableOlderLink {
+    display: none;
+}
+
       ]]>
     </b:template-skin>
 
@@ -1176,7 +1182,7 @@ if(typeof document.getElementsByClassName !== 'function') {
         </b:if>
       </b:loop>
 
-
+<b:include name='nextprev'/>
 
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
@@ -1198,8 +1204,10 @@ if(typeof document.getElementsByClassName !== 'function') {
       while(d && d.nodeType != 1 && d.nextSibling)
         d = d.nextSibling;
       var backUrl = d.href;
-      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0)
-        d.parentNode.removeChild(d);
+      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0) {
+var theOlderLink = document.querySelectorAll("#blog-pager-older-link");
+for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "none";
+      }
     }
  
     var regex = /[\?&]max-results=(\d+)/;
@@ -1209,7 +1217,10 @@ if(typeof document.getElementsByClassName !== 'function') {
  
     if(numPosts < numMax) {
       d = document.getElementById('blog-pager-older-link');
-      if(d) d.parentNode.removeChild(d);
+      if(d) {
+var theOlderLink = document.querySelectorAll("#blog-pager-older-link");
+for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "none";
+      }
     }
   }
 //]]>
@@ -1752,6 +1763,9 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;wsus&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
+<b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
@@ -1792,7 +1806,7 @@ if(typeof document.getElementsByClassName !== 'function') {
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2071,6 +2085,9 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;wsus&quot;'>
+<a expr:href='&quot;/search/label/Windows%20Updates?max-results=10&quot;' rel='tag'>Windows Updates</a>
+<b:else/>
 
 
 
@@ -2103,6 +2120,7 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2820,7 +2838,7 @@ head.appendChild(script);
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>CLOUD</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Alexa,Apple,AutoIt,BSOD,Blogger,CS50,CSS,Canon,CentOS 6,CentOS 7,Citrix,Crawler,DiskPart,DokuWiki,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Gandalf,Gigabyte,Google Apps,Group Policy,HP,HTTrack,HashMyFiles,Hiren,How not to do,Interests,JavaScript,Just Saying,KNOPPIX,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MS Project,MS Visio,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,Office 2003,Office 2007,Office XP,Office2002,Outlook 2010,PSP,PXE boot,PartedMagic,Partition Wizard,PlayStation,PlayStation 2,PostgreSQL,Printer,Process Monitor,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Registry,Remote Desktop,SELinux,SQL Server 2008 R2,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Success,Super Nintendo,Template,Tiny Core,Total Commander,Total Uninstall,VMware,Viewer,Visual Basic,WinPcap,Windows 95,Windows Installer,Windows Updates,WordPress,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,awk,cron,detect,driver,drivers,floppy,grep,nginx,non-Microsoft Binaries,sed,wget</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>Alexa,Apple,AutoIt,BSOD,Blogger,CS50,CSS,Canon,CentOS 6,CentOS 7,Citrix,Crawler,DiskPart,DokuWiki,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Gandalf,Gigabyte,Google Apps,Group Policy,HP,HashMyFiles,Hiren,How not to do,Interests,JavaScript,Just Saying,KNOPPIX,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MS Project,MS Visio,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,Office 2003,Office 2007,Office XP,Office2002,Outlook 2010,PSP,PXE boot,PartedMagic,Partition Wizard,PlayStation,PlayStation 2,PostgreSQL,Printer,Process Monitor,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Registry,Remote Desktop,SELinux,SQL Server 2008 R2,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Success,Super Nintendo,Template,Tiny Core,Total Commander,Total Uninstall,VMware,Viewer,Visual Basic,WinPcap,Windows 95,Windows Installer,Windows Updates,WordPress,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,awk,cron,detect,driver,drivers,floppy,grep,nginx,non-Microsoft Binaries,sed,wget</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
