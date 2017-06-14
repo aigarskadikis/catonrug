@@ -679,6 +679,8 @@ ul {list-style: none;}
 
 #blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
 
+span#blog-pager-older-link a, span#blog-pager-newer-link a{color:red!important}
+
 div.status-msg-wrap{margin-top:0;font-size:1.4em}
 
 @media only screen and (max-width:800px) {
@@ -788,11 +790,11 @@ div.post-body{font-size:1.4em!important}
 }
 
 
-div.widget h2 {margin-left:16px}
+div.widget h2 {margin-left:10px}
 
-div#BlogSearch1 h2.title {margin-left:16px}
+div#BlogSearch1 h2.title {margin-left:10px;margin-right:10px}
 
-div.widget-content {padding:0 16px 16px 16px}
+div.widget-content {padding:0 10px 16px 10px}
 .widget{margin:0}
 
 .widget ul {padding:0}
@@ -1747,6 +1749,9 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;ie11&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
+<b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
@@ -1787,7 +1792,7 @@ if(typeof document.getElementsByClassName !== 'function') {
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2063,6 +2068,9 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
 <a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' rel='tag'>SCCM</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;ie11&quot;'>
+<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' rel='tag'>Internet Explorer 11</a>
+<b:else/>
 
 
 
@@ -2095,6 +2103,7 @@ if(typeof document.getElementsByClassName !== 'function') {
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2683,7 +2692,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Office 2010,Office 2013,Office 2016,Server 2008 R2,Server 2012 R2,Windows 10,Windows 7,Windows 8.1,Windows XP</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>.NET Framework,Batch File,Command Line,DISM,Internet Explorer 11,Office 2010,Office 2013,Office 2016,PowerShell,Registry,Remote Command,SCCM,Server 2008 R2,Server 2012 R2,Tweak,VHD boot,Windows 10,Windows 7,Windows 8.1,Windows XP</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -2729,7 +2738,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>4K Video Downloader,7-Zip,Acrobat Reader DC,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Audacity,CCleaner,Chrome,Cisco VPN,Citrix,Classic Shell,ConEmu,DAEMON Tools,DOSBox,Deluge,Ditto,Dropbox,Everything,Firefox,Flash Player,GanttProject,Google Drive,Gpg4win,Greenshot,HEAT,HTTrack,HandBrake,HashMyFiles,HxD Hex Editor,ImgBurn,Java 8,KMSPico,KeePass,MKVToolNix,NotepadPlusPlus,PDFCreator,PDFSaM,Paint.NET,Partition Wizard,Picasa,Process Monitor,ProjectLibre,PuTTY,RAM Disk,Silverlight,Skype,SumatraPDF,TeamViewer,TightVNC,Total Commander,VLC Media Player,VideoPad,VirtualBox,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Wireshark,eParakstitajs</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>4K Video Downloader,7-Zip,Acrobat Reader DC,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Audacity,CCleaner,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,ConEmu,DAEMON Tools,DOSBox,Deluge,Ditto,Dropbox,Everything,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,GanttProject,Google Drive,Gpg4win,Greenshot,HEAT,HTTrack,HandBrake,HashMyFiles,HxD Hex Editor,IBM Sametime,ImgBurn,Java 8,K-Lite Codec Pack,KMSPico,KeePass,MKVToolNix,NotepadPlusPlus,OperaWebBrowser,PDFCreator,PDFSaM,Paint.NET,Partition Wizard,PhotoShop,Picasa,Process Monitor,ProjectLibre,PuTTY,RAM Disk,Recuva,Safari,Silverlight,Skype,Subtitle Edit,SumatraPDF,TeamViewer,TightVNC,Total Commander,Total Uninstall,TrueCrypt,Universal USB Installer,VLC Media Player,VideoPad,VirtualBox,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Wireshark,eParakstitajs</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -2811,7 +2820,7 @@ head.appendChild(script);
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>CLOUD</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Flash Player,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,ConEmu,Crawler,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Chrome,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java 6,Java 7,Java 8,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,Microsoft Redistributable Package,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,Office2002,Office2016,OneDrive,OperaWebBrowser,Outlook 2010,Outlook 2016,Outlook2013,PDF Split and Merge,PDFArchitect,PDFCreator,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Recuva,Registry,Remote Command,Remote Desktop,Runtime,SCCM Agent Install,SCCM Agent Manage,SCCM Application Management,SCCM Client,SCCM Collection,SCCM Instant Execution,SCCM OS Deploy,SCCM PXE Boot,SCCM Prepare WIM,SCCM Remote Control,SCCM Reports,SCCM Server Setup,SCCM Update Management,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Defender,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,awk,cron,detect,dll is missing,driver,drivers,eParakstitajs,floppy,grep,nginx,non-Microsoft Binaries,sed,wget</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>Alexa,Apple,AutoIt,BSOD,Blogger,CS50,CSS,Canon,CentOS 6,CentOS 7,Citrix,Crawler,DiskPart,DokuWiki,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Gandalf,Gigabyte,Google Apps,Group Policy,HP,HTTrack,HashMyFiles,Hiren,How not to do,Interests,JavaScript,Just Saying,KNOPPIX,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MS Project,MS Visio,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,Office 2003,Office 2007,Office XP,Office2002,Outlook 2010,PSP,PXE boot,PartedMagic,Partition Wizard,PlayStation,PlayStation 2,PostgreSQL,Printer,Process Monitor,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Registry,Remote Desktop,SELinux,SQL Server 2008 R2,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Success,Super Nintendo,Template,Tiny Core,Total Commander,Total Uninstall,VMware,Viewer,Visual Basic,WinPcap,Windows 95,Windows Installer,Windows Updates,WordPress,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,awk,cron,detect,driver,drivers,floppy,grep,nginx,non-Microsoft Binaries,sed,wget</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
