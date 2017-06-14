@@ -741,6 +741,8 @@ h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
 div.post-body{font-size:2em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
+input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
+div.widget,#BlogSearch1{margin-top:2em}
 }
 
 
@@ -758,6 +760,9 @@ h1,h2,h3,#blog-pager,div.widget-content{font-size:1.2em!important}
 div.post-body{font-size:1.2em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
+input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
+div.widget,#BlogSearch1{margin-top:2em}
+
 }
 
 /* S5 */
@@ -773,6 +778,9 @@ h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
 div.post-body{font-size:2em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
+input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
+div.widget,#BlogSearch1{margin-top:2em}
+
 }
 
 @media (min-resolution: 280dpi) and (min-device-width:640px) {
@@ -787,6 +795,9 @@ h1,h2,h3,#blog-pager,div.widget-content{font-size:1.4em!important}
 div.post-body{font-size:1.4em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
+input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
+div.widget,#BlogSearch1{margin-top:2em}
+
 }
 
 
@@ -812,10 +823,6 @@ div.widget-content {padding:0 10px 16px 10px}
 .fauxcolumn-left-outer {background-color:#f9f9f9}
 div.breadcrumbs {padding-top:16px; display:none}
 
-#blog-pager-newer-link {
-/*float:right*/
-}
-
 span.snipeto{color:#aaa}
 
 div.cookie-choices-info {bottom:0;top:auto!important}
@@ -832,11 +839,10 @@ a.firstletter:first-letter{text-transform: capitalize;}
 .status-msg-border{border:0}
 .status-msg-bg{background:0}
 
-/*span#blog-pager-older-link a.blog-pager-older-link{display:none}*/
 
-.disableOlderLink {
-    display: none;
-}
+.disableOlderLink {display:none}
+
+
 
       ]]>
     </b:template-skin>
@@ -1557,10 +1563,11 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
       </div>
     </b:if>
 
+<!--
     <div class='mobile-link-button' id='blog-pager-home-link'>
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
     </div>
-
+-->
 
 
   </div>
@@ -1689,7 +1696,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
       </span>
     </b:if>
 
+
     <a class='home-link' expr:href='data:blog.homepageUrl'><i aria-hidden='true' class='fa fa-home fa-2'/></a>
+
 <!-- <data:homeMsg/> -->
 
   </div>
