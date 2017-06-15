@@ -4,7 +4,11 @@
 
 <head>
 
-    <meta expr:content='data:blog.isMobile         ? &quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0&quot;         : &quot;width=1100&quot;' name='viewport'/>
+
+
+  <meta content='initial-scale=1.0' name='viewport'/>
+
+
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 <meta content='a15ad3fa3ac32db7f097' name='wot-verification'/>
     <b:include data='blog' name='all-head-content'/>
@@ -679,7 +683,10 @@ ul {list-style: none;}
 
 #blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
 
-span#blog-pager-older-link a, span#blog-pager-newer-link a{color:red!important}
+/*
+span#blog-pager-older-link a, span#blog-pager-newer-link a{padding:3px 6px 2px 6px; background-color:#66bbdd;line-height:2em;color:white}
+span#blog-pager-older-link a:hover, span#blog-pager-newer-link a:hover{background-color:#2288bb;text-decoration:none}
+*/
 
 div.status-msg-wrap{margin-top:0;font-size:1.4em}
 
@@ -728,78 +735,80 @@ span.snipeto{display:none}
 
 
 
+
+
+
 /* iPhone5 portrait */
 @media (min-resolution: 192dpi) and (min-device-width:320px) {
-body{min-width:98%; font-size:2em}
+body{min-width:98%; font-size:1.3em}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
 .main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
 .column-left-outer { margin-left:0;}
 .main-inner .fauxcolumn-left-outer {    width: 0px;}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
-h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
-div.post-body{font-size:2em!important}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.3em!important}
+div.post-body{font-size:1.3em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
-input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
-div.widget,#BlogSearch1{margin-top:2em}
+input.gsc-input, input.gsc-search-button {font-size: 1.3em!important;}
+div.widget,#BlogSearch1{margin-top:1.3em}
 }
 
 
 
 /* Moto Play landscape */
 @media (min-resolution: 192dpi) and (min-device-width:592px) {
-body{min-width:98%; font-size:2em}
+body{min-width:98%; font-size:1.3em}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
 .main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
 .column-left-outer { margin-left:0;}
 .main-inner .fauxcolumn-left-outer {    width: 0px;}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
-h1,h2,h3,#blog-pager,div.widget-content{font-size:1.2em!important}
-div.post-body{font-size:1.2em!important}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.1.3em!important}
+div.post-body{font-size:1.1.3em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
-input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
-div.widget,#BlogSearch1{margin-top:2em}
+input.gsc-input, input.gsc-search-button {font-size: 1.3em!important;}
+div.widget,#BlogSearch1{margin-top:1.3em}
 
 }
 
 /* S5 */
 @media (min-resolution: 280dpi) and (min-device-width:360px) {
-body{min-width:98%; font-size:2em}
+body{min-width:98%; font-size:1.3em}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
 .main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
 .column-left-outer { margin-left:0;}
 .main-inner .fauxcolumn-left-outer {    width: 0px;}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
-h1,h2,h3,#blog-pager,div.widget-content{font-size:2em!important}
-div.post-body{font-size:2em!important}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.3em!important}
+div.post-body{font-size:1.3em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
-input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
-div.widget,#BlogSearch1{margin-top:2em}
+input.gsc-input, input.gsc-search-button {font-size: 1.3em!important;}
+div.widget,#BlogSearch1{margin-top:1.3em}
 
 }
 
 @media (min-resolution: 280dpi) and (min-device-width:640px) {
-body{min-width:98%; font-size:2em}
+body{min-width:98%; font-size:1.3em}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:98%;max-width:98%;_width:98%;}
 .main-inner .column-left-outer {width: 100%; right:0; margin-left:0;}
 .column-left-outer { margin-left:0;}
 .main-inner .fauxcolumn-left-outer {    width: 0px;}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
-h1,h2,h3,#blog-pager,div.widget-content{font-size:1.4em!important}
-div.post-body{font-size:1.4em!important}
+h1,h2,h3,#blog-pager,div.widget-content{font-size:1.3em!important}
+div.post-body{font-size:1.3em!important}
 #comments{display:none}
 .post-body pre.md5,pre.sha1{font-size:.8em!important}
-input.gsc-input, input.gsc-search-button {font-size: 5em!important;}
-div.widget,#BlogSearch1{margin-top:2em}
+input.gsc-input, input.gsc-search-button {font-size: 1.3em!important;}
+div.widget,#BlogSearch1{margin-top:1.3em}
 
 }
-
 
 div.widget h2 {margin-left:10px}
 
@@ -1798,6 +1807,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;deploy&quot;'>
 <b:if cond='data:label.name != &quot;boot&quot;'>
+<b:if cond='data:label.name != &quot;linux&quot;'>
+<b:if cond='data:label.name != &quot;usb&quot;'>
 <b:if cond='data:label.name != &quot;slipstream&quot;'>
 <b:if cond='data:label.name != &quot;driver&quot;'>
 <b:if cond='data:label.name != &quot;start&quot;'>
@@ -1815,7 +1826,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2122,6 +2133,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;deploy&quot;'>
 <b:if cond='data:label.name != &quot;boot&quot;'>
+<b:if cond='data:label.name != &quot;linux&quot;'>
+<b:if cond='data:label.name != &quot;usb&quot;'>
 <b:if cond='data:label.name != &quot;slipstream&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;driver&quot;'>
@@ -2129,6 +2142,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
