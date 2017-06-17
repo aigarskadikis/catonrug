@@ -1837,16 +1837,11 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
     </b:if>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
-<span class='snipeto'>
-  <data:post.snippet/>
-  </span>
+
 </b:if>
 
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-
-
-
 
 
     <div class='post-header'>
@@ -2700,38 +2695,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
   <b:if cond='data:title != &quot;&quot;'>
     <h2><data:title/></h2>
   </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
+<div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'> <b:if cond='data:display == &quot;list&quot;'> <ul> <b:loop values='data:labels' var='label'> <li> <b:if cond='data:blog.url == data:label.url'> <span expr:dir='data:blog.languageDirection'><data:label.name/></span> <b:else/> <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a> </b:if> <b:if cond='data:showFreqNumbers'> <span dir='ltr'>(<data:label.count/>)</span> </b:if> </li> </b:loop> </ul> <b:else/> <b:loop values='data:labels' var='label'> <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'> <b:if cond='data:blog.url == data:label.url'> <span expr:dir='data:blog.languageDirection'><data:label.name/></span> <b:else/> <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a> </b:if> <b:if cond='data:showFreqNumbers'> <span class='label-count' dir='ltr'>(<data:label.count/>)</span> </b:if> </span> </b:loop> </b:if> <b:include name='quickedit'/> </div>
 </b:includable>
   </b:widget>
   <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar' version='1'>
@@ -2783,34 +2747,9 @@ head.appendChild(script);
     <h2><data:title/></h2>
   </b:if>
   <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
+<b:if cond='data:display == &quot;list&quot;'><ul><b:loop values='data:labels' var='label'><li><b:if cond='data:blog.url == data:label.url'><span expr:dir='data:blog.languageDirection'><data:label.name/></span><b:else/><a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a></b:if><b:if cond='data:showFreqNumbers'><span dir='ltr'>(<data:label.count/>)</span></b:if></li></b:loop></ul>
     <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
+<b:loop values='data:labels' var='label'> <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'> <b:if cond='data:blog.url == data:label.url'> <span expr:dir='data:blog.languageDirection'><data:label.name/></span> <b:else/> <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a> </b:if> <b:if cond='data:showFreqNumbers'> <span class='label-count' dir='ltr'>(<data:label.count/>)</span> </b:if> </span> </b:loop>
     </b:if>
     <b:include name='quickedit'/>
   </div>
