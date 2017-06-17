@@ -3,24 +3,14 @@
 <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 
 <head>
+<title><data:view.title.escaped/></title>
 
-  <meta content='initial-scale=1.0' name='viewport'/>
-
-
-
-
+<link href='http://fontawesome.io/assets/font-awesome/css/font-awesome.css' rel='stylesheet'/>
+<meta content='initial-scale=1.0' name='viewport'/>
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 <meta content='a15ad3fa3ac32db7f097' name='wot-verification'/>
-    <b:include data='blog' name='all-head-content'/>
-
-
-
-<title>
-<data:view.title.escaped/>
-</title>
-    
-
-    <b:skin><![CDATA[/*
+<b:include data='blog' name='all-head-content'/> 
+<b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
 Name:     Simple
@@ -596,8 +586,7 @@ body.mobile  {
   border-$startSide: 1px solid $(tabs.border.color);
 }
 ]]></b:skin>
-
-    <b:template-skin>
+<b:template-skin>
       <b:variable default='960px' name='content.width' type='length' value='1002px'/>
       <b:variable default='0' name='main.column.left.width' type='length' value='160px'/>
       <b:variable default='310px' name='main.column.right.width' type='length' value='0px'/>
@@ -860,46 +849,20 @@ a.firstletter:first-letter{text-transform: capitalize;}
       ]]>
     </b:template-skin>
 
-    <b:if cond='data:skin.vars.body_background.image.isResizable'>
-      <b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
-    </b:if>
+<b:if cond='data:skin.vars.body_background.image.isResizable'>
+<b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
+</b:if>
 
-
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
-
-  <link href='http://fontawesome.io/assets/font-awesome/css/font-awesome.css' rel='stylesheet'/>
-
-
-    <b:include data='blog' name='google-analytics'/>
-
-
-
-
+<script async='async' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
+<b:include data='blog' name='google-analytics'/>
 
 <script type='text/javascript'>
 //<![CDATA[
- 
-if(typeof document.getElementsByClassName !== 'function') {
-  document.getElementsByClassName = function(clsName){
-    if(!clsName)
-      return [];
-    var retVal = [];
-    var elements = document.getElementsByTagName("*");
-    var expr = new RegExp('(^| )' + clsName + '( |$)');
-    for(var i=0 ; i<elements.length ; i++)
-        if(expr.test(elements[i].className))
-            retVal.push(elements[i]);
-    return retVal;
-  }
-}
- 
+"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(e){if(!e)return[];for(var t=[],n=document.getElementsByTagName("*"),s=new RegExp("(^| )"+e+"( |$)"),m=0;m<n.length;m++)s.test(n[m].className)&&t.push(n[m]);return t});
 //]]>
 </script>
 
-
-
-
-  </head>
+</head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
 
@@ -912,63 +875,8 @@ if(typeof document.getElementsByClassName !== 'function') {
     </div>
   </b:if>
 
-  <div class='body-fauxcolumns'>
-    <div class='fauxcolumn-outer body-fauxcolumn-outer'>
-    <div class='cap-top'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    <div class='fauxborder-left'>
-    <div class='fauxborder-right'/>
-    <div class='fauxcolumn-inner'>
-    </div>
-    </div>
-    <div class='cap-bottom'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    </div>
-  </div>
+<div class='body-fauxcolumns'><div class='fauxcolumn-outer body-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div class='content'><div class='content-fauxcolumns'><div class='fauxcolumn-outer content-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div class='content-outer'><div class='content-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left content-fauxborder-left'><div class='fauxborder-right content-fauxborder-right'/><div class='content-inner'><header itemscope='itemscope' itemtype='https://schema.org/WPHeader' style='display:none'><div class='header-outer'><div class='header-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left header-fauxborder-left'><div class='fauxborder-right header-fauxborder-right'/><div class='region-inner header-inner'>
 
-  <div class='content'>
-  <div class='content-fauxcolumns'>
-    <div class='fauxcolumn-outer content-fauxcolumn-outer'>
-    <div class='cap-top'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    <div class='fauxborder-left'>
-    <div class='fauxborder-right'/>
-    <div class='fauxcolumn-inner'>
-    </div>
-    </div>
-    <div class='cap-bottom'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    </div>
-  </div>
-
-  <div class='content-outer'>
-  <div class='content-cap-top cap-top'>
-    <div class='cap-left'/>
-    <div class='cap-right'/>
-  </div>
-  <div class='fauxborder-left content-fauxborder-left'>
-  <div class='fauxborder-right content-fauxborder-right'/>
-  <div class='content-inner'>
-
-
-
-    <header itemscope='itemscope' itemtype='https://schema.org/WPHeader' style='display:none'>
-    <div class='header-outer'>
-    <div class='header-cap-top cap-top'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    <div class='fauxborder-left header-fauxborder-left'>
-    <div class='fauxborder-right header-fauxborder-right'/>
-    <div class='region-inner header-inner'>
       <b:section class='header' id='header' maxwidgets='1' name='Header' showaddelement='no'>
         <b:widget id='Header1' locked='false' title='solve, automate, speed up (Header)' type='Header'>
           <b:widget-settings>
