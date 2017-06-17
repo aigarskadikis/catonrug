@@ -4,9 +4,9 @@
 
 <head>
 
-
-
   <meta content='initial-scale=1.0' name='viewport'/>
+
+
 
 
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
@@ -402,6 +402,7 @@ h3.post-title, .comments h4 {
   position: relative;
 }
 
+/*
 .post-body img, .post-body video, .post-body .tr-caption-container, .Profile img, .Image img,
 .BlogList .item-thumbnail img {
   padding: $(image.border.small.size);
@@ -414,9 +415,12 @@ h3.post-title, .comments h4 {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
 }
 
+
 .post-body img, .post-body video, .post-body .tr-caption-container {
   padding: $(image.border.large.size);
 }
+*/
+
 
 .post-body .tr-caption-container {
   color: $(image.text.color);
@@ -821,7 +825,7 @@ div.widget-content {padding:0 10px 16px 10px}
 
 .footer-inner {padding:0}
 
-#cookieChoiceInfo {bottom:0;top:auto!important}
+
 
 .header-inner .Header .descriptionwrapper {margin-bottom:0}
 
