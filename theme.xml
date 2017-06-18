@@ -2515,7 +2515,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
 
 
-
+  <script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'/>
 
 
 </body>
