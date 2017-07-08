@@ -853,7 +853,8 @@ a.firstletter:first-letter{text-transform: capitalize;}
 <b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
 </b:if>
 
-<script async='async' src='https://code.jquery.com/jquery-1.10.2.min.js'/>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
 
 <b:include data='blog' name='google-analytics'/>
@@ -2506,6 +2507,13 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
   </div>
   </div>
 
+<div id='images' style='width:100%;height:50px'>
+ 
+
+
+</div>
+
+
 <b:if cond='data:blog.pageType != &quot;index&quot;'>
 <script type='text/javascript'>
 //<![CDATA[
@@ -2524,6 +2532,22 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
 
   <script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'/>
+
+
+<script>
+//<![CDATA[
+$.getJSON("http://www.catonrug.net/feeds/posts/default/631070137981061829?alt=json",function(data){
+
+console.log(data.entry.title.$t);
+
+});
+
+
+//]]>
+</script>
+
+
+
 
 
 </body>
