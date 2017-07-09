@@ -859,19 +859,20 @@ a.firstletter:first-letter{text-transform: capitalize;}
 <script>
 //<![CDATA[
 
-function sed7z() {
+function sed7z(){
+$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
-$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){
+function grepsed7z(){
+$.getJSON("/feeds/posts/default/4804114361448432355?alt=json",function(data){$("#grepsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
-console.log(data.entry.title.$t);
+function datesedtr7z(){
+$.getJSON("/feeds/posts/default/4087562863531669994?alt=json",function(data){$("#datesedtr7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
-var link = document.createElement("a");
-    link.href = data.entry.content.$t;
-    link.download = "sed.7z";
-    link.click();
-});
+function z7z(){
+$.getJSON("/feeds/posts/default/6175980867816000733?alt=json",function(data){$("#z7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
-};
+function mp4(v){
+$.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$("#video").append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
 
 
 //]]>
