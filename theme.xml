@@ -861,16 +861,46 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 function sed7z(){
 $.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-
+function grep7z(){
+$.getJSON("/feeds/posts/default/47654747331945941?alt=json",function(data){$("#grep7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function date7z(){
+$.getJSON("/feeds/posts/default/7847081425142553533?alt=json",function(data){$("#date7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function grepsed7z(){
 $.getJSON("/feeds/posts/default/4804114361448432355?alt=json",function(data){$("#grepsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function grepls7z(){
+$.getJSON("/feeds/posts/default/1910515196171025503?alt=json",function(data){$("#grepls7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function greplssed7z(){
+$.getJSON("/feeds/posts/default/2101849000645152822?alt=json",function(data){$("#greplssed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function catgrepsed7z(){
+$.getJSON("/feeds/posts/default/6488238164872434475?alt=json",function(data){$("#catgrepsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function grepheadsed7z(){
+$.getJSON("/feeds/posts/default/9005108445475096749?alt=json",function(data){$("#grepheadsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function grepseduniq7z(){
+$.getJSON("/feeds/posts/default/7741492944609866678?alt=json",function(data){$("#grepseduniq7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function grepsedsort7z(){
+$.getJSON("/feeds/posts/default/8497691457687549833?alt=json",function(data){$("#grepsedsort7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function tailsed7z(){
+$.getJSON("/feeds/posts/default/2181713388828634795?alt=json",function(data){$("#tailsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function curlexe(){
+$.getJSON("/feeds/posts/default/4512944840766614734?alt=json",function(data){$("#curlexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function awkexe(){
+$.getJSON("/feeds/posts/default/7345841194095732726?alt=json",function(data){$("#awkexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function md5sumexe(){
+$.getJSON("/feeds/posts/default/5955831632040532768?alt=json",function(data){$("#md5sumexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function sleepexe(){
+$.getJSON("/feeds/posts/default/1960776102413335346?alt=json",function(data){$("#sleepexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
+function wgetexe(){
+$("#wgetexe").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmUUxMcUxOeU8ydVE' download='wget.exe'>wget.exe</a>");}
+
+function grepsedsortuniq7z(){
+$.getJSON("/feeds/posts/default/2030266721379947829?alt=json",function(data){$("#grepsedsortuniq7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function dategrepsedsort7z(){
+$.getJSON("/feeds/posts/default/335026750155096629?alt=json",function(data){$("#dategrepsedsort7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function datesedtr7z(){
 $.getJSON("/feeds/posts/default/4087562863531669994?alt=json",function(data){$("#datesedtr7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-
 function z7z(){
 $.getJSON("/feeds/posts/default/6175980867816000733?alt=json",function(data){$("#z7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-
 function mp4(v){
 $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$("#video").append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
 
