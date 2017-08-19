@@ -865,6 +865,8 @@ function grep7z(){
 $.getJSON("/feeds/posts/default/47654747331945941?alt=json",function(data){$("#grep7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function date7z(){
 $.getJSON("/feeds/posts/default/7847081425142553533?alt=json",function(data){$("#date7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function ls7z(){
+$.getJSON("/feeds/posts/default/3954558083556446198?alt=json",function(data){$("#ls7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function grepsed7z(){
 $.getJSON("/feeds/posts/default/4804114361448432355?alt=json",function(data){$("#grepsed7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function grepls7z(){
@@ -889,10 +891,12 @@ function md5sumexe(){
 $.getJSON("/feeds/posts/default/5955831632040532768?alt=json",function(data){$("#md5sumexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function sleepexe(){
 $.getJSON("/feeds/posts/default/1960776102413335346?alt=json",function(data){$("#sleepexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-
 function wgetexe(){
 $("#wgetexe").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmUUxMcUxOeU8ydVE' download='wget.exe'>wget.exe</a>");}
-
+function hxd7z(){
+$.getJSON("/feeds/posts/default/8343934451329232504?alt=json",function(data){$("#hxd7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+function w32di(){
+$("#w32di").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmLUE1VmIyeVJaZUk' download='Win32DiskImager-0.9.5-install.exe'>Win32DiskImager-0.9.5-install.exe</a>");}
 function grepsedsortuniq7z(){
 $.getJSON("/feeds/posts/default/2030266721379947829?alt=json",function(data){$("#grepsedsortuniq7z").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function dategrepsedsort7z(){
@@ -1751,6 +1755,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-rpi&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
+<b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
@@ -1799,7 +1806,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2070,6 +2077,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
 <a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' rel='tag'>SCCM</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-rpi&quot;'>
+<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' rel='tag'>Raspberry Pi</a>
+<b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
@@ -2110,6 +2120,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
 </b:if>
 </b:if>
 </b:if>
