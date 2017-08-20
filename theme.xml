@@ -910,6 +910,8 @@ function z7z(){
 $("#z7z").append("download <a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmZW5zazROU3AyV1E' download='7z.dll'>7z.dll</a> and <a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmLTlGQ3ZubW9ELVk' download='7z.exe'>7z.exe</a>");};
 function mp4(v){
 $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$("#video").append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
+function mp4id(v,id){
+$.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
 
 
 //]]>
