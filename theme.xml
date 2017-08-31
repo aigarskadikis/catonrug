@@ -866,31 +866,34 @@ a.firstletter:first-letter{text-transform: capitalize;}
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
 
-<!--[if gte IE 10]>
+
 
 <script>
 //<![CDATA[
 
-function dataURIToBlob(dataURI) {
-    dataURI = dataURI.replace(/^data:/, '');
+function dataURItoBlob(dataURI, callback) {
+// convert base64 to raw binary data held in a string
+// doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+var byteString = atob(dataURI.split(',')[1]);
 
-    const type = dataURI.match(/image\/[^;]+/);
-    const base64 = dataURI.replace(/^[^,]+,/, '');
-    const arrayBuffer = new ArrayBuffer(base64.length);
-    const typedArray = new Uint8Array(arrayBuffer);
+// separate out the mime component
+var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
 
-    for (let i = 0; i < base64.length; i++) {
-        typedArray[i] = base64.charCodeAt(i);
-    }
-
-    return new Blob([arrayBuffer], {type});
+// write the bytes of the string to an ArrayBuffer
+var ab = new ArrayBuffer(byteString.length);
+var ia = new Uint8Array(ab);
+for (var i = 0; i < byteString.length; i++) {
+ia[i] = byteString.charCodeAt(i);
 }
+
+// write the ArrayBuffer to a blob, and you're done
+var bb = new Blob([ab], {type: mimeString});
+return bb;
+}
+
 //]]>
 
 </script>
-
-<![endif]-->
-
 
 
 
@@ -905,13 +908,16 @@ var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.ap
   function saveF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
   function extractF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 
+var blobObject = new Blob(["I scream. You scream. We all scream for ice cream."]);
+
 
 function sed7z(){
 
   if (!isIE) { 
 $.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});
   } else {
-$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='javascript:void(0)' onClick='javascript:alert(&quot;files can be downloaded only with firefox, chrome, opera&quot;)'>"+data.entry.title.$t+"</a>");});
+$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){
+$("#sed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});
 
 }
 
