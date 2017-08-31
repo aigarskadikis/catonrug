@@ -902,7 +902,7 @@ return bb;
 //<![CDATA[
 
 // detect IE browser
-var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {isIE = true;}
+var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf("Edge") > -1) {isIE = true;}
 
 //save or extact files by post id
   function saveF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
