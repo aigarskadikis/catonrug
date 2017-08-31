@@ -853,7 +853,7 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 .disableOlderLink {display:none}
 
-
+.vborder{border:1px solid #ccc; }
 
       ]]>
     </b:template-skin>
@@ -865,11 +865,58 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
+
+<!--[if gte IE 10]>
+
 <script>
 //<![CDATA[
 
+function dataURIToBlob(dataURI) {
+    dataURI = dataURI.replace(/^data:/, '');
+
+    const type = dataURI.match(/image\/[^;]+/);
+    const base64 = dataURI.replace(/^[^,]+,/, '');
+    const arrayBuffer = new ArrayBuffer(base64.length);
+    const typedArray = new Uint8Array(arrayBuffer);
+
+    for (let i = 0; i < base64.length; i++) {
+        typedArray[i] = base64.charCodeAt(i);
+    }
+
+    return new Blob([arrayBuffer], {type});
+}
+//]]>
+
+</script>
+
+<![endif]-->
+
+
+
+
+
+<script>
+//<![CDATA[
+
+// detect IE browser
+var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {isIE = true;}
+
+//save or extact files by post id
+  function saveF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+  function extractF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+
+
 function sed7z(){
-$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
+
+  if (!isIE) { 
+$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});
+  } else {
+$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='javascript:void(0)' onClick='javascript:alert(&quot;files can be downloaded only with firefox, chrome, opera&quot;)'>"+data.entry.title.$t+"</a>");});
+
+}
+
+};
+
 function grep7z(){
 $.getJSON("/feeds/posts/default/47654747331945941?alt=json",function(data){$("#grep7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
 function date7z(){
