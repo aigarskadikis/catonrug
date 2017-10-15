@@ -5,7 +5,7 @@
 <head>
 <title><data:view.title.escaped/></title>
 
-<link href='http://fontawesome.io/assets/font-awesome/css/font-awesome.css' rel='stylesheet'/>
+<link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.css' rel='stylesheet'/>
 <meta content='initial-scale=1.0' name='viewport'/>
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 <meta content='a15ad3fa3ac32db7f097' name='wot-verification'/>
@@ -853,7 +853,18 @@ a.firstletter:first-letter{text-transform: capitalize;}
 
 .disableOlderLink {display:none}
 
-.vborder{border:1px solid #ccc; }
+.vborder{border:1px solid #1881d7; }
+
+.post-body table {
+    border-collapse: collapse; width:100%;
+border: 1px solid black;
+}
+
+.post-body th, .post-body td {
+border: 1px solid black;
+padding:4px;
+text-align: left;
+}
 
       ]]>
     </b:template-skin>
@@ -2866,7 +2877,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
       gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
         if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
           gapi.iframes.getContext().openChild({
-              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d3325322079154148081\x26blogName\x3dsolve,+automate,+speed+up\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://www.catonrug.net/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttp://www.catonrug.net/\x26vt\x3d-9024894000748668678&#39;,
+              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d3325322079154148081\x26blogName\x3dsolve,+automate,+speed+up\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://catonrug.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://catonrug.blogspot.com/\x26vt\x3d-2982533624743412024&#39;,
               where: document.getElementById(&quot;navbar-iframe-container&quot;),
               id: &quot;navbar-iframe&quot;
           });
