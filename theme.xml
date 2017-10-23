@@ -7,8 +7,6 @@
 
 <link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.css' rel='stylesheet'/>
 <meta content='initial-scale=1.0' name='viewport'/>
-<meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
-<meta content='a15ad3fa3ac32db7f097' name='wot-verification'/>
 <b:include data='blog' name='all-head-content'/> 
 <b:skin><![CDATA[/*
 -----------------------------------------------
@@ -878,9 +876,6 @@ text-align: left;
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
-
-
-
 <script>
 //<![CDATA[
 
@@ -907,9 +902,6 @@ return bb;
 //]]>
 
 </script>
-
-
-
 
 <script>
 //<![CDATA[
@@ -1003,7 +995,7 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
 
-  <b:if cond='data:blog.pageType == &quot;index&quot;' itemscope='itemscope' itemtype='https://schema.org/WebPage'>
+  <b:if cond='data:blog.pageType == &quot;index&quot;' itemscope='itemscope' itemtype='http://schema.org/WebPage'>
     <div style='display: none;'>
       <meta expr:content='data:blog.title' itemprop='name'/>
       <b:if cond='data:blog.metaDescription'>
@@ -1012,7 +1004,7 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
     </div>
   </b:if>
 
-<div class='body-fauxcolumns'><div class='fauxcolumn-outer body-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div align='center' class='content'><div class='content-fauxcolumns'><div class='fauxcolumn-outer content-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div class='content-outer'><div class='content-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left content-fauxborder-left'><div class='fauxborder-right content-fauxborder-right'/><div class='content-inner'><header itemscope='itemscope' itemtype='https://schema.org/WPHeader' style='display:none'><div class='header-outer'><div class='header-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left header-fauxborder-left'><div class='fauxborder-right header-fauxborder-right'/><div class='region-inner header-inner'>
+<div class='body-fauxcolumns'><div class='fauxcolumn-outer body-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div align='center' class='content'><div class='content-fauxcolumns'><div class='fauxcolumn-outer content-fauxcolumn-outer'><div class='cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left'><div class='fauxborder-right'/><div class='fauxcolumn-inner'/></div><div class='cap-bottom'><div class='cap-left'/><div class='cap-right'/></div></div></div><div class='content-outer'><div class='content-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left content-fauxborder-left'><div class='fauxborder-right content-fauxborder-right'/><div class='content-inner'><header itemscope='itemscope' itemtype='http://schema.org/WPHeader' style='display:none'><div class='header-outer'><div class='header-cap-top cap-top'><div class='cap-left'/><div class='cap-right'/></div><div class='fauxborder-left header-fauxborder-left'><div class='fauxborder-right header-fauxborder-right'/><div class='region-inner header-inner'>
 
       <b:section class='header' id='header' maxwidgets='1' name='Header' showaddelement='no'>
         <b:widget id='Header1' locked='false' title='solve, automate, speed up (Header)' type='Header'>
@@ -1268,6 +1260,8 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
     <b:if cond='data:label.name != &quot;gnu&quot;'>
     <b:if cond='data:label.name != &quot;mp4&quot;'>
     <b:if cond='data:label.name != &quot;fix-rpi&quot;'>
+    <b:if cond='data:label.name != &quot;fix-wp&quot;'>
+    <b:if cond='data:label.name != &quot;fix-sccm&quot;'>
     <b:if cond='data:label.name != &quot;win2k8r2&quot;'>
 
         <div class='post-outer'>
@@ -1283,6 +1277,8 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
         </b:if>
 
 
+    </b:if>
+    </b:if>
     </b:if>
     </b:if>
     </b:if>
@@ -1869,7 +1865,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
               <b:includable id='post' var='post'>
 
 
-  <div class='post hentry uncustomized-post-template' itemscope='itemscope' itemtype='https://schema.org/Article'>
+  <div class='post hentry uncustomized-post-template' itemscope='itemscope' itemtype='http://schema.org/Article'>
     <b:if cond='data:post.firstImageUrl'>
       <meta expr:content='data:post.firstImageUrl'/>
     </b:if>
@@ -1936,6 +1932,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-wp&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=10&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
+<b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
@@ -1984,7 +1983,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2105,22 +2104,22 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <time class='updated' expr:datetime='data:post.lastUpdatedISO8601'><data:post.lastUpdatedISO8601/></time>
 
 
-<abbr itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization'>
+<abbr itemprop='publisher' itemscope='itemscope' itemtype='http://schema.org/Organization'>
 
   <abbr itemprop='name'>CatOnRug</abbr>
   <abbr itemprop='description'>solve, automate, speed up</abbr>
   <abbr itemprop='url'><data:blog.homepageUrl/></abbr>
 
-<abbr itemprop='logo' itemscope='itemscope' itemtype='https://schema.org/ImageObject'>
+<abbr itemprop='logo' itemscope='itemscope' itemtype='http://schema.org/ImageObject'>
   <img itemprop='url' src='https://lh3.googleusercontent.com/-K-Wa489ZkJ8/VMUqTubjxtI/AAAAAAAATas/TGA9uGQV490/s300-Ic42/catonrug-net-logo.png'/>
   </abbr>
     </abbr>
 
-<abbr itemprop='mainEntityOfPage' itemscope='itemscope' itemtype='https://schema.org/WebPage'>
+<abbr itemprop='mainEntityOfPage' itemscope='itemscope' itemtype='http://schema.org/WebPage'>
   <abbr expr:content='data:blog.url' itemprop='url'/>
 </abbr>
 
-  <abbr class='author vcard' itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+  <abbr class='author vcard' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
     <span class='fn' itemprop='name'><data:post.author/></span>
   </abbr>
 
@@ -2259,6 +2258,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
 <a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' rel='tag'>Raspberry Pi</a>
 <b:else/>
+<b:if cond='data:label.name == &quot;fix-wp&quot;'>
+<a expr:href='&quot;/search/label/WordPress?max-results=10&quot;' rel='tag'>WordPress</a>
+<b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
 <a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
@@ -2299,6 +2301,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2660,7 +2663,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 
 
 
-          <aside itemscope='itemscope' itemtype='https://schema.org/WPSideBar'>
+          <aside itemscope='itemscope' itemtype='http://schema.org/WPSideBar'>
           <macro:include id='main-column-left-sections' name='sections'>
             <macro:param default='0' name='num' value='1'/>
             <macro:param default='sidebar-left' name='idPrefix'/>
@@ -2835,7 +2838,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 
     <div class='widget-content'>
       <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
-        <form class='gsc-search-box' expr:action='data:blog.searchUrl' itemprop='potentialAction' itemscope='itemscope' itemtype='https://schema.org/SearchAction'>
+        <form class='gsc-search-box' expr:action='data:blog.searchUrl' itemprop='potentialAction' itemscope='itemscope' itemtype='http://schema.org/SearchAction'>
 	      <meta expr:content='data:blog.searchUrl + &quot;?={q}&quot;' itemprop='target'/>
           <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
           <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
