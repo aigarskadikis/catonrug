@@ -7,6 +7,8 @@
 
 <link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.css' rel='stylesheet'/>
 <meta content='initial-scale=1.0' name='viewport'/>
+<meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
+
 <b:include data='blog' name='all-head-content'/> 
 <b:skin><![CDATA[/*
 -----------------------------------------------
@@ -869,6 +871,16 @@ text-align: left;
       ]]>
     </b:template-skin>
 
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+  <style type='text/css'>
+    #blog-pager{display:none}
+    .welcome{padding-top:1em}
+</style>
+
+</b:if>
+
+
 <b:if cond='data:skin.vars.body_background.image.isResizable'>
 <b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
 </b:if>
@@ -1195,35 +1207,41 @@ function anchor(postid,insert){if(!isIE){$.getJSON("/feeds/posts/default/"+posti
 
 
   <b:if cond='!data:mobile'>
+
+
+
+
+
+
     <!-- posts -->
     <div class='blog-posts hfeed'>
 
+
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+  <div class='welcome'>Welcome to <strong>solve, autmate, speed up</strong> website which are mainly focused on <strong>Zero touch, Kickstart, Monitoring, Web scraping, Headless setup &amp; Low power device</strong>.<br/>
+    <br/>
+
+    You can <a href='/search/label/start'>set up your environment</a> and move into <a href='/search/label/advanced'>advanced</a> stuff or get <a href='/search/label/serious'>serious</a> automatization
+
+</div>
+
+
+</b:if>
 
 <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
       <b:include data='top' name='status-message'/>
       </b:if>
 
-    <!-- navigation -->
+
+<!-- navigation -->
     <b:include name='nextprev'/>
+
 
 <!-- top -->
 
-
-
-
-
-
 <!-- end of top -->
-
-
-
-
-
-
-
-
-
-
 
 
       <b:loop values='data:posts' var='post'>
@@ -1343,6 +1361,8 @@ function anchor(postid,insert){if(!isIE){$.getJSON("/feeds/posts/default/"+posti
 
       </b:loop>
 
+
+
 <b:include name='nextprev'/>
 
 
@@ -1394,10 +1414,28 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 
 
 
+
+
+
       <b:if cond='data:numPosts != 0'>
         &lt;/div&gt;&lt;/div&gt;
       </b:if>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- feed links -->
     <b:include name='feedLinks'/>
@@ -1965,6 +2003,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
+<b:if cond='data:label.name != &quot;reinstall&quot;'>
+<b:if cond='data:label.name != &quot;serious&quot;'>
+<b:if cond='data:label.name != &quot;advanced&quot;'>
 <b:if cond='data:label.name != &quot;deploy&quot;'>
 <b:if cond='data:label.name != &quot;boot&quot;'>
 <b:if cond='data:label.name != &quot;linux&quot;'>
@@ -1984,8 +2025,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
@@ -2656,86 +2697,6 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
   </div>
 </b:includable>
             </b:widget>
-            <b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive'>
-              <b:widget-settings>
-                <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
-                <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
-                <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
-                <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
-                <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
-                <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
-                <b:widget-setting name='chronological'>false</b:widget-setting>
-                <b:widget-setting name='showPosts'>true</b:widget-setting>
-                <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-  <div id='ArchiveList'>
-  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-    <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
-    <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
-    <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
-  </div>
-  </div>
-  <b:include name='quickedit'/>
-  </div>
-</b:includable>
-              <b:includable id='flat' var='data'>
-  <ul class='flat'>
-    <b:loop values='data:data' var='i'>
-      <li class='archivedate'>
-        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
-      </li>
-    </b:loop>
-  </ul>
-</b:includable>
-              <b:includable id='interval' var='intervalData'>
-  <b:loop values='data:intervalData' var='interval'>
-    <ul class='hierarchy'>
-      <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
-        <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-        <a class='post-count-link' expr:href='data:interval.url'>
-          <data:interval.name/>
-        </a>
-        <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
-        <b:include cond='data:interval.data' data='interval.data' name='interval'/>
-        <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
-      </li>
-    </ul>
-  </b:loop>
-</b:includable>
-              <b:includable id='menu' var='data'>
-  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
-    <option value=''><data:title/></option>
-    <b:loop values='data:data' var='i'>
-      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
-    </b:loop>
-  </select>
-</b:includable>
-              <b:includable id='posts' var='posts'>
-  <ul class='posts'>
-    <b:loop values='data:posts' var='post'>
-      <li><a expr:href='data:post.url'><data:post.title/></a></li>
-    </b:loop>
-  </ul>
-</b:includable>
-              <b:includable id='toggle' var='interval'>
-  <a class='toggle' href='javascript:void(0)'>
-    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
-      <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
-        &#9660;&#160;
-      <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
-        &#9668;&#160;
-      <b:else/>
-        &#9658;&#160;
-      </b:if>
-    </span>
-  </a>
-</b:includable>
-            </b:widget>
           </b:section>
         </div>
         </div>
@@ -2801,22 +2762,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
         <macro:param default='false' name='includeBottom'/>
       </macro:include>
       <!-- outside of the include in order to lock Attribution widget -->
-      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'>
-        <b:widget id='Attribution1' locked='false' title='' type='Attribution'>
-          <b:widget-settings>
-            <b:widget-setting name='copyright'/>
-          </b:widget-settings>
-          <b:includable id='main'>
-    <div class='widget-content' style='text-align: center;'>
-      <b:if cond='data:attribution != &quot;&quot;'>
-       <data:attribution/>
-      </b:if>
-    </div>
-
-    <b:include name='quickedit'/>
-  </b:includable>
-        </b:widget>
-      </b:section>
+      <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'/>
     </div>
     </div>
     <div class='footer-cap-bottom cap-bottom'>
