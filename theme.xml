@@ -1285,10 +1285,6 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
 <!-- exclude all labels do not like to show in seach result -->
     <b:if cond='data:label.name != &quot;gnu&quot;'>
     <b:if cond='data:label.name != &quot;mp4&quot;'>
-    <b:if cond='data:label.name != &quot;fix-rpi&quot;'>
-    <b:if cond='data:label.name != &quot;fix-wp&quot;'>
-    <b:if cond='data:label.name != &quot;fix-sccm&quot;'>
-    <b:if cond='data:label.name != &quot;win2k8r2&quot;'>
 
         <div class='post-outer'>
           <b:include data='post' name='post'/>
@@ -1303,10 +1299,6 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
         </b:if>
 
 
-    </b:if>
-    </b:if>
-    </b:if>
-    </b:if>
     </b:if>
     </b:if>
 <!-- end of exclude all labels do not like to show in seach result -->
