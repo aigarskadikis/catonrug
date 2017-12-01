@@ -587,6 +587,9 @@ body.mobile  {
 .mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
   border-$startSide: 1px solid $(tabs.border.color);
 }
+
+audio {width:100%}
+
 ]]></b:skin>
 <b:template-skin>
       <b:variable default='960px' name='content.width' type='length' value='1002px'/>
@@ -1989,6 +1992,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;dl&quot;'>
 <b:if cond='data:label.name != &quot;iso&quot;'>
 <b:if cond='data:label.name != &quot;x86&quot;'>
+<b:if cond='data:label.name != &quot;video&quot;'>
 <b:if cond='data:label.name != &quot;x64&quot;'>
 <b:if cond='data:label.name != &quot;vhd&quot;'>
 <b:if cond='data:label.name != &quot;convert&quot;'>
@@ -2025,7 +2029,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2899,7 +2903,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Batch File,Blogger,Command Line,Office 2010,Office 2013,Raspberry Pi,Registry,Shell,Template,Tweak,Windows 10,Windows 7,Windows 8.1,Windows XP,WordPress,Zabbix Basic,advanced,enterprise,start</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>Batch File,Blogger,Command Line,Office 2010,Office 2013,PowerShell,Raspberry Pi,Registry,Shell,Template,Tweak,Windows 10,Windows 7,Windows 8.1,Windows XP,WordPress,Zabbix Basic,advanced,enterprise,start</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
     </b:widget-settings>
