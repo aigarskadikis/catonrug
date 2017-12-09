@@ -4,8 +4,7 @@
 
 <head>
 <title><data:view.title.escaped/></title>
-
-<link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.css' rel='stylesheet'/>
+<link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.min.css' rel='stylesheet'/>
 <meta content='initial-scale=1.0' name='viewport'/>
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 
@@ -872,6 +871,8 @@ text-align: left;
 }
 
 .blog-posts{padding-bottom:64px}
+
+div.list-label-widget-content ul li span {color:#999}
 
       ]]>
     </b:template-skin>
@@ -2903,9 +2904,9 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Batch File,Blogger,Command Line,Office 2010,Office 2013,PowerShell,Raspberry Pi,Registry,Shell,Template,Tweak,Windows 10,Windows 7,Windows 8.1,Windows XP,WordPress,Zabbix Basic,advanced,enterprise,start</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Clone,Command Line,ConEmu,Crawler,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java 6,Java 7,Java 8,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,adobereader11,advanced,awk,boot,clean,compress,convert,cron,dataURI,deploy,detect,dl,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,gnu,grep,headless,ie11,install,integrate,iso,linux,mp4,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,remove,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
