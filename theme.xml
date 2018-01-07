@@ -149,7 +149,7 @@ URL:      www.blogger.com
    <Variable name="page.width" description="Page Width" type="string" default="auto" value="auto"/>
 
    <Variable name="main.section.margin" description="Main Section Margin" type="length" default="15px" min="0" max="100px" value="15px"/>
-   <Variable name="main.padding" description="Main Padding" type="length" default="15px" min="0" max="100px" value="15px"/>
+   <Variable name="main.padding" description="Main Padding" type="length" default="15px" min="0" max="100px" value="12px"/>
    <Variable name="main.padding.top" description="Main Padding Top" type="length" default="30px" min="0" max="100px" value="30px"/>
    <Variable name="main.padding.bottom" description="Main Padding Bottom" type="length" default="30px" min="0" max="100px" value="0px"/>
 
@@ -695,6 +695,10 @@ body{min-width:98%; font-size:1.5em}
 .main-inner .fauxcolumn-left-outer {    width: 0px;}
 .main-inner .columns {    padding-left: 0px;    padding-right: 0px;}
 span.snipeto{display:none}
+a:visited,a:link{color:black}
+input.gsc-input,input.gsc-search-button,
+aside div ul li a,
+#main div div div div div h3 a{font-size:1.8em}
 }
 
 @media only screen and (min-width:800px) {
@@ -722,10 +726,10 @@ span.snipeto{display:none}
 @media only screen and (min-width:1024px) {
 body{min-width:990px}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:990px;max-width:990px;_width:990px;}
-.main-inner .column-left-outer {width: 160px; right: 100%; margin-left: -160px;}
+.main-inner .column-left-outer {width: 166px; right: 100%; margin-left: -166px;}
 .column-left-outer { margin-left: -100%;}
-.main-inner .fauxcolumn-left-outer {    width: 160px;}
-.main-inner .columns {padding-left: 160px;  padding-right: 0px;}
+.main-inner .fauxcolumn-left-outer {    width: 166px;}
+.main-inner .columns {padding-left: 166px;  padding-right: 0px;}
 span.snipeto{display:none}
 }
 
@@ -733,10 +737,10 @@ span.snipeto{display:none}
 @media only screen and (min-width:1280px) {
 body{min-width:1214px}
 .content-outer, .content-fauxcolumn-outer, .region-inner{min-width:1214px;max-width:1214px;_width:1214px;}
-.main-inner .column-left-outer {width: 160px; right: 100%; margin-left: -160px;}
+.main-inner .column-left-outer {width: 166px; right: 100%; margin-left: -166px;}
 .column-left-outer { margin-left: -100%;}
-.main-inner .fauxcolumn-left-outer {    width: 160px;}
-.main-inner .columns {padding-left: 160px;  padding-right: 0px;}
+.main-inner .fauxcolumn-left-outer {    width: 166px;}
+.main-inner .columns {padding-left: 166px;  padding-right: 0px;}
 span.snipeto{display:none}
 }
 
@@ -814,6 +818,8 @@ div.post-body{font-size:1.3em!important}
 input.gsc-input, input.gsc-search-button {font-size: 1.3em!important;}
 div.widget,#BlogSearch1{margin-top:1.3em}
 
+input.gsc-input,input.gsc-search-button{font-size:x-large}
+
 }
 
 div.widget h2 {margin-left:10px}
@@ -874,6 +880,8 @@ text-align: left;
 
 div.list-label-widget-content ul li span {color:#999}
 
+ol {margin:0;padding:0}
+
       ]]>
     </b:template-skin>
 
@@ -927,55 +935,13 @@ return bb;
 // detect IE browser
 var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf("Edge") > -1) {isIE = true;}
 
-//save or extact files by post id
-  function saveF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-  function extractF(f,id){$.getJSON("/feeds/posts/default/"+f+"?alt=json",function(data){$(id).append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});};
-
-function sed7z(){if(!isIE){$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/2727982332321297025?alt=json",function(data){$("#sed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grep7z(){if(!isIE){$.getJSON("/feeds/posts/default/47654747331945941?alt=json",function(data){$("#grep7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/47654747331945941?alt=json",function(data){$("#grep7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function date7z(){if(!isIE){$.getJSON("/feeds/posts/default/7847081425142553533?alt=json",function(data){$("#date7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/7847081425142553533?alt=json",function(data){$("#date7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function ls7z(){if(!isIE){$.getJSON("/feeds/posts/default/3954558083556446198?alt=json",function(data){$("#ls7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/3954558083556446198?alt=json",function(data){$("#ls7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepsed7z(){if(!isIE){$.getJSON("/feeds/posts/default/4804114361448432355?alt=json",function(data){$("#grepsed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/4804114361448432355?alt=json",function(data){$("#grepsed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepls7z(){if(!isIE){$.getJSON("/feeds/posts/default/1910515196171025503?alt=json",function(data){$("#grepls7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/1910515196171025503?alt=json",function(data){$("#grepls7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function greplssed7z(){if(!isIE){$.getJSON("/feeds/posts/default/2101849000645152822?alt=json",function(data){$("#greplssed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/2101849000645152822?alt=json",function(data){$("#greplssed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function catgrepsed7z(){if(!isIE){$.getJSON("/feeds/posts/default/6488238164872434475?alt=json",function(data){$("#catgrepsed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/6488238164872434475?alt=json",function(data){$("#catgrepsed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepheadsed7z(){if(!isIE){$.getJSON("/feeds/posts/default/9005108445475096749?alt=json",function(data){$("#grepheadsed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/9005108445475096749?alt=json",function(data){$("#grepheadsed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepseduniq7z(){if(!isIE){$.getJSON("/feeds/posts/default/7741492944609866678?alt=json",function(data){$("#grepseduniq7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/7741492944609866678?alt=json",function(data){$("#grepseduniq7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepsedsort7z(){if(!isIE){$.getJSON("/feeds/posts/default/8497691457687549833?alt=json",function(data){$("#grepsedsort7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/8497691457687549833?alt=json",function(data){$("#grepsedsort7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function tailsed7z(){if(!isIE){$.getJSON("/feeds/posts/default/2181713388828634795?alt=json",function(data){$("#tailsed7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/2181713388828634795?alt=json",function(data){$("#tailsed7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function hxd7z(){if(!isIE){$.getJSON("/feeds/posts/default/8343934451329232504?alt=json",function(data){$("#hxd7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/8343934451329232504?alt=json",function(data){$("#hxd7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function grepsedsortuniq7z(){if(!isIE){$.getJSON("/feeds/posts/default/2030266721379947829?alt=json",function(data){$("#grepsedsortuniq7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/2030266721379947829?alt=json",function(data){$("#grepsedsortuniq7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function dategrepsedsort7z(){if(!isIE){$.getJSON("/feeds/posts/default/335026750155096629?alt=json",function(data){$("#dategrepsedsort7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/335026750155096629?alt=json",function(data){$("#dategrepsedsort7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function datesedtr7z(){if(!isIE){$.getJSON("/feeds/posts/default/4087562863531669994?alt=json",function(data){$("#datesedtr7z").append("extract <a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/4087562863531669994?alt=json",function(data){$("#datesedtr7z").append("extract <a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
 function curlexe(){if(!isIE){$.getJSON("/feeds/posts/default/4512944840766614734?alt=json",function(data){$("#curlexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/4512944840766614734?alt=json",function(data){$("#curlexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
 
 function awkexe(){if(!isIE){$.getJSON("/feeds/posts/default/7345841194095732726?alt=json",function(data){$("#awkexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/7345841194095732726?alt=json",function(data){$("#awkexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
 
-function md5sumexe(){if(!isIE){$.getJSON("/feeds/posts/default/5955831632040532768?alt=json",function(data){$("#md5sumexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/5955831632040532768?alt=json",function(data){$("#md5sumexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function sleepexe(){if(!isIE){$.getJSON("/feeds/posts/default/1960776102413335346?alt=json",function(data){$("#sleepexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/1960776102413335346?alt=json",function(data){$("#sleepexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
 function wgetexe(){$("#wgetexe").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmUUxMcUxOeU8ydVE' download='wget.exe'>wget.exe</a>");}
 
 function w32di(){$("#w32di").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmLUE1VmIyeVJaZUk' download='Win32DiskImager-0.9.5-install.exe'>Win32DiskImager-0.9.5-install.exe</a>");}
-
-function z7z(){$("#z7z").append("download <a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmZW5zazROU3AyV1E' download='7z.dll'>7z.dll</a> and <a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmLTlGQ3ZubW9ELVk' download='7z.exe'>7z.exe</a>");};
 
 function mp4(v){
 $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$("#video").append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
@@ -984,7 +950,6 @@ function mp4id(v,id){
 $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
 
 function anchor(postid,insert){if(!isIE){$.getJSON("/feeds/posts/default/"+postid+"?alt=json",function(data){$(insert).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/"+postid+"?alt=json",function(data){$(insert).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
 
 function mp3id(v,id){
 $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<source src='"+data.entry.content.$t+"' type='audio\/mpeg'>");});};
@@ -1245,13 +1210,16 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
 
 
 <!-- navigation -->
+
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+
     <b:include name='nextprev'/>
 
-
+</b:if>
 <!-- top -->
 
 <!-- end of top -->
-
+<!--  <ol>  -->
 
       <b:loop values='data:posts' var='post'>
 
@@ -1272,6 +1240,7 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
           &lt;/div&gt;&lt;/div&gt;
         </b:if>
         <b:if cond='data:post.isDateStart'>
+
           &lt;div class=&quot;date-outer&quot;&gt;
         </b:if>
         <b:if cond='data:post.dateHeader'>
@@ -1322,6 +1291,7 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
           &lt;/div&gt;&lt;/div&gt;
         </b:if>
         <b:if cond='data:post.isDateStart'>
+
           &lt;div class=&quot;date-outer&quot;&gt;
         </b:if>
         <b:if cond='data:post.dateHeader'>
@@ -1340,7 +1310,7 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
           <b:include data='post' name='post'/>
           <b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
         </div>
-
+  
         <!-- Ad -->
         <b:if cond='data:post.includeAd'>
           <div class='inline-ad'>
@@ -1364,8 +1334,11 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
 
 
 
-<b:include name='nextprev'/>
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
 
+    <b:include name='nextprev'/>
+
+</b:if>
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <script type='text/javascript'>
@@ -1395,7 +1368,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
     var regex = /[\?&]max-results=(\d+)/;
     var numMax = regex.exec(pageUrl);
     if(numMax) numMax = parseInt(numMax[1]);
-    if(!numMax) numMax = 20;
+    if(!numMax) numMax = 30;
  
     if(numPosts < numMax) {
       d = document.getElementById('blog-pager-older-link');
@@ -1410,21 +1383,16 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 </b:if>
 
 
-
-
-
-
-
-
-
-
       <b:if cond='data:numPosts != 0'>
         &lt;/div&gt;&lt;/div&gt;
       </b:if>
+
+<!--  </ol>  -->
+
     </div>
 
 
-
+   
 
 
 
@@ -1786,9 +1754,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
           <b:if cond='data:post.title'>
             <h3 class='post-title entry-title' itemprop='name'>
               <b:if cond='data:post.link'>
-                <a expr:href='data:post.link' rel='prerender'><data:post.title/></a>
+                <a expr:href='data:post.link'><data:post.title/></a>
               <b:elseif cond='data:post.url and data:blog.url != data:post.url'/>
-                <a expr:href='data:post.url' rel='prerender'><data:post.title/></a>
+                <a expr:href='data:post.url'><data:post.title/></a>
               <b:else/>
                 <data:post.title/>
 
@@ -1883,21 +1851,21 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
     <b:if cond='data:olderPageUrl'>
       <span id='blog-pager-older-link'>
       <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
-<link expr:href='data:olderPageUrl' rel='prerender'/>
+<link expr:href='data:olderPageUrl'/>
       </span>
     </b:if>
 
     <b:if cond='data:newerPageUrl'>
       <span id='blog-pager-newer-link'>
       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
-<link expr:href='data:newerPageUrl' rel='prerender'/>
+<link expr:href='data:newerPageUrl'/>
 
       </span>
     </b:if>
 
 
     <a class='home-link' expr:href='data:blog.homepageUrl'><i aria-hidden='true' class='fa fa-home fa-2'/></a>
-<link expr:href='data:blog.homepageUrl' rel='prerender'/>
+<link expr:href='data:blog.homepageUrl'/>
 
 <!-- <data:homeMsg/> -->
 
@@ -1939,52 +1907,59 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:loop values='data:post.labels' var='label'>
 
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=30&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=10&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=30&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=30&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=30&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=30&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=10&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=30&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=10&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=30&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=10&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=30&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=30&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=10&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=30&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=30&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
+<b:else/>
+<b:if cond='data:label.name == &quot;fix-python&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Python?max-results=30&quot;' itemprop='url'><span itemprop='title'>Python</span></a></span>
+<b:else/>
+<b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=30&quot;' itemprop='url'><span itemprop='title'>Zabbix Basic</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=30&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=10&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=30&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=30&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=10&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=30&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
 <b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;video&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
 <b:if cond='data:label.name != &quot;msi&quot;'>
 <b:if cond='data:label.name != &quot;msiexec&quot;'>
@@ -2020,17 +1995,17 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
-<a expr:href='data:label.url + &quot;?max-results=10&quot;' itemprop='url'>
+<a expr:href='data:label.url + &quot;?max-results=30&quot;' itemprop='url'>
 <span itemprop='title'><data:label.name/></span>
 </a>
 </span>
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
 
@@ -2104,11 +2079,13 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <!-- end of generate some specific bradcrumbs -->
 
 <!-- extract post title -->
+
+
     <a expr:name='data:post.id'/>
     <b:if cond='data:post.title'>
       <h3 class='post-title entry-title' itemprop='headline name'>
       <b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url)'>
-        <a expr:href='data:post.link ? data:post.link : data:post.url' rel='prerender'><data:post.title/></a>
+        <a expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
       <b:else/>
 
 
@@ -2270,53 +2247,60 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <data:postLabelsLabel/>
 <b:loop values='data:post.labels' var='label'>
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<a expr:href='&quot;/search/label/Windows%207?max-results=10&quot;' rel='tag'>Windows 7</a>
+<a expr:href='&quot;/search/label/Windows%207?max-results=30&quot;' rel='tag'>Windows 7</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=10&quot;' rel='tag'>Server 2008 R2</a>
+<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=30&quot;' rel='tag'>Server 2008 R2</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<a expr:href='&quot;/search/label/Windows%208.1?max-results=10&quot;' rel='tag'>Windows 8.1</a>
+<a expr:href='&quot;/search/label/Windows%208.1?max-results=30&quot;' rel='tag'>Windows 8.1</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<a expr:href='&quot;/search/label/Windows%2010?max-results=10&quot;' rel='tag'>Windows 10</a>
+<a expr:href='&quot;/search/label/Windows%2010?max-results=30&quot;' rel='tag'>Windows 10</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<a expr:href='&quot;/search/label/Windows%20XP?max-results=10&quot;' rel='tag'>Windows XP</a>
+<a expr:href='&quot;/search/label/Windows%20XP?max-results=30&quot;' rel='tag'>Windows XP</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<a expr:href='&quot;/search/label/Office%202010?max-results=10&quot;' rel='tag'>Office 2010</a>
+<a expr:href='&quot;/search/label/Office%202010?max-results=30&quot;' rel='tag'>Office 2010</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<a expr:href='&quot;/search/label/Office%202013?max-results=10&quot;' rel='tag'>Office 2013</a>
+<a expr:href='&quot;/search/label/Office%202013?max-results=30&quot;' rel='tag'>Office 2013</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<a expr:href='&quot;/search/label/Office%202016?max-results=10&quot;' rel='tag'>Office 2016</a>
+<a expr:href='&quot;/search/label/Office%202016?max-results=30&quot;' rel='tag'>Office 2016</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=10&quot;' rel='tag'>Adobe Reader 11</a>
+<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=30&quot;' rel='tag'>Adobe Reader 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<a expr:href='&quot;/search/label/DISM?max-results=10&quot;' rel='tag'>DISM</a>
+<a expr:href='&quot;/search/label/DISM?max-results=30&quot;' rel='tag'>DISM</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<a expr:href='&quot;/search/label/SCCM?max-results=10&quot;' rel='tag'>SCCM</a>
+<a expr:href='&quot;/search/label/SCCM?max-results=30&quot;' rel='tag'>SCCM</a>
+<b:else/>
+<b:if cond='data:label.name == &quot;fix-python&quot;'>
+<a expr:href='&quot;/search/label/Python?max-results=30&quot;' rel='tag'>Python</a>
+<b:else/>
+<b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
+<a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=30&quot;' rel='tag'>Zabbix Basic</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=10&quot;' rel='tag'>Raspberry Pi</a>
+<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=30&quot;' rel='tag'>Raspberry Pi</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<a expr:href='&quot;/search/label/WordPress?max-results=10&quot;' rel='tag'>WordPress</a>
+<a expr:href='&quot;/search/label/WordPress?max-results=30&quot;' rel='tag'>WordPress</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=10&quot;' rel='tag'>Internet Explorer 11</a>
+<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=30&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<a expr:href='&quot;/search/label/Windows%20Updates?max-results=10&quot;' rel='tag'>Windows Updates</a>
+<a expr:href='&quot;/search/label/Windows%20Updates?max-results=30&quot;' rel='tag'>Windows Updates</a>
 <b:else/>
 
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;video&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
 <b:if cond='data:label.name != &quot;msi&quot;'>
 <b:if cond='data:label.name != &quot;msiexec&quot;'>
@@ -2350,8 +2334,11 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 
 
-<a expr:href='data:label.url + &quot;?max-results=10&quot;' rel='tag'><data:label.name/></a>
+<a expr:href='data:label.url + &quot;?max-results=30&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2902,9 +2889,9 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
   </b:widget>
   <b:widget id='Label2' locked='false' title='' type='Label' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Clone,Command Line,ConEmu,Crawler,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java 6,Java 7,Java 8,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,adobereader11,advanced,awk,boot,clean,compress,convert,cron,dataURI,deploy,detect,dl,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,gnu,grep,headless,ie11,install,integrate,iso,linux,mp4,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,remove,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,ConEmu,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java 6,Java 7,Java 8,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Raspberry Pi 3 Overclock,Raspberry Pi 3 Workstation,Raspberry Pi Server,Raspberry Pi WiFi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SCCM OS Deploy,SCCM WSUS,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,advanced,awk,bash,boot,clean,convert,cron,deploy,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,integrate,iso,linux,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,wget,x86</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -2920,7 +2907,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;' rel='prerender'><data:label.name/></a>
+              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=30&quot;' rel=''><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -2934,7 +2921,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=10&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=30&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -2979,6 +2966,98 @@ if (head) {
 head.appendChild(script);
 }})();
 &lt;/script&gt;
+</b:includable>
+  </b:widget>
+  <b:widget id='Label3' locked='false' title='' type='Label'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>detect,install,remove</b:widget-setting>
+      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Label1' locked='false' title='' type='Label'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>Office2002,adobereader11,fix-dism,fix-rpi,fix-sccm,fix-wp,office2010,office2013,office2016,win10,win2k3,win2k8r2,win7,win81,winxp,wsus</b:widget-setting>
+      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
 </b:includable>
   </b:widget>
 </b:section-contents><b:section-contents id='footer-1'/></html>
