@@ -4,7 +4,6 @@
 
 <head>
 <title><data:view.title.escaped/></title>
-<link href='https://cdn.rawgit.com/FortAwesome/Font-Awesome/c754197d91b9b615349ff22fdae393905015ffff/css/font-awesome.min.css' rel='stylesheet'/>
 <meta content='initial-scale=1.0' name='viewport'/>
 <meta content='115E7C579F62FD996D1874A5D4B0B6F1' name='msvalidate.01'/>
 
@@ -882,6 +881,20 @@ div.list-label-widget-content ul li span {color:#999}
 
 ol {margin:0;padding:0}
 
+textarea.ac
+{
+background: #f9f9f9;
+    border: 1px dashed #2288bb;
+    padding: .7em 1em;
+    margin: .5em .5em 0 0;
+    width:97%;
+
+min-height:240px;
+/ * white-space: nowrap; */
+font-size:1.35em;
+}
+
+
       ]]>
     </b:template-skin>
 
@@ -904,81 +917,11 @@ ol {margin:0;padding:0}
 
 <script>
 //<![CDATA[
-
-function dataURItoBlob(dataURI, callback) {
-// convert base64 to raw binary data held in a string
-// doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-var byteString = atob(dataURI.split(',')[1]);
-
-// separate out the mime component
-var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
-
-// write the bytes of the string to an ArrayBuffer
-var ab = new ArrayBuffer(byteString.length);
-var ia = new Uint8Array(ab);
-for (var i = 0; i < byteString.length; i++) {
-ia[i] = byteString.charCodeAt(i);
-}
-
-// write the ArrayBuffer to a blob, and you're done
-var bb = new Blob([ab], {type: mimeString});
-return bb;
-}
-
-//]]>
-
-</script>
-
-<script>
-//<![CDATA[
-
-// detect IE browser
-var isIE = false; if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf("Edge") > -1) {isIE = true;}
-
-function curlexe(){if(!isIE){$.getJSON("/feeds/posts/default/4512944840766614734?alt=json",function(data){$("#curlexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/4512944840766614734?alt=json",function(data){$("#curlexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function awkexe(){if(!isIE){$.getJSON("/feeds/posts/default/7345841194095732726?alt=json",function(data){$("#awkexe").append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/7345841194095732726?alt=json",function(data){$("#awkexe").append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function wgetexe(){$("#wgetexe").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmUUxMcUxOeU8ydVE' download='wget.exe'>wget.exe</a>");}
-
-function w32di(){$("#w32di").append("<a href='https://drive.google.com/uc?export=download&id=0BxmEiwnrWfmmLUE1VmIyeVJaZUk' download='Win32DiskImager-0.9.5-install.exe'>Win32DiskImager-0.9.5-install.exe</a>");}
-
-function mp4(v){
-$.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$("#video").append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
-
-function mp4id(v,id){
-$.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<source src='"+data.entry.content.$t+"' type='video\/mp4'><a href='"+data.entry.content.$t+"'>"+data.entry.title.$t+"</a>");});};
-
-function anchor(postid,insert){if(!isIE){$.getJSON("/feeds/posts/default/"+postid+"?alt=json",function(data){$(insert).append("<a href='"+data.entry.content.$t+"' download='"+data.entry.title.$t+"'>"+data.entry.title.$t+"</a>");});}else{$.getJSON("/feeds/posts/default/"+postid+"?alt=json",function(data){$(insert).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+data.entry.content.$t+"&quot;), &quot;"+data.entry.title.$t+"&quot;);'>"+data.entry.title.$t+"</a>");});}};
-
-function mp3id(v,id){
-$.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<source src='"+data.entry.content.$t+"' type='audio\/mpeg'>");});};
-
-
+function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.charCodeAt(d++))>>2,r=(3&e)<<4|(n=t.charCodeAt(d++))>>4,o=(15&n)<<2|(c=t.charCodeAt(d++))>>6,s=63&c,isNaN(n)?o=s=64:isNaN(c)&&(s=64),i=i+keyStr.charAt(a)+keyStr.charAt(r)+keyStr.charAt(o)+keyStr.charAt(s),e=n=c="",a=r=o=s=""}while(d<t.length);return i}function decode64(t){var e,n,a,r,o="",i="",c="",s=0;/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{e=keyStr.indexOf(t.charAt(s++))<<2|(a=keyStr.indexOf(t.charAt(s++)))>>4,n=(15&a)<<4|(r=keyStr.indexOf(t.charAt(s++)))>>2,i=(3&r)<<6|(c=keyStr.indexOf(t.charAt(s++))),o+=String.fromCharCode(e),64!=r&&(o+=String.fromCharCode(n)),64!=c&&(o+=String.fromCharCode(i)),e=n=i="",a=r=c=""}while(s<t.length);return unescape(o)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],r=new ArrayBuffer(n.length),o=new Uint8Array(r),i=0;i<n.length;i++)o[i]=n.charCodeAt(i);return new Blob([r],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a> which includes:<br /><textarea class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a> which includes:<br /><textarea class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||navigator.appVersion.indexOf("Trident/")>0||window.navigator.userAgent.indexOf("Edge")>-1)&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),r=0;r<n.length;r++)a.test(n[r].className)&&e.push(n[r]);return e});
 //]]>
 </script>
-
 
 <b:include data='blog' name='google-analytics'/>
-
-<script type='text/javascript'>
-//<![CDATA[
-"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(e){if(!e)return[];for(var t=[],n=document.getElementsByTagName("*"),s=new RegExp("(^| )"+e+"( |$)"),m=0;m<n.length;m++)s.test(n[m].className)&&t.push(n[m]);return t});
-
-//]]>
-</script>
-
-<script>
-//<![CDATA[
-
-
-
-
-//]]>
-</script>
-
-
-
 
 </head>
 
@@ -1335,49 +1278,13 @@ $.getJSON("/feeds/posts/default/"+v+"?alt=json",function(data){$(id).append("<so
 
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
-
     <b:include name='nextprev'/>
-
 </b:if>
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <script type='text/javascript'>
 //<![CDATA[
-// remove unnecessary links in label searches / mspotilas 2011
-  var pageUrl = window.location.href;
-  if(pageUrl.indexOf('/search/label/') > -1) {
-    var d = document.getElementsByClassName('status-msg-body');
-    if(d && d.length == 1) {
-      d = d[0].firstChild;
-      while(d && (d.nodeType != 1 || d.nodeName.toLowerCase() != 'a' || d.href.indexOf('/search/label/') < 0))
-        d = d.nextSibling;
-      if(d) d.parentNode.removeChild(d);
-    }
-    d = document.getElementById('blog-pager-newer-link');
-    if(d && d.firstChild) {
-      d = d.firstChild;
-      while(d && d.nodeType != 1 && d.nextSibling)
-        d = d.nextSibling;
-      var backUrl = d.href;
-      if(pageUrl.indexOf('updated-max=') < 0 && backUrl.indexOf('updated-max=') < 0) {
-var theOlderLink = document.querySelectorAll("#blog-pager-older-link");
-for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "none";
-      }
-    }
- 
-    var regex = /[\?&]max-results=(\d+)/;
-    var numMax = regex.exec(pageUrl);
-    if(numMax) numMax = parseInt(numMax[1]);
-    if(!numMax) numMax = 30;
- 
-    if(numPosts < numMax) {
-      d = document.getElementById('blog-pager-older-link');
-      if(d) {
-var theOlderLink = document.querySelectorAll("#blog-pager-older-link");
-for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "none";
-      }
-    }
-  }
+var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=document.getElementsByClassName("status-msg-body");if(d&&1==d.length){for(d=d[0].firstChild;d&&(1!=d.nodeType||"a"!=d.nodeName.toLowerCase()||d.href.indexOf("/search/label/")<0);)d=d.nextSibling;d&&d.parentNode.removeChild(d)}if((d=document.getElementById("blog-pager-newer-link"))&&d.firstChild){for(d=d.firstChild;d&&1!=d.nodeType&&d.nextSibling;)d=d.nextSibling;var backUrl=d.href;if(pageUrl.indexOf("updated-max=")<0&&backUrl.indexOf("updated-max=")<0)for(var theOlderLink=document.querySelectorAll("#blog-pager-older-link"),i=0;i<theOlderLink.length;i++)theOlderLink[i].style.display="none"}var regex=/[\?&]max-results=(\d+)/,numMax=regex.exec(pageUrl);if(numMax&&(numMax=parseInt(numMax[1])),numMax||(numMax=30),numPosts<numMax&&(d=document.getElementById("blog-pager-older-link")))for(var theOlderLink=document.querySelectorAll("#blog-pager-older-link"),i=0;i<theOlderLink.length;i++)theOlderLink[i].style.display="none"}
 //]]>
 </script>
 </b:if>
@@ -1864,7 +1771,7 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
     </b:if>
 
 
-    <a class='home-link' expr:href='data:blog.homepageUrl'><i aria-hidden='true' class='fa fa-home fa-2'/></a>
+    <a class='home-link' expr:href='data:blog.homepageUrl'>Home</a>
 <link expr:href='data:blog.homepageUrl'/>
 
 <!-- <data:homeMsg/> -->
@@ -1887,8 +1794,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
 
 <div class='breadcrumbs'>
-<span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>
-<span><i class='fa fa-file-text-o'/><data:blog.pageName/></span>
+<span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span>
+<span><data:blog.pageName/></span>
 </div>
 
 <b:else/>
@@ -1980,6 +1887,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
+<b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;xml&quot;'>
+<b:if cond='data:label.name != &quot;i&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
 <b:if cond='data:label.name != &quot;enterprise&quot;'>
 <b:if cond='data:label.name != &quot;serious&quot;'>
@@ -2003,8 +1913,8 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
@@ -2320,6 +2230,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 <b:if cond='data:label.name != &quot;upgrade&quot;'>
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
+<b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;xml&quot;'>
+<b:if cond='data:label.name != &quot;i&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
 <b:if cond='data:label.name != &quot;enterprise&quot;'>
 <b:if cond='data:label.name != &quot;serious&quot;'>
@@ -2336,6 +2249,9 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
 
 <a expr:href='data:label.url + &quot;?max-results=30&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2494,14 +2410,18 @@ for (var i = 0; i < theOlderLink.length; i++) theOlderLink[i].style.display = "n
       }
 
       var bodyFromEntry = function(entry) {
-        if (entry.gd$extendedProperty) {
+        var text = (entry &&
+                    ((entry.content && entry.content.$t) ||
+                     (entry.summary && entry.summary.$t))) ||
+            '';
+        if (entry && entry.gd$extendedProperty) {
           for (var k in entry.gd$extendedProperty) {
             if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
-              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+              return '<span class="deleted-comment">' + text + '</span>';
             }
           }
         }
-        return entry.content.$t;
+        return text;
       }
 
       var parse = function(data) {
@@ -2887,11 +2807,11 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:include name='quickedit'/>
   </b:includable>
   </b:widget>
-  <b:widget id='Label2' locked='false' title='' type='Label' version='1'>
+  <b:widget id='Label2' locked='false' title='Labels' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,ConEmu,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java 6,Java 7,Java 8,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Raspberry Pi 3 Overclock,Raspberry Pi 3 Workstation,Raspberry Pi Server,Raspberry Pi WiFi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SCCM OS Deploy,SCCM WSUS,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,advanced,awk,bash,boot,clean,convert,cron,deploy,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,integrate,iso,linux,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,wget,x86</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,ConEmu,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Raspberry Pi 3 Overclock,Raspberry Pi 3 Workstation,Raspberry Pi Server,Raspberry Pi WiFi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SCCM OS Deploy,SCCM WSUS,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,advanced,awk,bash,boot,clean,convert,cron,deploy,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,integrate,iso,linux,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,wget,x86</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -2968,7 +2888,7 @@ head.appendChild(script);
 &lt;/script&gt;
 </b:includable>
   </b:widget>
-  <b:widget id='Label3' locked='false' title='' type='Label'>
+  <b:widget id='Label3' locked='false' title='Labels' type='Label'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
@@ -3014,7 +2934,7 @@ head.appendChild(script);
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='' type='Label'>
+  <b:widget id='Label1' locked='false' title='Labels' type='Label'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
