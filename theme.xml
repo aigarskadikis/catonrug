@@ -383,7 +383,7 @@ h2.date-header {
 
 h3.post-title, .comments h4 {
   font: $(post.title.font);
-  margin: .75em 0 0;
+  margin: 0 0 0;
 }
 
 .post-body {
@@ -851,6 +851,8 @@ div.cookie-choices-info {bottom:0;top:auto!important}
 
 .post-labels{font-size:2em}
 
+.blog-posts{margin-top:1em}
+
 .post-footer{margin:0;padding:0}
 
 a.firstletter {display:inline-block;}
@@ -1119,7 +1121,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
                 <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                 <b:widget-setting name='showLabels'>true</b:widget-setting>
                 <b:widget-setting name='showLocation'>false</b:widget-setting>
-                <b:widget-setting name='postLabelsLabel'>Check out more from</b:widget-setting>
+                <b:widget-setting name='postLabelsLabel'><![CDATA[&gt;]]></b:widget-setting>
                 <b:widget-setting name='showTimestamp'>false</b:widget-setting>
                 <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                 <b:widget-setting name='showBacklinks'>false</b:widget-setting>
@@ -1833,6 +1835,20 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 
 <b:loop values='data:posts' var='post'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <b:if cond='data:post.labels'>
 <div class='breadcrumbs'>
 
@@ -2056,6 +2072,13 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 
 
+
+
+
+
+
+
+
     <div class='post-header'>
     <div class='post-header-line-1'/>
     </div>
@@ -2184,6 +2207,13 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
       </div>
 
       <div class='post-footer-line post-footer-line-2'>
+
+
+<!-- labels -->
+
+
+
+
       <span class='post-labels'>
 <b:if cond='data:top.showPostLabels and data:post.labels'>
 <data:postLabelsLabel/>
@@ -2337,6 +2367,17 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
 </b:loop>
 </b:if>
 </span>
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
       <div class='post-footer-line post-footer-line-3'>
