@@ -139,7 +139,7 @@ URL:      www.blogger.com
    <Variable name="tabs.border.width" description="Tabs Border Width" type="length" default="1px" min="0" max="10px" value="1px"/>
    <Variable name="tabs.bevel.border.width" description="Tabs Bevel Border Width" type="length" default="1px" min="0" max="10px" value="1px"/>
 
-   <Variable name="post.margin.bottom" description="Post Bottom Margin" type="length" default="25px" min="0" max="100px" value="25px"/>
+   <Variable name="post.margin.bottom" description="Post Bottom Margin" type="length" default="25px" min="0" max="100px" value="0"/>
 
    <Variable name="image.border.small.size" description="Image Border Small Size" type="length" default="2px" min="0" max="10px" value="2px"/>
    <Variable name="image.border.large.size" description="Image Border Large Size" type="length" default="5px" min="0" max="10px" value="5px"/>
@@ -1164,10 +1164,14 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
 
 
 <!-- navigation -->
+<b:if cond='data:blog.searchLabel == &quot;i&quot;'>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 
     <b:include name='nextprev'/>
+
+</b:if>
+
 
 </b:if>
 <!-- top -->
@@ -1292,7 +1296,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
 
 </b:loop>
 
-
+<b:if cond='data:blog.searchLabel == &quot;i&quot;'>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
     <b:include name='nextprev'/>
@@ -1306,10 +1310,13 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
 </script>
 </b:if>
 
+</b:if>
 
       <b:if cond='data:numPosts != 0'>
         &lt;/div&gt;&lt;/div&gt;
       </b:if>
+
+
 </ol>
 
     </div>
