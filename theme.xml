@@ -1177,8 +1177,10 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
 <!-- top -->
 
 <!-- end of top -->
-<ol>
 
+
+
+&lt;ol id=&quot;postlist&quot;&gt;
 
 
       <b:loop values='data:posts' var='post'>
@@ -1318,7 +1320,23 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
       </b:if>
 
 
-</ol>
+&lt;/ol&gt;
+
+
+<script type='text/javascript'>
+  if (document.location.href.indexOf(&#39;start=20&#39;) &gt; -1)
+{
+document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &quot;21&quot;);
+}
+  if (document.location.href.indexOf(&#39;start=40&#39;) &gt; -1)
+{
+document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &quot;41&quot;);
+}
+</script>
+
+
+
+
 
     </div>
 
