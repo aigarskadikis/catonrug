@@ -383,7 +383,9 @@ h2.date-header {
 
 h3.post-title, .comments h4 {
   font: $(post.title.font);
-  margin: 0 0 0;
+  margin: 0 0 0 0;
+height:1em;
+padding:0;
 }
 
 .post-body {
@@ -677,7 +679,7 @@ body{padding:0}
 ul {list-style: none;}
 .post-body img, .post-body video{max-width:100%;margin:0 auto;height:auto}
 
-#blog-pager{font-size:1.4em;margin-top:.5em;margin-bottom:0}
+#blog-pager{margin-top:.5em;margin-bottom:0}
 
 /*
 span#blog-pager-older-link a, span#blog-pager-newer-link a{padding:3px 6px 2px 6px; background-color:#66bbdd;line-height:2em;color:white}
@@ -896,14 +898,12 @@ min-height:240px;
 font-size:1.35em;
 }
 
-.blog-posts ol li {padding: 0;
-    margin: 0 0 0 1.4em;
+.blog-posts ol#postlist li.litem {
+padding: 0 0 .5em 0;
+    margin: 0 0 .2em 2em;
     text-indent: 0;
 color:#bbb;font-size:170%;
-line-height:170%;
 }
-
-.blog-posts ol li div.date-outer{}
 
 
       ]]>
@@ -1169,7 +1169,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 
-    <b:include name='nextprev'/>
+<!--    <b:include name='nextprev'/> -->
 
 </b:if>
 
@@ -1203,7 +1203,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
         </b:if>
         
 
-          &lt;li&gt;&lt;div class=&quot;date-outer a&quot;&gt;
+          &lt;li class=&quot;litem&quot;&gt;&lt;div class=&quot;date-outer a&quot;&gt;
         
         <b:if cond='data:post.dateHeader'>
 
@@ -1300,10 +1300,10 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
 
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
-<!-- 
+
 
     <b:include name='nextprev'/>
- -->
+
 </b:if>
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
@@ -1324,16 +1324,13 @@ var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=
 
 
 <script type='text/javascript'>
-  if (document.location.href.indexOf(&#39;start=20&#39;) &gt; -1)
+if (document.location.href.indexOf(&#39;start=&#39;) &gt; -1)
 {
-document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &quot;21&quot;);
-}
-  if (document.location.href.indexOf(&#39;start=40&#39;) &gt; -1)
-{
-document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &quot;41&quot;);
+var arr = document.URL.match(/start=([0-9]+)/)
+var c = parseInt(arr[1])+1;
+document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 }
 </script>
-
 
 
 
@@ -1804,6 +1801,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
       </span>
     </b:if>
 
+<!--
     <b:if cond='data:newerPageUrl'>
       <span id='blog-pager-newer-link'>
       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
@@ -1811,6 +1809,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 
       </span>
     </b:if>
+-->
 
 
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
@@ -1882,55 +1881,55 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <b:loop values='data:post.labels' var='label'>
 
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=20&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=14&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=20&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=14&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=20&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=14&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=20&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=14&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-python&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Python?max-results=20&quot;' itemprop='url'><span itemprop='title'>Python</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Python?max-results=14&quot;' itemprop='url'><span itemprop='title'>Python</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=20&quot;' itemprop='url'><span itemprop='title'>Zabbix Basic</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Zabbix?max-results=14&quot;' itemprop='url'><span itemprop='title'>Zabbix</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=20&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=14&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=20&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=14&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=20&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=14&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
 <b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
@@ -1973,7 +1972,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
-<a expr:href='data:label.url + &quot;?max-results=20&quot;' itemprop='url'>
+<a expr:href='data:label.url + &quot;?max-results=14&quot;' itemprop='url'>
 <span itemprop='title'><data:label.name/></span>
 </a>
 </span>
@@ -2241,55 +2240,55 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <data:postLabelsLabel/>
 <b:loop values='data:post.labels' var='label'>
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<a expr:href='&quot;/search/label/Windows%207?max-results=20&quot;' rel='tag'>Windows 7</a>
+<a expr:href='&quot;/search/label/Windows%207?max-results=14&quot;' rel='tag'>Windows 7</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=20&quot;' rel='tag'>Server 2008 R2</a>
+<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=14&quot;' rel='tag'>Server 2008 R2</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<a expr:href='&quot;/search/label/Windows%208.1?max-results=20&quot;' rel='tag'>Windows 8.1</a>
+<a expr:href='&quot;/search/label/Windows%208.1?max-results=14&quot;' rel='tag'>Windows 8.1</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<a expr:href='&quot;/search/label/Windows%2010?max-results=20&quot;' rel='tag'>Windows 10</a>
+<a expr:href='&quot;/search/label/Windows%2010?max-results=14&quot;' rel='tag'>Windows 10</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<a expr:href='&quot;/search/label/Windows%20XP?max-results=20&quot;' rel='tag'>Windows XP</a>
+<a expr:href='&quot;/search/label/Windows%20XP?max-results=14&quot;' rel='tag'>Windows XP</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<a expr:href='&quot;/search/label/Office%202010?max-results=20&quot;' rel='tag'>Office 2010</a>
+<a expr:href='&quot;/search/label/Office%202010?max-results=14&quot;' rel='tag'>Office 2010</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<a expr:href='&quot;/search/label/Office%202013?max-results=20&quot;' rel='tag'>Office 2013</a>
+<a expr:href='&quot;/search/label/Office%202013?max-results=14&quot;' rel='tag'>Office 2013</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<a expr:href='&quot;/search/label/Office%202016?max-results=20&quot;' rel='tag'>Office 2016</a>
+<a expr:href='&quot;/search/label/Office%202016?max-results=14&quot;' rel='tag'>Office 2016</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=20&quot;' rel='tag'>Adobe Reader 11</a>
+<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=14&quot;' rel='tag'>Adobe Reader 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<a expr:href='&quot;/search/label/DISM?max-results=20&quot;' rel='tag'>DISM</a>
+<a expr:href='&quot;/search/label/DISM?max-results=14&quot;' rel='tag'>DISM</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<a expr:href='&quot;/search/label/SCCM?max-results=20&quot;' rel='tag'>SCCM</a>
+<a expr:href='&quot;/search/label/SCCM?max-results=14&quot;' rel='tag'>SCCM</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-python&quot;'>
-<a expr:href='&quot;/search/label/Python?max-results=20&quot;' rel='tag'>Python</a>
+<a expr:href='&quot;/search/label/Python?max-results=14&quot;' rel='tag'>Python</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=20&quot;' rel='tag'>Zabbix Basic</a>
+<a expr:href='&quot;/search/label/Zabbix?max-results=14&quot;' rel='tag'>Zabbix</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=20&quot;' rel='tag'>Raspberry Pi</a>
+<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=14&quot;' rel='tag'>Raspberry Pi</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<a expr:href='&quot;/search/label/WordPress?max-results=20&quot;' rel='tag'>WordPress</a>
+<a expr:href='&quot;/search/label/WordPress?max-results=14&quot;' rel='tag'>WordPress</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=20&quot;' rel='tag'>Internet Explorer 11</a>
+<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=14&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<a expr:href='&quot;/search/label/Windows%20Updates?max-results=20&quot;' rel='tag'>Windows Updates</a>
+<a expr:href='&quot;/search/label/Windows%20Updates?max-results=14&quot;' rel='tag'>Windows Updates</a>
 <b:else/>
 
 
@@ -2331,7 +2330,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 
 
-<a expr:href='data:label.url + &quot;?max-results=20&quot;' rel='tag'><data:label.name/></a>
+<a expr:href='data:label.url + &quot;?max-results=14&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
 </b:if>
 </b:if>
@@ -2483,55 +2482,55 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <b:loop values='data:post.labels' var='label'>
 
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%207?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 7</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=20&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Server%202008%20R2?max-results=14&quot;' itemprop='url'><span itemprop='title'>Server 2008 R2</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%208.1?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 8.1</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%2010?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows 10</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20XP?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows XP</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202010?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2010</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202013?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2013</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=20&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Office%202016?max-results=14&quot;' itemprop='url'><span itemprop='title'>Office 2016</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=20&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=14&quot;' itemprop='url'><span itemprop='title'>Adobe Reader 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=20&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/DISM?max-results=14&quot;' itemprop='url'><span itemprop='title'>DISM</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=20&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/SCCM?max-results=14&quot;' itemprop='url'><span itemprop='title'>SCCM</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-python&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Python?max-results=20&quot;' itemprop='url'><span itemprop='title'>Python</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Python?max-results=14&quot;' itemprop='url'><span itemprop='title'>Python</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=20&quot;' itemprop='url'><span itemprop='title'>Zabbix Basic</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Zabbix?max-results=14&quot;' itemprop='url'><span itemprop='title'>Zabbix</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=20&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=14&quot;' itemprop='url'><span itemprop='title'>Raspberry Pi</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=20&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/WordPress?max-results=14&quot;' itemprop='url'><span itemprop='title'>WordPress</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=20&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=14&quot;' itemprop='url'><span itemprop='title'>Internet Explorer 11</span></a></span>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=20&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
+<span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='&quot;/search/label/Windows%20Updates?max-results=14&quot;' itemprop='url'><span itemprop='title'>Windows Updates</span></a></span>
 <b:else/>
 
 <b:if cond='data:label.name != &quot;detect&quot;'>
@@ -2574,7 +2573,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 
 
 <span itemprop='child' itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
-<a expr:href='data:label.url + &quot;?max-results=20&quot;' itemprop='url'>
+<a expr:href='data:label.url + &quot;?max-results=14&quot;' itemprop='url'>
 <span itemprop='title'><data:label.name/></span>
 </a>
 </span>
@@ -2842,55 +2841,55 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <data:postLabelsLabel/>
 <b:loop values='data:post.labels' var='label'>
 <b:if cond='data:label.name == &quot;win7&quot;'>
-<a expr:href='&quot;/search/label/Windows%207?max-results=20&quot;' rel='tag'>Windows 7</a>
+<a expr:href='&quot;/search/label/Windows%207?max-results=14&quot;' rel='tag'>Windows 7</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=20&quot;' rel='tag'>Server 2008 R2</a>
+<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=14&quot;' rel='tag'>Server 2008 R2</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win81&quot;'>
-<a expr:href='&quot;/search/label/Windows%208.1?max-results=20&quot;' rel='tag'>Windows 8.1</a>
+<a expr:href='&quot;/search/label/Windows%208.1?max-results=14&quot;' rel='tag'>Windows 8.1</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;win10&quot;'>
-<a expr:href='&quot;/search/label/Windows%2010?max-results=20&quot;' rel='tag'>Windows 10</a>
+<a expr:href='&quot;/search/label/Windows%2010?max-results=14&quot;' rel='tag'>Windows 10</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;winxp&quot;'>
-<a expr:href='&quot;/search/label/Windows%20XP?max-results=20&quot;' rel='tag'>Windows XP</a>
+<a expr:href='&quot;/search/label/Windows%20XP?max-results=14&quot;' rel='tag'>Windows XP</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2010&quot;'>
-<a expr:href='&quot;/search/label/Office%202010?max-results=20&quot;' rel='tag'>Office 2010</a>
+<a expr:href='&quot;/search/label/Office%202010?max-results=14&quot;' rel='tag'>Office 2010</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2013&quot;'>
-<a expr:href='&quot;/search/label/Office%202013?max-results=20&quot;' rel='tag'>Office 2013</a>
+<a expr:href='&quot;/search/label/Office%202013?max-results=14&quot;' rel='tag'>Office 2013</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;office2016&quot;'>
-<a expr:href='&quot;/search/label/Office%202016?max-results=20&quot;' rel='tag'>Office 2016</a>
+<a expr:href='&quot;/search/label/Office%202016?max-results=14&quot;' rel='tag'>Office 2016</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=20&quot;' rel='tag'>Adobe Reader 11</a>
+<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=14&quot;' rel='tag'>Adobe Reader 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<a expr:href='&quot;/search/label/DISM?max-results=20&quot;' rel='tag'>DISM</a>
+<a expr:href='&quot;/search/label/DISM?max-results=14&quot;' rel='tag'>DISM</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<a expr:href='&quot;/search/label/SCCM?max-results=20&quot;' rel='tag'>SCCM</a>
+<a expr:href='&quot;/search/label/SCCM?max-results=14&quot;' rel='tag'>SCCM</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-python&quot;'>
-<a expr:href='&quot;/search/label/Python?max-results=20&quot;' rel='tag'>Python</a>
+<a expr:href='&quot;/search/label/Python?max-results=14&quot;' rel='tag'>Python</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<a expr:href='&quot;/search/label/Zabbix%20Basic?max-results=20&quot;' rel='tag'>Zabbix Basic</a>
+<a expr:href='&quot;/search/label/Zabbix?max-results=14&quot;' rel='tag'>Zabbix</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=20&quot;' rel='tag'>Raspberry Pi</a>
+<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=14&quot;' rel='tag'>Raspberry Pi</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<a expr:href='&quot;/search/label/WordPress?max-results=20&quot;' rel='tag'>WordPress</a>
+<a expr:href='&quot;/search/label/WordPress?max-results=14&quot;' rel='tag'>WordPress</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;ie11&quot;'>
-<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=20&quot;' rel='tag'>Internet Explorer 11</a>
+<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=14&quot;' rel='tag'>Internet Explorer 11</a>
 <b:else/>
 <b:if cond='data:label.name == &quot;wsus&quot;'>
-<a expr:href='&quot;/search/label/Windows%20Updates?max-results=20&quot;' rel='tag'>Windows Updates</a>
+<a expr:href='&quot;/search/label/Windows%20Updates?max-results=14&quot;' rel='tag'>Windows Updates</a>
 <b:else/>
 
 
@@ -2932,7 +2931,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 
 
-<a expr:href='data:label.url + &quot;?max-results=20&quot;' rel='tag'><data:label.name/></a>
+<a expr:href='data:label.url + &quot;?max-results=14&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
 </b:if>
 </b:if>
@@ -3176,7 +3175,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;, &q
 
       var paginator = function(callback) {
         if (hasMore()) {
-          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=20';
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=14';
           if (cursor) {
             url += '&published-min=' + new Date(cursor).toISOString();
           }
@@ -3509,11 +3508,11 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:include name='quickedit'/>
   </b:includable>
   </b:widget>
-  <b:widget id='Label2' locked='false' title='Labels' type='Label' version='1'>
+  <b:widget id='Label2' locked='false' title='Products' type='Label' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,ConEmu,DAEMON Tools,DISM,DOSBox,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,Free QuizMaker,FreeMeter,FreeRip,Gandalf,GanttProject,Gigabyte,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,IBM Sametime,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,LinuxCommandLine,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Must Know,MySQL,NetSetMan,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,OperaWebBrowser,Outlook 2010,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi,Raspberry Pi 3 Overclock,Raspberry Pi 3 Workstation,Raspberry Pi Server,Raspberry Pi WiFi,Recuva,Registry,Remote Command,Remote Desktop,SCCM,SCCM OS Deploy,SCCM WSUS,SELinux,SQL Server 2008 R2,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,Shell,Silverlight,Skype,Slackware,Sony,Spacewalk Channel for CentOS 5 i386,Spacewalk Channel for CentOS 6 i386,Spacewalk Channel for CentOS 6 x86_64,Spacewalk Channel for CentOS 7,Spacewalk Install CentOS 6,Spacewalk Install CentOS 7,Spacewalk Kickstart CentOS 5 i386,Spacewalk Kickstart CentOS 6 x86_64,Spacewalk Kickstart CentOS 7 x86_64,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinRAR,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix Agent,Zabbix Appliance,Zabbix Basic,Zabbix Proxy,Zabbix Server,Zabbix Templates,Zabbix Triggers,advanced,awk,bash,boot,clean,convert,cron,deploy,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,integrate,iso,linux,msi,msiexec,nginx,non-Microsoft Binaries,offline,reinstall,sed,slipstream,start,trial,unattended,upgrade,usb,vhd,wget,x86</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>ActivePresenter,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -3529,7 +3528,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=20&quot;' rel=''><data:label.name/></a>
+              <a class='firstletter' expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=14&quot;' rel=''><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -3543,7 +3542,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=20&quot;'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=14&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -3590,13 +3589,13 @@ head.appendChild(script);
 &lt;/script&gt;
 </b:includable>
   </b:widget>
-  <b:widget id='Label3' locked='false' title='Labels' type='Label'>
+  <b:widget id='Label3' locked='false' title='Action' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>detect,install,remove</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>VHD boot,install,integrate,remove,slipstream,upgrade</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
@@ -3610,7 +3609,7 @@ head.appendChild(script);
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=14&quot;'><data:label.name/></a>
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
@@ -3624,7 +3623,7 @@ head.appendChild(script);
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=14&quot;'><data:label.name/></a>
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
@@ -3636,11 +3635,11 @@ head.appendChild(script);
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='Labels' type='Label'>
+  <b:widget id='Label1' locked='false' title='Type' type='Label'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Office2002,adobereader11,fix-dism,fix-rpi,fix-sccm,fix-wp,office2010,office2013,office2016,win10,win2k3,win2k8r2,win7,win81,winxp,wsus</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>iso,vhd</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
