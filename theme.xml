@@ -813,7 +813,7 @@ a.firstletter:first-letter{text-transform:capitalize}
 div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
 textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
-.blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%}
+.blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
 
       ]]>
 
@@ -834,12 +834,12 @@ textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5
 <b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
 </b:if>
 
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'/>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
 
 <script>
 //<![CDATA[
-function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.charCodeAt(d++))>>2,r=(3&e)<<4|(n=t.charCodeAt(d++))>>4,o=(15&n)<<2|(c=t.charCodeAt(d++))>>6,s=63&c,isNaN(n)?o=s=64:isNaN(c)&&(s=64),i=i+keyStr.charAt(a)+keyStr.charAt(r)+keyStr.charAt(o)+keyStr.charAt(s),e=n=c="",a=r=o=s=""}while(d<t.length);return i}function decode64(t){var e,n,a,r,o="",i="",c="",s=0;/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{e=keyStr.indexOf(t.charAt(s++))<<2|(a=keyStr.indexOf(t.charAt(s++)))>>4,n=(15&a)<<4|(r=keyStr.indexOf(t.charAt(s++)))>>2,i=(3&r)<<6|(c=keyStr.indexOf(t.charAt(s++))),o+=String.fromCharCode(e),64!=r&&(o+=String.fromCharCode(n)),64!=c&&(o+=String.fromCharCode(i)),e=n=i="",a=r=c=""}while(s<t.length);return unescape(o)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],r=new ArrayBuffer(n.length),o=new Uint8Array(r),i=0;i<n.length;i++)o[i]=n.charCodeAt(i);return new Blob([r],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a> which includes:<br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a> which includes:<br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||navigator.appVersion.indexOf("Trident/")>0||window.navigator.userAgent.indexOf("Edge")>-1)&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),r=0;r<n.length;r++)a.test(n[r].className)&&e.push(n[r]);return e});
+function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.charCodeAt(d++))>>2,r=(3&e)<<4|(n=t.charCodeAt(d++))>>4,o=(15&n)<<2|(c=t.charCodeAt(d++))>>6,s=63&c,isNaN(n)?o=s=64:isNaN(c)&&(s=64),i=i+keyStr.charAt(a)+keyStr.charAt(r)+keyStr.charAt(o)+keyStr.charAt(s),e=n=c="",a=r=o=s=""}while(d<t.length);return i}function decode64(t){var e,n,a,r,o="",i="",c="",s=0;/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{e=keyStr.indexOf(t.charAt(s++))<<2|(a=keyStr.indexOf(t.charAt(s++)))>>4,n=(15&a)<<4|(r=keyStr.indexOf(t.charAt(s++)))>>2,i=(3&r)<<6|(c=keyStr.indexOf(t.charAt(s++))),o+=String.fromCharCode(e),64!=r&&(o+=String.fromCharCode(n)),64!=c&&(o+=String.fromCharCode(i)),e=n=i="",a=r=c=""}while(s<t.length);return unescape(o)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],r=new ArrayBuffer(n.length),o=new Uint8Array(r),i=0;i<n.length;i++)o[i]=n.charCodeAt(i);return new Blob([r],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||navigator.appVersion.indexOf("Trident/")>0||window.navigator.userAgent.indexOf("Edge")>-1)&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),r=0;r<n.length;r++)a.test(n[r].className)&&e.push(n[r]);return e});
 //]]>
 </script>
 
@@ -1020,7 +1020,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
                 <b:widget-setting name='style.textcolor'>#222222</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='authorLabel'>By</b:widget-setting>
-                <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+                <b:widget-setting name='showCommentLink'>false</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#666666</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
                 <b:widget-setting name='style.linkcolor'>#2288bb</b:widget-setting>
@@ -1062,8 +1062,10 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
   <div class='welcome'>Welcome to <strong>solve, autmate, speed up</strong> website which are mainly focused on <strong>Zero touch, Kickstart, Monitoring, Web scraping, Headless setup &amp; Low power device</strong>.<br/>
     <br/>
 
-    You can to <a href='/search/label/start'>start</a> set up your environment and move into <a href='/search/label/advanced'>advanced</a> stuff or get into <a href='/search/label/enterprise'>enterprise</a>.
+    You can to <a href='/search/label/start'>start</a> set up your environment and move into <a href='/search/label/advanced'>advanced</a> stuff or get into <a href='/search/label/enterprise'>enterprise</a>.<br/>
+    <br/>
 
+    Latest notes can be found by browsing <a href='/search/label/i?max-results=14'>label i</a>.
 </div>
 
 
@@ -3371,6 +3373,27 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </macro:includable>
 
 <b:section-contents id='sidebar-left-1'>
+  <b:widget id='LinkList1' locked='false' title='' type='LinkList'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='text-1'>Latest</b:widget-setting>
+      <b:widget-setting name='link-1'>/search/label/i?max-results=14</b:widget-setting>
+      <b:widget-setting name='text-0'>Home</b:widget-setting>
+      <b:widget-setting name='link-0'>/</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+
+<b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+   <b:include name='quickedit'/>
+ </div>
+</b:includable>
+  </b:widget>
   <b:widget id='BlogSearch1' locked='false' title='Find' type='BlogSearch' version='1'>
     <b:includable id='main'>
     <!-- only display title if it's non-empty -->
