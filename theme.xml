@@ -814,7 +814,8 @@ div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
 textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
-
+.widget .post-body ul{padding: 0 0 0 2.5em}
+.post-body ol {margin-left:16px;}
       ]]>
 
 
@@ -1020,7 +1021,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
                 <b:widget-setting name='style.textcolor'>#222222</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='authorLabel'>By</b:widget-setting>
-                <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+                <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#666666</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
                 <b:widget-setting name='style.linkcolor'>#2288bb</b:widget-setting>
@@ -3429,7 +3430,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>ActivePresenter,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>ActivePresenter,MySQL,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix,fix-zabbix</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
