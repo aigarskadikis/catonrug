@@ -814,7 +814,8 @@ div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
 textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
-
+.widget .post-body ul{padding: 0 0 0 2.5em}
+.post-body ol {margin-left:16px;}
       ]]>
 
 
@@ -1020,7 +1021,7 @@ function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.char
                 <b:widget-setting name='style.textcolor'>#222222</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='authorLabel'>By</b:widget-setting>
-                <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+                <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#666666</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
                 <b:widget-setting name='style.linkcolor'>#2288bb</b:widget-setting>
@@ -1900,7 +1901,54 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:loop values='data:posts' var='post'>
 <b:if cond='data:post.labels'>
 <b:loop values='data:post.labels' var='label'>
+
+<b:if cond='data:label.name == &quot;advanced&quot;'>
+<b:elseif cond='data:label.name == &quot;boot&quot;'/>
+<b:elseif cond='data:label.name == &quot;clean&quot;'/>
+<b:elseif cond='data:label.name == &quot;cmd&quot;'/>
+<b:elseif cond='data:label.name == &quot;compress&quot;'/>
+<b:elseif cond='data:label.name == &quot;convert&quot;'/>
+<b:elseif cond='data:label.name == &quot;dataURI&quot;'/>
+<b:elseif cond='data:label.name == &quot;deploy&quot;'/>
+<b:elseif cond='data:label.name == &quot;detect&quot;'/>
+<b:elseif cond='data:label.name == &quot;dl&quot;'/>
+<b:elseif cond='data:label.name == &quot;download&quot;'/>
+<b:elseif cond='data:label.name == &quot;driver&quot;'/>
+<b:elseif cond='data:label.name == &quot;enterprise&quot;'/>
+<b:elseif cond='data:label.name == &quot;headless&quot;'/>
+<b:elseif cond='data:label.name == &quot;i&quot;'/>
+<b:elseif cond='data:label.name == &quot;install&quot;'/>
+<b:elseif cond='data:label.name == &quot;integrate&quot;'/>
+<b:elseif cond='data:label.name == &quot;iso&quot;'/>
+<b:elseif cond='data:label.name == &quot;linux&quot;'/>
+<b:elseif cond='data:label.name == &quot;MIB&quot;'/>
+<b:elseif cond='data:label.name == &quot;mp3&quot;'/>
+<b:elseif cond='data:label.name == &quot;mp4&quot;'/>
+<b:elseif cond='data:label.name == &quot;msi&quot;'/>
+<b:elseif cond='data:label.name == &quot;msiexec&quot;'/>
+<b:elseif cond='data:label.name == &quot;offline&quot;'/>
+<b:elseif cond='data:label.name == &quot;Presentation&quot;'/>
+<b:elseif cond='data:label.name == &quot;reinstall&quot;'/>
+<b:elseif cond='data:label.name == &quot;remove&quot;'/>
+<b:elseif cond='data:label.name == &quot;serious&quot;'/>
+<b:elseif cond='data:label.name == &quot;slipstream&quot;'/>
+<b:elseif cond='data:label.name == &quot;start&quot;'/>
+<b:elseif cond='data:label.name == &quot;trial&quot;'/>
+<b:elseif cond='data:label.name == &quot;unattended&quot;'/>
+<b:elseif cond='data:label.name == &quot;txt&quot;'/>
+<b:elseif cond='data:label.name == &quot;upgrade&quot;'/>
+<b:elseif cond='data:label.name == &quot;usb&quot;'/>
+<b:elseif cond='data:label.name == &quot;vbs&quot;'/>
+<b:elseif cond='data:label.name == &quot;vhd&quot;'/>
+<b:elseif cond='data:label.name == &quot;video&quot;'/>
+<b:elseif cond='data:label.name == &quot;x64&quot;'/>
+<b:elseif cond='data:label.name == &quot;x86&quot;'/>
+<b:elseif cond='data:label.name == &quot;xml&quot;'/>
+<b:else/>
 <abbr expr:content='data:label.name' itemprop='articleSection'/>
+</b:if>
+
+
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 </b:loop>
 <b:else/>
@@ -2188,46 +2236,58 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:else/>
 
 
-<b:if cond='data:label.name != &quot;detect&quot;'>
-<b:if cond='data:label.name != &quot;video&quot;'>
+<b:if cond='data:label.name != &quot;advanced&quot;'>
+<b:if cond='data:label.name != &quot;boot&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
+<b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;compress&quot;'>
+<b:if cond='data:label.name != &quot;convert&quot;'>
+<b:if cond='data:label.name != &quot;dataURI&quot;'>
+<b:if cond='data:label.name != &quot;deploy&quot;'>
+<b:if cond='data:label.name != &quot;detect&quot;'>
+<b:if cond='data:label.name != &quot;dl&quot;'>
+<b:if cond='data:label.name != &quot;download&quot;'>
+<b:if cond='data:label.name != &quot;driver&quot;'>
+<b:if cond='data:label.name != &quot;enterprise&quot;'>
+<b:if cond='data:label.name != &quot;headless&quot;'>
+<b:if cond='data:label.name != &quot;i&quot;'>
+<b:if cond='data:label.name != &quot;install&quot;'>
+<b:if cond='data:label.name != &quot;integrate&quot;'>
+<b:if cond='data:label.name != &quot;iso&quot;'>
+<b:if cond='data:label.name != &quot;linux&quot;'>
+<b:if cond='data:label.name != &quot;MIB&quot;'>
+<b:if cond='data:label.name != &quot;mp3&quot;'>
+<b:if cond='data:label.name != &quot;mp4&quot;'>
 <b:if cond='data:label.name != &quot;msi&quot;'>
 <b:if cond='data:label.name != &quot;msiexec&quot;'>
-<b:if cond='data:label.name != &quot;compress&quot;'>
-<b:if cond='data:label.name != &quot;download&quot;'>
-<b:if cond='data:label.name != &quot;dl&quot;'>
-<b:if cond='data:label.name != &quot;iso&quot;'>
-<b:if cond='data:label.name != &quot;x86&quot;'>
-<b:if cond='data:label.name != &quot;x64&quot;'>
-<b:if cond='data:label.name != &quot;vhd&quot;'>
-<b:if cond='data:label.name != &quot;convert&quot;'>
-<b:if cond='data:label.name != &quot;headless&quot;'>
-<b:if cond='data:label.name != &quot;trial&quot;'>
-<b:if cond='data:label.name != &quot;integrate&quot;'>
-<b:if cond='data:label.name != &quot;unattended&quot;'>
 <b:if cond='data:label.name != &quot;offline&quot;'>
-<b:if cond='data:label.name != &quot;upgrade&quot;'>
-<b:if cond='data:label.name != &quot;install&quot;'>
-<b:if cond='data:label.name != &quot;remove&quot;'>
-<b:if cond='data:label.name != &quot;cmd&quot;'>
-<b:if cond='data:label.name != &quot;xml&quot;'>
-<b:if cond='data:label.name != &quot;i&quot;'>
-<b:if cond='data:label.name != &quot;reinstall&quot;'>
-<b:if cond='data:label.name != &quot;enterprise&quot;'>
-<b:if cond='data:label.name != &quot;serious&quot;'>
-<b:if cond='data:label.name != &quot;advanced&quot;'>
-<b:if cond='data:label.name != &quot;deploy&quot;'>
-<b:if cond='data:label.name != &quot;boot&quot;'>
-<b:if cond='data:label.name != &quot;linux&quot;'>
-<b:if cond='data:label.name != &quot;usb&quot;'>
-<b:if cond='data:label.name != &quot;slipstream&quot;'>
-<b:if cond='data:label.name != &quot;driver&quot;'>
-<b:if cond='data:label.name != &quot;start&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
+<b:if cond='data:label.name != &quot;reinstall&quot;'>
+<b:if cond='data:label.name != &quot;remove&quot;'>
+<b:if cond='data:label.name != &quot;serious&quot;'>
+<b:if cond='data:label.name != &quot;slipstream&quot;'>
+<b:if cond='data:label.name != &quot;start&quot;'>
+<b:if cond='data:label.name != &quot;trial&quot;'>
+<b:if cond='data:label.name != &quot;unattended&quot;'>
+<b:if cond='data:label.name != &quot;txt&quot;'>
+<b:if cond='data:label.name != &quot;upgrade&quot;'>
+<b:if cond='data:label.name != &quot;usb&quot;'>
+<b:if cond='data:label.name != &quot;vbs&quot;'>
+<b:if cond='data:label.name != &quot;vhd&quot;'>
+<b:if cond='data:label.name != &quot;video&quot;'>
+<b:if cond='data:label.name != &quot;x64&quot;'>
+<b:if cond='data:label.name != &quot;x86&quot;'>
+<b:if cond='data:label.name != &quot;xml&quot;'>
 
 
 <a expr:href='data:label.url + &quot;?max-results=14&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -3429,7 +3489,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>ActivePresenter,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>ActivePresenter,MySQL,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix,fix-zabbix</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
