@@ -148,7 +148,7 @@ URL:      www.blogger.com
    <Variable name="page.width" description="Page Width" type="string" default="auto" value="auto"/>
 
    <Variable name="main.section.margin" description="Main Section Margin" type="length" default="15px" min="0" max="100px" value="15px"/>
-   <Variable name="main.padding" description="Main Padding" type="length" default="15px" min="0" max="100px" value="12px"/>
+   <Variable name="main.padding" description="Main Padding" type="length" default="15px" min="0" max="100px" value="11px"/>
    <Variable name="main.padding.top" description="Main Padding Top" type="length" default="30px" min="0" max="100px" value="30px"/>
    <Variable name="main.padding.bottom" description="Main Padding Bottom" type="length" default="30px" min="0" max="100px" value="0px"/>
 
@@ -816,6 +816,7 @@ textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
 .widget .post-body ul{padding: 0 0 0 2.5em}
 .post-body ol {margin-left:16px;}
+.entry-content div.center{text-align:center}
       ]]>
 
 
@@ -3489,7 +3490,7 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>ActivePresenter,MySQL,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix,fix-zabbix</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>ActivePresenter,Blogger,MySQL,Office 2013,PowerShell,Raspberry Pi,Spacewalk,Windows 10,Windows 7,Windows 8.1,Windows XP,Zabbix,Zabbix API,Zabbix LLD,Zabbix MySQL,Zabbix PowerShell,Zabbix SNMP,Zabbix Security,Zabbix Web,fix-zabbix</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
