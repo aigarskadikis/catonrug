@@ -816,7 +816,7 @@ textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
 .widget .post-body ul{padding: 0 0 0 2.5em}
 .post-body ol {margin-left:16px;}
-.entry-content div.center{text-align:center}
+.entry-content div.c{text-align:center}
       ]]>
 
 
