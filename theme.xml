@@ -3358,36 +3358,22 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
   </div>
   </div>
 
-
-
-
 <b:if cond='data:blog.pageType != &quot;index&quot;'>
 <script type='text/javascript'>
 //<![CDATA[
 
-//select pre code with double click
-$("i[rel='pre']").replaceWith(function(){return $("<pre><code>"+$(this).html()+"</code></pre>")});for(var pres=document.getElementsByTagName("pre"),i=0;i<pres.length;i++)pres[i].addEventListener("dblclick",function(){var a=getSelection(),b=document.createRange();b.selectNodeContents(this),a.removeAllRanges(),a.addRange(b)},!1);
-
 //show image actual size on click
 var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith('<a href="'+this.src+'">'+this.outerHTML+"</a>")});
-
 
 //]]>
 </script>
 </b:if>
 
 
-
-  <script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'/>
-
-
-
 <script>
 //<![CDATA[
 
-
 //]]>
-
 </script>
 
 
