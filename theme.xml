@@ -814,9 +814,11 @@ div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
 textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
-.widget .post-body ul{padding: 0 0 0 2.5em}
 .post-body ol {margin-left:16px;}
 .entry-content div.c{text-align:center}
+.entry-content h2 {font:normal 1em 'Lucida Console',Monaco,monospace}
+.entry-content h2,.widget .post-body ul,.widget .post-body ol{padding:0;margin:0 0 .8em 2.5em }
+.widget .post-body textarea{margin: .2em 0 1em 0}
       ]]>
 
 
