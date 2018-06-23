@@ -843,8 +843,7 @@ textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5
 
 <script>
 //<![CDATA[
-function encode64(t){t=escape(t);var e,n,a,r,o,i="",c="",s="",d=0;do{a=(e=t.charCodeAt(d++))>>2,r=(3&e)<<4|(n=t.charCodeAt(d++))>>4,o=(15&n)<<2|(c=t.charCodeAt(d++))>>6,s=63&c,isNaN(n)?o=s=64:isNaN(c)&&(s=64),i=i+keyStr.charAt(a)+keyStr.charAt(r)+keyStr.charAt(o)+keyStr.charAt(s),e=n=c="",a=r=o=s=""}while(d<t.length);return i}function decode64(t){var e,n,a,r,o="",i="",c="",s=0;/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{e=keyStr.indexOf(t.charAt(s++))<<2|(a=keyStr.indexOf(t.charAt(s++)))>>4,n=(15&a)<<4|(r=keyStr.indexOf(t.charAt(s++)))>>2,i=(3&r)<<6|(c=keyStr.indexOf(t.charAt(s++))),o+=String.fromCharCode(e),64!=r&&(o+=String.fromCharCode(n)),64!=c&&(o+=String.fromCharCode(i)),e=n=i="",a=r=c=""}while(s<t.length);return unescape(o)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],r=new ArrayBuffer(n.length),o=new Uint8Array(r),i=0;i<n.length;i++)o[i]=n.charCodeAt(i);return new Blob([r],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||navigator.appVersion.indexOf("Trident/")>0||window.navigator.userAgent.indexOf("Edge")>-1)&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),r=0;r<n.length;r++)a.test(n[r].className)&&e.push(n[r]);return e});
-//]]>
+function encode64(t){t=escape(t);for(var e,n,a,o,r,i="",s="",c="",d=0;a=(e=t.charCodeAt(d++))>>2,o=(3&e)<<4|(n=t.charCodeAt(d++))>>4,r=(15&n)<<2|(s=t.charCodeAt(d++))>>6,c=63&s,isNaN(n)?r=c=64:isNaN(s)&&(c=64),i=i+keyStr.charAt(a)+keyStr.charAt(o)+keyStr.charAt(r)+keyStr.charAt(c),e=n=s="",a=o=r=c="",d<t.length;);return i}function decode64(t){var e,n,a,o,r="",i="",s="",c=0;for(/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");e=keyStr.indexOf(t.charAt(c++))<<2|(a=keyStr.indexOf(t.charAt(c++)))>>4,n=(15&a)<<4|(o=keyStr.indexOf(t.charAt(c++)))>>2,i=(3&o)<<6|(s=keyStr.indexOf(t.charAt(c++))),r+=String.fromCharCode(e),64!=o&&(r+=String.fromCharCode(n)),64!=s&&(r+=String.fromCharCode(i)),e=n=i="",a=o=s="",c<t.length;);return unescape(r)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],o=new ArrayBuffer(n.length),r=new Uint8Array(o),i=0;i<n.length;i++)r[i]=n.charCodeAt(i);return new Blob([o],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function out(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||0<navigator.appVersion.indexOf("Trident/")||-1<window.navigator.userAgent.indexOf("Edge"))&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),o=0;o<n.length;o++)a.test(n[o].className)&&e.push(n[o]);return e});//]]>
 </script>
 
 <b:include data='blog' name='google-analytics'/>
@@ -1855,6 +1854,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;sh&quot;'>
+<b:if cond='data:label.name != &quot;out&quot;'>
+<b:if cond='data:label.name != &quot;base64&quot;'>
 <b:if cond='data:label.name != &quot;xml&quot;'>
 <b:if cond='data:label.name != &quot;i&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
@@ -1879,9 +1881,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 
 </b:if>
@@ -1907,6 +1909,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 <b:if cond='data:label.name == &quot;advanced&quot;'>
 <b:elseif cond='data:label.name == &quot;boot&quot;'/>
+<b:elseif cond='data:label.name == &quot;base64&quot;'/>
 <b:elseif cond='data:label.name == &quot;clean&quot;'/>
 <b:elseif cond='data:label.name == &quot;cmd&quot;'/>
 <b:elseif cond='data:label.name == &quot;compress&quot;'/>
@@ -1930,10 +1933,12 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:elseif cond='data:label.name == &quot;msi&quot;'/>
 <b:elseif cond='data:label.name == &quot;msiexec&quot;'/>
 <b:elseif cond='data:label.name == &quot;offline&quot;'/>
+<b:elseif cond='data:label.name == &quot;out&quot;'/>
 <b:elseif cond='data:label.name == &quot;Presentation&quot;'/>
 <b:elseif cond='data:label.name == &quot;reinstall&quot;'/>
 <b:elseif cond='data:label.name == &quot;remove&quot;'/>
 <b:elseif cond='data:label.name == &quot;serious&quot;'/>
+<b:elseif cond='data:label.name == &quot;sh&quot;'/>
 <b:elseif cond='data:label.name == &quot;slipstream&quot;'/>
 <b:elseif cond='data:label.name == &quot;start&quot;'/>
 <b:elseif cond='data:label.name == &quot;trial&quot;'/>
@@ -2240,6 +2245,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 
 <b:if cond='data:label.name != &quot;advanced&quot;'>
+<b:if cond='data:label.name != &quot;base64&quot;'>
 <b:if cond='data:label.name != &quot;boot&quot;'>
 <b:if cond='data:label.name != &quot;clean&quot;'>
 <b:if cond='data:label.name != &quot;cmd&quot;'>
@@ -2264,10 +2270,12 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:if cond='data:label.name != &quot;msi&quot;'>
 <b:if cond='data:label.name != &quot;msiexec&quot;'>
 <b:if cond='data:label.name != &quot;offline&quot;'>
+<b:if cond='data:label.name != &quot;out&quot;'>
 <b:if cond='data:label.name != &quot;Presentation&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;serious&quot;'>
+<b:if cond='data:label.name != &quot;sh&quot;'>
 <b:if cond='data:label.name != &quot;slipstream&quot;'>
 <b:if cond='data:label.name != &quot;start&quot;'>
 <b:if cond='data:label.name != &quot;trial&quot;'>
@@ -2285,6 +2293,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 <a expr:href='data:label.url + &quot;?max-results=14&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
@@ -2515,6 +2526,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;sh&quot;'>
+<b:if cond='data:label.name != &quot;out&quot;'>
+<b:if cond='data:label.name != &quot;base64&quot;'>
 <b:if cond='data:label.name != &quot;xml&quot;'>
 <b:if cond='data:label.name != &quot;i&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
@@ -2539,7 +2553,7 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
 
-</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
+</b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
 </b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if></b:if>
@@ -2874,6 +2888,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 <b:if cond='data:label.name != &quot;install&quot;'>
 <b:if cond='data:label.name != &quot;remove&quot;'>
 <b:if cond='data:label.name != &quot;cmd&quot;'>
+<b:if cond='data:label.name != &quot;out&quot;'>
+<b:if cond='data:label.name != &quot;sh&quot;'>
+<b:if cond='data:label.name != &quot;base64&quot;'>
 <b:if cond='data:label.name != &quot;xml&quot;'>
 <b:if cond='data:label.name != &quot;i&quot;'>
 <b:if cond='data:label.name != &quot;reinstall&quot;'>
@@ -2892,6 +2909,9 @@ document.getElementById(&quot;postlist&quot;).setAttribute(&quot;start&quot;,c);
 
 <a expr:href='data:label.url + &quot;?max-results=14&quot;' rel='tag'><data:label.name/></a>
 <!--<b:if cond='not data:label.isLast'>,</b:if>-->
+</b:if>
+</b:if>
+</b:if>
 </b:if>
 </b:if>
 </b:if>
