@@ -812,13 +812,20 @@ a.firstletter:first-letter{text-transform:capitalize}
 .blog-posts{padding-bottom:64px}
 div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
-textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
+textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:240px;/*white-space:nowrap;*/font-size:1.35em}
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
 .post-body ol {margin-left:16px;}
 .entry-content div.c{text-align:center}
 .entry-content h2 {font:normal 1em 'Lucida Console',Monaco,monospace}
 .entry-content h2,.widget .post-body ul,.widget .post-body ol{padding:0;margin:.25em 0 1em 2.5em }
 .widget .post-body textarea{margin: .2em 0 1em 0}
+
+textarea {
+min-height: 60px;
+overflow-y: auto;
+word-wrap:break-word
+}
+
       ]]>
 
 
@@ -838,12 +845,26 @@ textarea.ac{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5
 <b:include cond='not data:view.isPreview' data='{                          image: data:skin.vars.body_background.image,                          selector: &quot;body&quot;                        }' name='responsiveImageStyle'/>
 </b:if>
 
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
+
+
+
+<!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' /> -->
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'/>
+
+<script src='https://rawgit.com/bgrins/ExpandingTextareas/master/dist/expanding.jquery.js'/>
+
 
 
 <script>
 //<![CDATA[
-function encode64(t){t=escape(t);for(var e,n,a,o,r,i="",s="",c="",d=0;a=(e=t.charCodeAt(d++))>>2,o=(3&e)<<4|(n=t.charCodeAt(d++))>>4,r=(15&n)<<2|(s=t.charCodeAt(d++))>>6,c=63&s,isNaN(n)?r=c=64:isNaN(s)&&(c=64),i=i+keyStr.charAt(a)+keyStr.charAt(o)+keyStr.charAt(r)+keyStr.charAt(c),e=n=s="",a=o=r=c="",d<t.length;);return i}function decode64(t){var e,n,a,o,r="",i="",s="",c=0;for(/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");e=keyStr.indexOf(t.charAt(c++))<<2|(a=keyStr.indexOf(t.charAt(c++)))>>4,n=(15&a)<<4|(o=keyStr.indexOf(t.charAt(c++)))>>2,i=(3&o)<<6|(s=keyStr.indexOf(t.charAt(c++))),r+=String.fromCharCode(e),64!=o&&(r+=String.fromCharCode(n)),64!=s&&(r+=String.fromCharCode(i)),e=n=i="",a=o=s="",c<t.length;);return unescape(r)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],o=new ArrayBuffer(n.length),r=new Uint8Array(o),i=0;i<n.length;i++)r[i]=n.charCodeAt(i);return new Blob([o],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac'>"+decode64(t.entry.content.$t)+"</textarea>")})}function out(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||0<navigator.appVersion.indexOf("Trident/")||-1<window.navigator.userAgent.indexOf("Edge"))&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),o=0;o<n.length;o++)a.test(n[o].className)&&e.push(n[o]);return e});//]]>
+
+
+
+function encode64(t){t=escape(t);for(var e,n,a,o,r,i="",s="",c="",d=0;a=(e=t.charCodeAt(d++))>>2,o=(3&e)<<4|(n=t.charCodeAt(d++))>>4,r=(15&n)<<2|(s=t.charCodeAt(d++))>>6,c=63&s,isNaN(n)?r=c=64:isNaN(s)&&(c=64),i=i+keyStr.charAt(a)+keyStr.charAt(o)+keyStr.charAt(r)+keyStr.charAt(c),e=n=s="",a=o=r=c="",d<t.length;);return i}function decode64(t){var e,n,a,o,r="",i="",s="",c=0;for(/[^A-Za-z0-9\+\/\=]/g.exec(t)&&alert("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),t=t.replace(/[^A-Za-z0-9\+\/\=]/g,"");e=keyStr.indexOf(t.charAt(c++))<<2|(a=keyStr.indexOf(t.charAt(c++)))>>4,n=(15&a)<<4|(o=keyStr.indexOf(t.charAt(c++)))>>2,i=(3&o)<<6|(s=keyStr.indexOf(t.charAt(c++))),r+=String.fromCharCode(e),64!=o&&(r+=String.fromCharCode(n)),64!=s&&(r+=String.fromCharCode(i)),e=n=i="",a=o=s="",c<t.length;);return unescape(r)}function dataURItoBlob(t,e){for(var n=atob(t.split(",")[1]),a=t.split(",")[0].split(":")[1].split(";")[0],o=new ArrayBuffer(n.length),r=new Uint8Array(o),i=0;i<n.length;i++)r[i]=n.charCodeAt(i);return new Blob([o],{type:a})}function mp4id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='video/mp4'><a href='"+t.entry.content.$t+"'>"+t.entry.title.$t+"</a>")})}function anchor(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a>")})}function ac(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(dataURItoBlob(&quot;data:application/octet-stream;base64,"+t.entry.content.$t+"&quot;), &quot;"+t.entry.title.$t+"&quot;);'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac expanding'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<a href='data:application/octet-stream;base64,"+t.entry.content.$t+"' download='"+t.entry.title.$t+"'>"+t.entry.title.$t+"</a><br /><textarea id='ac' class='ac expanding'>"+decode64(t.entry.content.$t)+"</textarea>")})}function out(t,e){isIE?$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")}):$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<textarea id='out' class='out'>"+decode64(t.entry.content.$t)+"</textarea>")})}function mp3id(t,e){$.getJSON("/feeds/posts/default/"+t+"?alt=json",function(t){$(e).append("<source src='"+t.entry.content.$t+"' type='audio/mpeg'>")})}function adjustHeight(t){t.style.height=t.scrollHeight>t.clientHeight?t.scrollHeight+"px":"60px"}var keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",isIE=!1;(-1!==navigator.userAgent.indexOf("MSIE")||0<navigator.appVersion.indexOf("Trident/")||-1<window.navigator.userAgent.indexOf("Edge"))&&(isIE=!0),"function"!=typeof document.getElementsByClassName&&(document.getElementsByClassName=function(t){if(!t)return[];for(var e=[],n=document.getElementsByTagName("*"),a=new RegExp("(^| )"+t+"( |$)"),o=0;o<n.length;o++)a.test(n[o].className)&&e.push(n[o]);return e});
+
+
+//]]>
 </script>
 
 <b:include data='blog' name='google-analytics'/>
@@ -3392,8 +3413,18 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
 </b:if>
 
 
+
 <script>
 //<![CDATA[
+
+$(document).ready(function(){
+
+$('textarea').expanding()
+
+})
+
+
+
 
 //]]>
 </script>
