@@ -817,7 +817,7 @@ ol{margin:0;padding:0}
 textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em}
 .blog-posts ol#postlist li.litem{padding:0 0 .5em;margin:0 0 0 2em;text-indent:0;color:#bbb;font-size:170%;content: counter(level1) ")";}
 .post-body ol {margin-left:16px;}
-.entry-content div.c{text-align:center}
+.entry-content div.c{text-align:center;margin-bottom:1em}
 .entry-content h2 {font:normal 1em 'Lucida Console',Monaco,monospace}
 .entry-content h2,.widget .post-body ul,.widget .post-body ol{padding:0;margin:.25em 0 1em 2.5em}
 
