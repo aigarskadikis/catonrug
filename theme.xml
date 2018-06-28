@@ -718,9 +718,9 @@ body{min-width:990px}
 .main-inner .columns{padding-left:0px;padding-right:0}
 span.snipeto{display:none}
 }
-@media only screen and (min-width:1280px) {
-body{min-width:1214px}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1214px;max-width:1214px;_width:1214px}
+@media only screen and (min-width:1100px) {
+body{min-width:1048px}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1048px;max-width:1048px;_width:1048px}
 .main-inner .column-left-outer{width:0px;right:100%;margin-left:0px}
 .column-left-outer{margin-left:-100%}
 .main-inner .fauxcolumn-left-outer{width:0px}
@@ -728,15 +728,6 @@ body{min-width:1214px}
 span.snipeto{display:none}
 }
 
-@media only screen and (min-width:1330px) {
-body{min-width:1304px}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1304px;max-width:1304px;_width:1304px}
-.main-inner .column-left-outer{width:0px;right:100%;margin-left:0px}
-.column-left-outer{margin-left:-100%}
-.main-inner .fauxcolumn-left-outer{width:0px}
-.main-inner .columns{padding-left:0px;padding-right:0}
-span.snipeto{display:none}
-}
 
 
 
@@ -1076,9 +1067,6 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
               </b:widget-settings>
               <b:includable id='main' var='top'>
 
-<script type='text/javascript'>
-  numPosts = <data:numPosts/>;
-</script>
 
 
   <b:if cond='!data:mobile'>
@@ -1115,7 +1103,6 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
 
 
 
-&lt;ol id=&quot;postlist&quot;&gt;
 
 
       <b:loop values='data:posts' var='post'>
@@ -1221,26 +1208,13 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 
-
+<!--
     <b:include name='nextprev'/>
-
-</b:if>
-
-<b:if cond='data:blog.pageType == &quot;index&quot;'>
-<script type='text/javascript'>
-//<![CDATA[
-var pageUrl=window.location.href;if(pageUrl.indexOf("/search/label/")>-1){var d=document.getElementsByClassName("status-msg-body");if(d&&1==d.length){for(d=d[0].firstChild;d&&(1!=d.nodeType||"a"!=d.nodeName.toLowerCase()||d.href.indexOf("/search/label/")<0);)d=d.nextSibling;d&&d.parentNode.removeChild(d)}if((d=document.getElementById("blog-pager-newer-link"))&&d.firstChild){for(d=d.firstChild;d&&1!=d.nodeType&&d.nextSibling;)d=d.nextSibling;var backUrl=d.href;if(pageUrl.indexOf("updated-max=")<0&&backUrl.indexOf("updated-max=")<0)for(var theOlderLink=document.querySelectorAll("#blog-pager-older-link"),i=0;i<theOlderLink.length;i++)theOlderLink[i].style.display="none"}var regex=/[\?&]max-results=(\d+)/,numMax=regex.exec(pageUrl);if(numMax&&(numMax=parseInt(numMax[1])),numMax||(numMax=30),numPosts<numMax&&(d=document.getElementById("blog-pager-older-link")))for(var theOlderLink=document.querySelectorAll("#blog-pager-older-link"),i=0;i<theOlderLink.length;i++)theOlderLink[i].style.display="none"}
-//]]>
-</script>
+-->
 </b:if>
 
 
-      <b:if cond='data:numPosts != 0'>
-        &lt;/div&gt;&lt;/div&gt;
-      </b:if>
 
-
-&lt;/ol&gt;
 
 
 
