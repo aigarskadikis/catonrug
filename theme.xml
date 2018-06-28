@@ -23,7 +23,7 @@ URL:      www.blogger.com
    <Group description="Page Text" selector="body">
      <Variable name="body.font" description="Font" type="font"
          default="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal .8em Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
-     <Variable name="body.text.color" description="Text Color" type="color" default="#222222" value="#222222"/>
+     <Variable name="body.text.color" description="Text Color" type="color" default="#222222" value="#444444"/>
    </Group>
 
    <Group description="Backgrounds" selector=".body-fauxcolumns-outer">
@@ -68,7 +68,7 @@ URL:      www.blogger.com
 
    <Group description="Date Header" selector=".date-header">
      <Variable name="date.header.color" description="Text Color" type="color"
-         default="$(body.text.color)" value="#222222"/>
+         default="$(body.text.color)" value="#444444"/>
      <Variable name="date.header.background.color" description="Background Color" type="color"
          default="transparent" value="transparent"/>
      <Variable name="date.header.font" description="Text Font" type="font"
@@ -1034,7 +1034,7 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
             <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>false</b:widget-setting>
-                <b:widget-setting name='style.textcolor'>#222222</b:widget-setting>
+                <b:widget-setting name='style.textcolor'>#444444</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>false</b:widget-setting>
                 <b:widget-setting name='authorLabel'>By</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
