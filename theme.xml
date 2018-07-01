@@ -9,60 +9,69 @@
 
 <b:include data='blog' name='all-head-content'/>
 
+  <style type='text/css'>
+
+#cookieChoiceInfo {bottom:0;top:auto !important;}
+body{background-color:#f5f5f5;}
+
+</style>
+
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 
   <style type='text/css'>
-html body .region-inner{min-width:0;max-width:100%;width:auto;}
-a:link,a:visited{text-decoration:none;color:#2288bb;}
-a:visited{text-decoration:none;color:#2288bb;}
-a:hover{text-decoration:underline;color:#33aaff;}
-.body-fauxcolumn-outer .fauxcolumn-inner{background:transparent none repeat scroll top left;_background-image:none;}
-.body-fauxcolumn-outer .cap-top{position:absolute;z-index:1;height:400px;width:100%;}
-.body-fauxcolumn-outer .cap-top .cap-left{width:100%;background:transparent none repeat-x scroll top left;_background-image:none;}
-.content-outer{-moz-box-shadow:0 0 40px rgba(0, 0, 0, .15);-webkit-box-shadow:0 0 5px rgba(0, 0, 0, .15);-goog-ms-box-shadow:0 0 10px #333333;box-shadow:0 0 40px rgba(0, 0, 0, .15);margin-bottom:1px;text-align:left;}
-.content-inner{padding:10px 10px;}
-.content-inner{background-color:#ffffff;}
-.header-outer{background:transparent none repeat-x scroll 0 -400px;_background-image:none;}
-.Header h1{font:normal normal 42px Arial, Tahoma, Helvetica, FreeSans, sans-serif;color:#3399bb;text-shadow:-1px -1px 1px rgba(0, 0, 0, .2);}
-.Header h1 a{color:#3399bb;}
-.Header .description{font-size:140%;color:#777777;}
-.header-inner .Header .titlewrapper{padding:16px 16px 0px 16px;}
-.header-inner .Header .descriptionwrapper{padding:0 16px;}
-.main-outer{border-top:0 solid #eeeeee;}
-.fauxcolumn-left-outer .fauxcolumn-inner{border-right:1px solid #eeeeee;}
-.fauxcolumn-right-outer .fauxcolumn-inner{border-left:1px solid #eeeeee;}
-.main-inner{padding-top:30px;padding-bottom:0px;}
-.main-inner .column-center-inner{padding:0 11px;}
-.main-inner .column-center-inner .section{margin:0 15px;}
-.post{margin:0 0 0 0;}
-h3.post-title{font:normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;margin:0 0 0 0;padding:0;}
-.post-body{font-size:110%;line-height:1.4;position:relative;}
-.post-header{margin:0 0 1.5em;line-height:1.6;font-size:90%;}
-.post-footer{margin:20px -2px 0;padding:5px 10px;color:#666666;line-height:1.6;font-size:90%;}
-.footer-outer{border-top:0 dashed #bbbbbb;}
-audio{width:100%;}
-/*! CSS Used from: Embedded */
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:700px;max-width:700px;_width:700px;}
-.main-inner .columns{padding-left:0px;padding-right:0px;}
-.main-inner .fauxcolumn-center-outer{left:0px;right:0px;_width:expression(this.parentNode.offsetWidth - parseInt(&quot;0px&quot;) - parseInt(&quot;0px&quot;) + &#39;px&#39;);}
-.main-inner .fauxcolumn-left-outer{width:0px;}
-.main-inner .fauxcolumn-right-outer{width:0px;}
-.main-inner .column-left-outer{width:0px;right:100%;margin-left:-0px;}
-.main-inner .column-right-outer{width:0px;margin-right:-0px;}
-html *{max-height:1000000px;}
-.entry-content code{border:1px solid #ccc;background:#f5f5f5;font-family:monospace;font-size:1.4em;padding:.1em .5em;border-radius:.25em;}
-.entry-content pre{color:#444;font-family:&#39;Lucida Console&#39;,Monaco,monospace;white-space:pre;overflow:auto;word-wrap:normal;}
-.entry-content pre code{border:0;background:#f9f9f9;padding:0;margin:0;}
-.post-body pre{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em 0 1em;}
-.post-body pre.md5,.post-body pre.sha1{margin:0;padding:0;border:0;background:#fff;font-size:.8em;}
-.section{margin:0;}
-.main-inner .column-left-inner,.main-inner .column-right-inner{padding:0;}
-.main-inner .column-center-inner .section{margin:0;}
-.content-inner{padding:0;}
-body{padding:0;}
-ul{list-style:none;}
-.post-body img,.post-body video{max-width:100%;margin:0 auto;height:auto;}
-div.widget,#BlogSearch1{margin:1.3em 0 0 0;}
+
+
+
+html body .region-inner{min-width:0;max-width:100%;width:auto}
+a:link,a:visited{text-decoration:none;color:#28b}
+a:visited{text-decoration:none;color:#28b}
+a:hover{text-decoration:underline;color:#3af}
+.body-fauxcolumn-outer .fauxcolumn-inner{background:transparent none repeat scroll top left}
+.body-fauxcolumn-outer .cap-top{position:absolute;z-index:1;height:400px;width:100%}
+.body-fauxcolumn-outer .cap-top .cap-left{width:100%;background:transparent none repeat-x scroll top left}
+.content-outer{margin-bottom:1px;text-align:left}
+.content-inner{padding:10px;background-color:#fff}
+.header-outer{background:transparent none repeat-x scroll 0 -400px}
+.Header h1{font:normal normal 42px Arial,Tahoma,Helvetica,FreeSans,sans-serif;color:#39b}
+.Header h1 a{color:#39b}
+.Header .description{font-size:140%;color:#777}
+.header-inner .Header .titlewrapper{padding:16px 16px 0}
+.header-inner .Header .descriptionwrapper{padding:0 16px}
+.main-outer{border-top:0 solid #eee}
+.fauxcolumn-left-outer .fauxcolumn-inner{border-right:1px solid #eee}
+.fauxcolumn-right-outer .fauxcolumn-inner{border-left:1px solid #eee}
+.main-inner{padding-top:30px;padding-bottom:0}
+.main-inner .column-center-inner{padding:0 1em}
+.main-inner .column-center-inner .section{margin:0 15px}
+.post{margin:0}
+h3.post-title{font:normal normal 22px Arial,Tahoma,Helvetica,FreeSans,sans-serif;margin:0;padding:0}
+.post-body{font-size:110%;line-height:1.4;position:relative}
+.post-header{margin:0 0 1.5em;line-height:1.6;font-size:90%}
+.post-footer{margin:20px -2px 0;padding:5px 10px;color:#666;line-height:1.6;font-size:90%}
+.footer-outer{border-top:0 dashed #bbb}
+audio{width:100%}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:700px;max-width:700px}
+.main-inner .columns{padding-left:0;padding-right:0}
+.main-inner .fauxcolumn-center-outer{left:0;right:0}
+.main-inner .fauxcolumn-left-outer{width:0}
+.main-inner .fauxcolumn-right-outer{width:0}
+.main-inner .column-left-outer{width:0;right:100%;margin-left:-0}
+.main-inner .column-right-outer{width:0;margin-right:-0}
+html *{max-height:1000000px}
+.entry-content code{border:1px solid #ccc;background:#f5f5f5;font-family:monospace;font-size:1.4em;padding:.1em .5em}
+.entry-content pre{color:#444;font-family:&#39;Lucida Console&#39;,Monaco,monospace;white-space:pre;overflow:auto}
+.entry-content pre code{border:0;background:#f9f9f9;padding:0;margin:0}
+.post-body pre{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em 0 1em}
+.post-body pre.md5,.post-body pre.sha1{margin:0;padding:0;border:0;background:#fff;font-size:.8em}
+.section{margin:0}
+.main-inner .column-left-inner,.main-inner .column-right-inner{padding:0}
+.main-inner .column-center-inner .section{margin:0}
+.content-inner{padding:0}
+body{padding:0}
+ul{list-style:none}
+.post-body img,.post-body video{max-width:100%;margin:0 auto;height:auto}
+div.widget,#BlogSearch1{margin:1.3em 0 0}
+
  @media only screen and (max-width:800px){
 body{min-width:98%;font-size:1.5em;}
 .content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
@@ -98,8 +107,8 @@ body{min-width:990px;}
 .main-inner .columns{padding-left:0px;padding-right:0;}
 }
  @media only screen and (min-width:1100px){
-body{min-width:1048px;}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1048px;max-width:1048px;_width:1048px;}
+body{min-width:1058px;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1058px;max-width:1058px;_width:1058px;}
 .main-inner .column-left-outer{width:0px;right:100%;margin-left:0px;}
 .column-left-outer{margin-left:-100%;}
 .main-inner .fauxcolumn-left-outer{width:0px;}
@@ -157,25 +166,27 @@ div.post-body{font-size:1.3em!important;}
 .post-body pre.md5,pre.sha1{font-size:.8em!important;}
 div.widget,#BlogSearch1{margin-top:1.3em;}
 }
-div.widget h2{margin-left:10px;}
-.widget{margin:0;}
-.widget ul{padding:0;}
-.footer-inner{padding:0;}
-.header-inner .Header .descriptionwrapper{margin-bottom:0;}
-.main-inner{padding-top:0;}
-.column-left-outer{padding-top:16px;}
-.fauxcolumn-left-outer{background-color:#f9f9f9;}
-div.breadcrumbs{padding-top:16px;display:none;}
-.post-body ul{list-style-type:circle;}
-.post-labels{font-size:2em;}
-.blog-posts{margin-top:2em;}
-.post-footer{margin:0;padding:0;}
-.b{border:1px solid #1881d7;}
-.blog-posts{padding-bottom:64px;}
-textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em;}
-.entry-content div.c,.entry-content div.center{text-align:center;margin-bottom:1em;}
-.entry-content h2{font:normal 1em &#39;Lucida Console&#39;,Monaco,monospace;}
-.entry-content h2,.widget .post-body ul{padding:0;margin:.25em 0 1em 2.5em;}
+div.widget h2{margin-left:10px}
+.widget{margin:0}
+.widget ul{padding:0}
+.footer-inner{padding:0}
+.header-inner .Header .descriptionwrapper{margin-bottom:0}
+.main-inner{padding-top:0}
+.column-left-outer{padding-top:16px}
+.fauxcolumn-left-outer{background-color:#f9f9f9}
+div.breadcrumbs{padding:0 0 1em;display:block;font-size:150%}
+.post-body ul{list-style-type:circle}
+.post-labels{font-size:2em}
+.blog-posts{margin-top:2em}
+.post-footer{margin:0;padding:0}
+.b{border:1px solid #1881d7}
+.blog-posts{padding-bottom:64px}
+textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em}
+.entry-content div.c,.entry-content div.center{text-align:center;margin-bottom:1em}
+.entry-content h2{font:normal 1em &#39;Lucida Console&#39;,Monaco,monospace}
+.entry-content h2,.widget .post-body ul{padding:0;margin:.25em 0 1em 2.5em}
+    .blogger-comment-from-post{height:14em}
+
 
 </style>
 
@@ -203,7 +214,7 @@ a:hover{text-decoration:underline;color:#3af}
 .fauxcolumn-right-outer .fauxcolumn-inner{border-left:1px solid #eee}
 div.widget &gt; h2,div.widget h2.title{margin:0 0 0 .4em;font:normal bold 1.2em Arial,Tahoma,Helvetica,FreeSans,sans-serif;color:#666}
 .main-inner{padding-top:30px;padding-bottom:0}
-.main-inner .column-center-inner{padding:0 11px}
+.main-inner .column-center-inner{padding:0 1em}
 .main-inner .column-center-inner .section{margin:0 15px}
 .footer-outer{border-top:0 dashed #bbb}
 .content-outer,.content-fauxcolumn-outer,.region-inner{min-width:700px;max-width:700px}
@@ -255,8 +266,8 @@ body{min-width:990px}
 .main-inner .columns{padding-left:0;padding-right:0}
 }
 @media only screen and (min-width:1100px) {
-body{min-width:1048px}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1048px;max-width:1048px}
+body{min-width:1058px}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1058px;max-width:1058px}
 .main-inner .column-left-outer{width:0;right:100%;margin-left:0}
 .column-left-outer{margin-left:-100%}
 .main-inner .fauxcolumn-left-outer{width:0}
@@ -343,7 +354,7 @@ a:hover{text-decoration:underline;color:#3af}
 .fauxcolumn-left-outer .fauxcolumn-inner{border-right:1px solid #eee}
 .fauxcolumn-right-outer .fauxcolumn-inner{border-left:1px solid #eee}
 .main-inner{padding-top:30px;padding-bottom:0}
-.main-inner .column-center-inner{padding:0 11px}
+.main-inner .column-center-inner{padding:0 1em}
 .main-inner .column-center-inner .section{margin:0 15px}
 .post{margin:0}
 h3.post-title{font:normal normal 22px Arial,Tahoma,Helvetica,FreeSans,sans-serif;margin:0;padding:0}
@@ -397,8 +408,8 @@ body{min-width:990px}
 .main-inner .columns{padding-left:0;padding-right:0}
 }
 @media only screen and (min-width:1100px) {
-body{min-width:1048px}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1048px;max-width:1048px}
+body{min-width:1058px}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1058px;max-width:1058px}
 .main-inner .column-left-outer{width:0;right:100%;margin-left:0}
 .column-left-outer{margin-left:-100%}
 .main-inner .fauxcolumn-left-outer{width:0}
@@ -452,8 +463,135 @@ div.widget,#BlogSearch1{margin-top:1.3em}
 .fauxcolumn-left-outer{background-color:#f9f9f9}
 div.breadcrumbs{padding-top:16px;display:none}
 .blog-posts{margin-top:2em;padding-bottom:64px}
+  .post-outer{margin-bottom:1em;}
 </style>
 
+
+     <b:elseif cond='data:blog.pageType == &quot;item&quot;'/>
+
+<style type='text/css'>
+/*! CSS Used from: Embedded */
+a:link,a:visited{text-decoration:none;color:#2288bb;}
+a:visited{text-decoration:none;color:#2288bb;}
+a:hover{text-decoration:underline;color:#33aaff;}
+.post{margin:0 0 0 0;}
+h3.post-title{font:normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;margin:0 0 0 0;padding:0;}
+.post-body{font-size:110%;line-height:1.4;position:relative;}
+.post-header{margin:0 0 1.5em;line-height:1.6;font-size:90%;}
+.post-footer{margin:20px -2px 0;padding:5px 10px;color:#666666;line-height:1.6;font-size:90%;}
+audio{width:100%;}
+html *{max-height:1000000px;}
+.entry-content code{border:1px solid #ccc;background:#f5f5f5;font-family:monospace;font-size:1.4em;padding:.1em .5em;border-radius:.25em;}
+.entry-content pre{color:#444;font-family:&#39;Lucida Console&#39;,Monaco,monospace;white-space:pre;overflow:auto;word-wrap:normal;}
+.entry-content pre code{border:0;background:#f9f9f9;padding:0;margin:0;}
+.post-body pre{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em 0 1em;}
+.post-body pre.md5,.post-body pre.sha1{margin:0;padding:0;border:0;background:#fff;font-size:.8em;}
+ul{list-style:none;}
+.post-body img,.post-body video{max-width:100%;margin:0 auto;height:auto;}
+ @media only screen and (max-width:800px){
+body{min-width:98%;font-size:1.5em;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+a:visited,a:link{color:#000;}
+#main div div div div div h3 a{font-size:1.2em;}
+}
+ @media only screen and (min-width:800px){
+body{min-width:728px;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:728px;max-width:728px;_width:728px;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+}
+ @media only screen and (min-width:940px){
+body{min-width:880px;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:880px;max-width:880px;_width:880px;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+}
+ @media only screen and (min-width:1024px){
+body{min-width:990px;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:990px;max-width:990px;_width:990px;}
+.main-inner .column-left-outer{width:0px;right:100%;margin-left:0px;}
+.column-left-outer{margin-left:-100%;}
+.main-inner .fauxcolumn-left-outer{width:0px;}
+.main-inner .columns{padding-left:0px;padding-right:0;}
+}
+ @media only screen and (min-width:1100px){
+body{min-width:1058px;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1058px;max-width:1058px;_width:1058px;}
+.main-inner .column-left-outer{width:0px;right:100%;margin-left:0px;}
+.column-left-outer{margin-left:-100%;}
+.main-inner .fauxcolumn-left-outer{width:0px;}
+.main-inner .columns{padding-left:0px;padding-right:0;}
+}
+ @media (min-resolution: 192dpi) and (min-device-width:320px){
+body{min-width:98%;font-size:1.3em;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+h1,h3{font-size:1.3em!important;}
+div.post-body{font-size:1.3em!important;}
+#comments{display:none;}
+div.widget,#BlogSearch1{margin-top:1.3em;}
+}
+ @media (min-resolution: 192dpi) and (min-device-width:592px){
+body{min-width:98%;font-size:1.3em;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+h1,h3{font-size:1.1.3em!important;}
+div.post-body{font-size:1.1.3em!important;}
+#comments{display:none;}
+div.widget,#BlogSearch1{margin-top:1.3em;}
+}
+ @media (min-resolution: 280dpi) and (min-device-width:360px){
+body{min-width:98%;font-size:1.3em;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+h1,h3{font-size:1.3em!important;}
+div.post-body{font-size:1.3em!important;}
+#comments{display:none;}
+div.widget,#BlogSearch1{margin-top:1.3em;}
+}
+ @media (min-resolution: 280dpi) and (min-device-width:640px){
+body{min-width:98%;font-size:1.3em;}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%;_width:98%;}
+.main-inner .column-left-outer{width:100%;right:0;margin-left:0;}
+.column-left-outer{margin-left:0;}
+.main-inner .fauxcolumn-left-outer{width:0;}
+.main-inner .columns{padding-left:0;padding-right:0;}
+h1,h3{font-size:1.3em!important;}
+div.post-body{font-size:1.3em!important;}
+#comments{display:none;}
+div.widget,#BlogSearch1{margin-top:1.3em;}
+}
+div.widget h2{margin-left:10px;}
+.widget ul{padding:0;}
+div.breadcrumbs{padding-top:16px;display:none;}
+.post-body ul{list-style-type:circle;}
+.post-labels{font-size:2em;}
+.post-footer{margin:0;padding:0;}
+.b{border:1px solid #1881d7;}
+textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em;}
+.entry-content div.c{text-align:center;margin-bottom:1em;}
+.entry-content h2{font:normal 1em &#39;Lucida Console&#39;,Monaco,monospace;}
+.entry-content h2,.widget .post-body ul{padding:0;margin:.25em 0 1em 2.5em;}
+
+
+</style>
 
      <b:else/>
 
@@ -1170,8 +1308,8 @@ body{min-width:990px}
 span.snipeto{display:none}
 }
 @media only screen and (min-width:1100px) {
-body{min-width:1048px}
-.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1048px;max-width:1048px;_width:1048px}
+body{min-width:1058px}
+.content-outer,.content-fauxcolumn-outer,.region-inner{min-width:1058px;max-width:1058px;_width:1058px}
 .main-inner .column-left-outer{width:0px;right:100%;margin-left:0px}
 .column-left-outer{margin-left:-100%}
 .main-inner .fauxcolumn-left-outer{width:0px}
@@ -1255,7 +1393,6 @@ div.widget-content{padding:0 10px 16px}
 .main-inner{padding-top:0}
 .column-left-outer{padding-top:16px}
 .fauxcolumn-left-outer{background-color:#f9f9f9}
-div.breadcrumbs{padding-top:16px;display:none}
 span.snipeto{color:#aaa}
 div.cookie-choices-info{bottom:0;top:auto!important}
 .post-body ul{list-style-type:circle}
@@ -1314,7 +1451,7 @@ textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em 
 </b:if>
 
 
-
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'/>
 
@@ -1333,6 +1470,11 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
 
 //]]>
 </script>
+
+
+  </b:if>
+
+
 
 <b:include data='blog' name='google-analytics'/>
 
@@ -2235,7 +2377,7 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
 <span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
 <a expr:href='data:blog.homepageUrl' itemprop='url'>
 <span itemprop='title'>Home</span>
-</a>
+</a> &gt; 
 
 <b:loop values='data:post.labels' var='label'>
 
@@ -3801,8 +3943,8 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
               <b:widget-settings>
                 <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
                 <b:widget-setting name='display'>CLOUD</b:widget-setting>
-                <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,ADFS,AWS,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,Blogger,CCleaner,CS50,CSS,Canon,CentOS 4,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,DAEMON Tools,DISM,DOSBox,Debian,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,FreeMeter,FreeRip,GRUB,Gandalf,Gigabyte,Google,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,Guidelines,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,ISP,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,MKVToolNix,MPlayer,MS Project,MS Visio,MicroSD,Microsoft Tools,MikroTik,Mozilla Thunderbird,Must Know,MySQL,NetSetMan,Network,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,Office2002,Opera,Outlook 2010,Outlook 2016,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhantomJS,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi 3 Workstation,Raspberry Pi Camera,Raspberry Pi Cooling,Raspberry Pi Internet,Raspberry Pi Management,Raspberry Pi Offline,Raspberry Pi SD Card,Raspberry Pi Server,Raspberry Pi VNC,Raspberry Pi WiFi,Raspberry Pi Zabbix,Recuva,RegEx,Registry,Remote Command,Remote Desktop,RetroPie,SCCM,SELinux,SNMP,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,SharePoint,Silverlight,Skype,Slackware,Sony,Spacewalk,Spacewalk 2.8 CentOS 7.5,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,Virtual Machine Manager,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix,Zabbix API,Zabbix Debug,Zabbix LLD,Zabbix MySQL,Zabbix PDF Report,Zabbix PowerShell,Zabbix SNMP,Zabbix Security,Zabbix Web,adobereader11,advanced,awk,base64,bash,boot,certbot,clean,convert,cron,deploy,detect,download,driver,drivers,eParakstitajs,enterprise,fix-dism,fix-python,fix-rpi,fix-sccm,fix-wp,fix-zabbix,flac,floppy,git,grep,headless,ie11,install,integrate,iso,msi,msiexec,nginx,non-Microsoft Binaries,office2010,office2013,office2016,offline,out,perl,reinstall,remove,sed,slipstream,snmpwalk,start,trial,txt,unattended,upgrade,usb,vbs,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86,xml,yum</b:widget-setting>
-                <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
+                <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,ADFS,AWS,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,BlogSpot Monitoring,Blogger JSON,Blogger SEO,CCleaner,CS50,CSS,Canon,CentOS 4,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,DAEMON Tools,DISM,DOSBox,Debian,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,FreeMeter,FreeRip,GRUB,Gandalf,Gigabyte,Google,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,Guidelines,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,ISP,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,MKVToolNix,MPlayer,MS Project,MS Visio,Mastering BlogSpot,Mastering Web,MicroSD,Microsoft Tools,MikroTik,Mozilla Thunderbird,Must Know,MySQL,NetSetMan,Network,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,Office2002,Opera,Outlook 2010,Outlook 2016,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhantomJS,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi 3 Workstation,Raspberry Pi Camera,Raspberry Pi Cooling,Raspberry Pi Internet,Raspberry Pi Management,Raspberry Pi Offline,Raspberry Pi SD Card,Raspberry Pi Server,Raspberry Pi VNC,Raspberry Pi WiFi,Raspberry Pi Zabbix,Recuva,RegEx,Registry,Remote Command,Remote Desktop,RetroPie,SCCM,SELinux,SNMP,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,SharePoint,Silverlight,Skype,Slackware,Sony,Spacewalk,Spacewalk 2.8 CentOS 7.5,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,Virtual Machine Manager,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix,Zabbix API,Zabbix Debug,Zabbix LLD,Zabbix MySQL,Zabbix PDF Report,Zabbix PowerShell,Zabbix SNMP,Zabbix Security,Zabbix Web,adobereader11,advanced,awk,base64,bash,boot,certbot,clean,convert,cron,deploy,detect,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,install,integrate,iso,msi,msiexec,nginx,non-Microsoft Binaries,office2010,office2013,office2016,offline,out,perl,reinstall,remove,sed,slipstream,snmpwalk,start,trial,txt,unattended,upgrade,usb,vbs,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86,xml,yum</b:widget-setting>
+                <b:widget-setting name='showType'>ALL</b:widget-setting>
                 <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
               </b:widget-settings>
               <b:includable id='main'>
@@ -3817,30 +3959,55 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
     <b:if cond='data:display == &quot;list&quot;'>
       <ul>
         <b:loop values='data:labels' var='label'>
+
+
           <li>
             <b:if cond='data:blog.url == data:label.url'>
               <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
             <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+
+
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
+
+
             </b:if>
             <b:if cond='data:showFreqNumbers'>
               <span dir='ltr'>(<data:label.count/>)</span>
             </b:if>
           </li>
+
+
         </b:loop>
       </ul>
     <b:else/>
       <b:loop values='data:labels' var='label'>
+
+<b:if cond='data:label.name == &quot;i&quot;'>
+<b:elseif cond='data:label.name == &quot;mp3&quot;'/>
+<b:elseif cond='data:label.name == &quot;mp4&quot;'/>
+<b:elseif cond='data:label.name == &quot;dataURI&quot;'/>
+<b:elseif cond='data:label.name == &quot;cmd&quot;'/>
+<b:elseif cond='data:label.name == &quot;xml&quot;'/>
+<b:elseif cond='data:label.name == &quot;sh&quot;'/>
+<b:elseif cond='data:label.name == &quot;py&quot;'/>
+<b:elseif cond='data:label.name == &quot;out&quot;'/>
+
+<b:else/>
+
+
         <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
           <b:if cond='data:blog.url == data:label.url'>
             <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
           <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
+
           </b:if>
           <b:if cond='data:showFreqNumbers'>
             <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
           </b:if>
         </span>
+</b:if>
       </b:loop>
     </b:if>
     <b:include name='quickedit'/>
