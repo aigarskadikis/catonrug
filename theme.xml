@@ -177,10 +177,9 @@ div.widget h2{margin-left:10px}
 div.breadcrumbs{padding:0 0 1em;display:block;font-size:150%}
 .post-body ul{list-style-type:circle}
 .post-labels{font-size:2em}
-.blog-posts{margin-top:2em}
+.blog-posts{margin-top:1em}
 .post-footer{margin:0;padding:0}
 .b{border:1px solid #1881d7}
-.blog-posts{padding-bottom:64px}
 textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em}
 .entry-content div.c,.entry-content div.center{text-align:center;margin-bottom:1em}
 .entry-content h2{font:normal 1em &#39;Lucida Console&#39;,Monaco,monospace}
@@ -230,7 +229,8 @@ html *{max-height:1000000px}
 .main-inner .column-center-inner .section{margin:0}
 .content-inner{padding:0}
 body{padding:0}
-div.widget,#BlogSearch1{margin:1.3em 0 0}
+#BlogSearch1{margin:1.3em 0 0 0}
+    div.widget{}
 @media only screen and (max-width:800px) {
 body{min-width:98%;font-size:1.5em}
 .content-outer,.content-fauxcolumn-outer,.region-inner{min-width:98%;max-width:98%}
@@ -462,7 +462,7 @@ div.widget,#BlogSearch1{margin-top:1.3em}
 .column-left-outer{padding-top:16px}
 .fauxcolumn-left-outer{background-color:#f9f9f9}
 div.breadcrumbs{padding-top:16px;display:none}
-.blog-posts{margin-top:2em;padding-bottom:64px}
+.blog-posts{margin-top:1em}
   .post-outer{margin-bottom:1em;}
 </style>
 
@@ -1397,7 +1397,7 @@ span.snipeto{color:#aaa}
 div.cookie-choices-info{bottom:0;top:auto!important}
 .post-body ul{list-style-type:circle}
 .post-labels{font-size:2em}
-.blog-posts{margin-top:2em}
+.blog-posts{margin-top:1em}
 .post-footer{margin:0;padding:0}
 a.firstletter{display:inline-block}
 a.firstletter:first-letter{text-transform:capitalize}
@@ -1407,7 +1407,6 @@ a.firstletter:first-letter{text-transform:capitalize}
 .b{border:1px solid #1881d7}
 .post-body table{border-collapse:collapse;width:100%;border:1px solid #000}
 .post-body th,.post-body td{border:1px solid #000;padding:4px;text-align:left}
-.blog-posts{padding-bottom:64px}
 div.list-label-widget-content ul li span{color:#999}
 ol{margin:0;padding:0}
 textarea{background:#f9f9f9;border:1px dashed #28b;padding:.7em 1em;margin:.5em .5em 0 0;width:97%;min-height:1em;font-size:1.35em}
@@ -2254,7 +2253,7 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
                 <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                                  and data:post.allowComments' data='post' name='comment_count_picker'/>
               </span>
             </div>
-
+<!--
             <div class='post-footer-line post-footer-line-2'>
               <b:if cond='data:top.showMobileShare'>
                 <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
@@ -2265,7 +2264,7 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
                 <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
               </b:if>
             </div>
-
+-->
           </div>
 
 
@@ -2784,197 +2783,9 @@ function encode64(t){t=escape(t);for(var e,n,a,r,o,i="",s="",c="",d=0;a=(e=t.cha
 
       </div>
 
-      <div class='post-footer-line post-footer-line-2'>
-
-
-<!-- labels -->
 
 
 
-
-      <span class='post-labels'>
-<b:if cond='data:top.showPostLabels and data:post.labels'>
-<data:postLabelsLabel/>
-<b:loop values='data:post.labels' var='label'>
-<b:if cond='data:label.name == &quot;win7&quot;'>
-<a expr:href='&quot;/search/label/Windows%207?max-results=50&quot;' rel='tag'>Windows 7</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=50&quot;' rel='tag'>Server 2008 R2</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win81&quot;'>
-<a expr:href='&quot;/search/label/Windows%208.1?max-results=50&quot;' rel='tag'>Windows 8.1</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win10&quot;'>
-<a expr:href='&quot;/search/label/Windows%2010?max-results=50&quot;' rel='tag'>Windows 10</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;winxp&quot;'>
-<a expr:href='&quot;/search/label/Windows%20XP?max-results=50&quot;' rel='tag'>Windows XP</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;office2010&quot;'>
-<a expr:href='&quot;/search/label/Office%202010?max-results=50&quot;' rel='tag'>Office 2010</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;office2013&quot;'>
-<a expr:href='&quot;/search/label/Office%202013?max-results=50&quot;' rel='tag'>Office 2013</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;office2016&quot;'>
-<a expr:href='&quot;/search/label/Office%202016?max-results=50&quot;' rel='tag'>Office 2016</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=50&quot;' rel='tag'>Adobe Reader 11</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<a expr:href='&quot;/search/label/DISM?max-results=50&quot;' rel='tag'>DISM</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<a expr:href='&quot;/search/label/SCCM?max-results=50&quot;' rel='tag'>SCCM</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-python&quot;'>
-<a expr:href='&quot;/search/label/Python?max-results=50&quot;' rel='tag'>Python</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<a expr:href='&quot;/search/label/Zabbix?max-results=50&quot;' rel='tag'>Zabbix</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=50&quot;' rel='tag'>Raspberry Pi</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<a expr:href='&quot;/search/label/WordPress?max-results=50&quot;' rel='tag'>WordPress</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;ie11&quot;'>
-<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=50&quot;' rel='tag'>Internet Explorer 11</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;wsus&quot;'>
-<a expr:href='&quot;/search/label/Windows%20Updates?max-results=50&quot;' rel='tag'>Windows Updates</a>
-<b:else/>
-
-
-<b:if cond='data:label.name != &quot;advanced&quot;'>
-<b:if cond='data:label.name != &quot;base64&quot;'>
-<b:if cond='data:label.name != &quot;boot&quot;'>
-<b:if cond='data:label.name != &quot;clean&quot;'>
-<b:if cond='data:label.name != &quot;cmd&quot;'>
-<b:if cond='data:label.name != &quot;compress&quot;'>
-<b:if cond='data:label.name != &quot;convert&quot;'>
-<b:if cond='data:label.name != &quot;dataURI&quot;'>
-<b:if cond='data:label.name != &quot;deploy&quot;'>
-<b:if cond='data:label.name != &quot;detect&quot;'>
-<b:if cond='data:label.name != &quot;dl&quot;'>
-<b:if cond='data:label.name != &quot;download&quot;'>
-<b:if cond='data:label.name != &quot;driver&quot;'>
-<b:if cond='data:label.name != &quot;enterprise&quot;'>
-<b:if cond='data:label.name != &quot;headless&quot;'>
-<b:if cond='data:label.name != &quot;i&quot;'>
-<b:if cond='data:label.name != &quot;install&quot;'>
-<b:if cond='data:label.name != &quot;integrate&quot;'>
-<b:if cond='data:label.name != &quot;iso&quot;'>
-<b:if cond='data:label.name != &quot;linux&quot;'>
-<b:if cond='data:label.name != &quot;MIB&quot;'>
-<b:if cond='data:label.name != &quot;mp3&quot;'>
-<b:if cond='data:label.name != &quot;mp4&quot;'>
-<b:if cond='data:label.name != &quot;msi&quot;'>
-<b:if cond='data:label.name != &quot;msiexec&quot;'>
-<b:if cond='data:label.name != &quot;offline&quot;'>
-<b:if cond='data:label.name != &quot;out&quot;'>
-<b:if cond='data:label.name != &quot;Presentation&quot;'>
-<b:if cond='data:label.name != &quot;reinstall&quot;'>
-<b:if cond='data:label.name != &quot;remove&quot;'>
-<b:if cond='data:label.name != &quot;serious&quot;'>
-<b:if cond='data:label.name != &quot;sh&quot;'>
-<b:if cond='data:label.name != &quot;slipstream&quot;'>
-<b:if cond='data:label.name != &quot;start&quot;'>
-<b:if cond='data:label.name != &quot;trial&quot;'>
-<b:if cond='data:label.name != &quot;unattended&quot;'>
-<b:if cond='data:label.name != &quot;txt&quot;'>
-<b:if cond='data:label.name != &quot;upgrade&quot;'>
-<b:if cond='data:label.name != &quot;usb&quot;'>
-<b:if cond='data:label.name != &quot;vbs&quot;'>
-<b:if cond='data:label.name != &quot;vhd&quot;'>
-<b:if cond='data:label.name != &quot;video&quot;'>
-<b:if cond='data:label.name != &quot;x64&quot;'>
-<b:if cond='data:label.name != &quot;x86&quot;'>
-<b:if cond='data:label.name != &quot;xml&quot;'>
-
-
-<a expr:href='data:label.url + &quot;?max-results=50&quot;' rel='tag'><data:label.name/></a>
-<!--<b:if cond='not data:label.isLast'>,</b:if>-->
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:loop>
-</b:if>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
       <div class='post-footer-line post-footer-line-3'>
       <span class='post-location'>
