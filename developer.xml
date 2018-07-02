@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:js='false' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 <title>
    <data:blog.pageTitle/>
 </title>
 <b:skin><![CDATA[]]></b:skin>
+
+<style text='text/css'>
+#cookieChoiceInfo {bottom:0;top:auto !important;display:none}
+</style>
+
 </head>
 <body>
 
@@ -15,7 +20,6 @@
       <b:widget-setting name='showDateHeader'>true</b:widget-setting>
       <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
-      <b:widget-setting name='authorLabel'>Posted by</b:widget-setting>
       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
       <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
       <b:widget-setting name='showAuthor'>false</b:widget-setting>
@@ -25,7 +29,8 @@
       <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
       <b:widget-setting name='style.layout'>1x1</b:widget-setting>
       <b:widget-setting name='showLabels'>true</b:widget-setting>
-      <b:widget-setting name='showLocation'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>false</b:widget-setting>
+      <b:widget-setting name='postLabelsLabel'>Check out more from</b:widget-setting>
       <b:widget-setting name='showTimestamp'>true</b:widget-setting>
       <b:widget-setting name='postsPerAd'>1</b:widget-setting>
       <b:widget-setting name='showBacklinks'>false</b:widget-setting>
