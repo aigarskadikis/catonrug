@@ -1598,6 +1598,131 @@ body{background-color:#f5f5f5;}
         <div class='column-center-outer'>
         <div class='column-center-inner'>
           <b:section class='main' id='main' name='Main' showaddelement='no'>
+            <b:widget id='BlogSearch1' locked='false' title='Find' type='BlogSearch' version='1'>
+              <b:includable id='main'>
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+
+    <!-- only display title if it's non-empty -->
+    <b:if cond='data:title != &quot;&quot;'>
+      <h2 class='title'/>
+    </b:if>
+
+    <div class='widget-content'>
+      <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
+        <form class='gsc-search-box' expr:action='data:blog.searchUrl' itemprop='potentialAction' itemscope='itemscope' itemtype='http://schema.org/SearchAction'>
+	      <meta expr:content='data:blog.searchUrl + &quot;?={q}&quot;' itemprop='target'/>
+          <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+          <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
+            <tbody>
+              <tr>
+                <td class='gsc-input'>
+                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' itemprop='query-input' name='q' placeholder='' size='10' title='search' type='search'/>
+                </td>
+                <td class='gsc-search-button'>
+                  <input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <b:include name='quickedit'/>
+
+</b:if>
+
+  </b:includable>
+            </b:widget>
+            <b:widget id='Label1' locked='false' title='' type='Label' version='1'>
+              <b:widget-settings>
+                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                <b:widget-setting name='display'>CLOUD</b:widget-setting>
+                <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,ADFS,AWS,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,BlogSpot Monitoring,Blogger JSON,Blogger SEO,CCleaner,CS50,CSS,Canon,CentOS 4,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,DAEMON Tools,DISM,DOSBox,Debian,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,FreeMeter,FreeRip,GRUB,Gandalf,Gigabyte,Google,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,Guidelines,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,ISP,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,MKVToolNix,MPlayer,MS Project,MS Visio,Mastering BlogSpot,Mastering Web,MicroSD,Microsoft Tools,MikroTik,Mozilla Thunderbird,Must Know,MySQL,NetSetMan,Network,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,Office2002,Opera,Outlook 2010,Outlook 2016,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhantomJS,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi 3 Workstation,Raspberry Pi Camera,Raspberry Pi Cooling,Raspberry Pi Internet,Raspberry Pi Management,Raspberry Pi Offline,Raspberry Pi SD Card,Raspberry Pi Server,Raspberry Pi VNC,Raspberry Pi WiFi,Raspberry Pi Zabbix,Recuva,RegEx,Registry,Remote Command,Remote Desktop,RetroPie,SCCM,SELinux,SNMP,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,SharePoint,Silverlight,Skype,Slackware,Sony,Spacewalk,Spacewalk 2.8 CentOS 7.5,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,Virtual Machine Manager,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix,Zabbix API,Zabbix Debug,Zabbix LLD,Zabbix MySQL,Zabbix PDF Report,Zabbix PowerShell,Zabbix SNMP,Zabbix Security,Zabbix Web,adobereader11,advanced,awk,base64,bash,boot,certbot,clean,convert,cron,deploy,detect,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,install,integrate,iso,msi,msiexec,nginx,non-Microsoft Binaries,office2010,office2013,office2016,offline,out,perl,reinstall,remove,sed,slipstream,snmpwalk,start,trial,txt,unattended,upgrade,usb,vbs,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86,xml,yum</b:widget-setting>
+                <b:widget-setting name='showType'>ALL</b:widget-setting>
+                <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+
+
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+
+
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
+
+
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+
+
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+
+<b:if cond='data:label.name == &quot;i&quot;'>
+<b:elseif cond='data:label.name == &quot;mp3&quot;'/>
+<b:elseif cond='data:label.name == &quot;mp4&quot;'/>
+<b:elseif cond='data:label.name == &quot;dataURI&quot;'/>
+<b:elseif cond='data:label.name == &quot;cmd&quot;'/>
+<b:elseif cond='data:label.name == &quot;xml&quot;'/>
+<b:elseif cond='data:label.name == &quot;sh&quot;'/>
+<b:elseif cond='data:label.name == &quot;py&quot;'/>
+<b:elseif cond='data:label.name == &quot;txt&quot;'/>
+<b:elseif cond='data:label.name == &quot;out&quot;'/>
+<b:elseif cond='data:label.name == &quot;MIB&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-dism&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-python&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-rpi&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-sccm&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-wp&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-zabbix&quot;'/>
+<b:elseif cond='data:label.name == &quot;fix-office2016&quot;'/>
+
+<b:else/>
+
+
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
+
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+</b:if>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+
+</b:if>
+
+
+</b:includable>
+            </b:widget>
             <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>false</b:widget-setting>
@@ -2171,55 +2296,6 @@ body{background-color:#f5f5f5;}
 
 
 
-
-          <div class='post-footer'>
-            <div class='post-footer-line post-footer-line-1'>
-              <span class='post-author'>
-                <b:if cond='data:top.showAuthor'>
-                  <b:if cond='data:post.authorProfileUrl'>
-                    
-                      <meta expr:content='data:post.authorProfileUrl'/>
-                      <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                        <span><data:post.author/></span>
-                      </a>
-                    
-                  <b:else/>
-                    
-                      <span><data:post.author/></span>
-                    
-                  </b:if>
-                </b:if>
-              </span>
-
-              <span class='post-timestamp'>
-                <b:if cond='data:top.showTimestamp'>
-                  <data:top.timestampLabel/>
-                  <b:if cond='data:post.url'>
-                    <meta expr:content='data:post.url.canonical'/>
-                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-                  </b:if>
-                </b:if>
-              </span>
-
-              <span class='post-comment-link'>
-                <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                                  and data:post.allowComments' data='post' name='comment_count_picker'/>
-              </span>
-            </div>
-<!--
-            <div class='post-footer-line post-footer-line-2'>
-              <b:if cond='data:top.showMobileShare'>
-                <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
-                  <a href='javascript:void(0);'><data:shareMsg/></a>
-                </div>
-              </b:if>
-              <b:if cond='data:top.showDummy'>
-                <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
-              </b:if>
-            </div>
--->
-          </div>
-
-
         </div>
 
         <b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
@@ -2662,105 +2738,6 @@ body{background-color:#f5f5f5;}
     </b:if>
 
 
-    <div class='post-footer'>
-    <div class='post-footer-line post-footer-line-1'>
-      <span class='post-author'>
-        <b:if cond='data:top.showAuthor'>
-          <data:top.authorLabel/>
-            <b:if cond='data:post.authorProfileUrl'>
-                <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
-                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                  <span><data:post.author/></span>
-                </a>
-            <b:else/>
-                <span><data:post.author/></span>
-            </b:if>
-        </b:if>
-      </span>
-
-
-
-      <span class='post-timestamp'>
-        <b:if cond='data:top.showTimestamp'>
-          <data:top.timestampLabel/>
-          <b:if cond='data:post.url'>
-            <meta expr:content='data:post.url.canonical' itemprop='url'/>
-            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-          </b:if>
-        </b:if>
-      </span>
-
-      <span class='reaction-buttons'>
-        <b:if cond='data:top.showReactions'>
-          <table border='0' cellpadding='0' cellspacing='0' width='100%'><tr>
-            <td class='reactions-label-cell' nowrap='nowrap' valign='top' width='1%'>
-              <span class='reactions-label'>
-              <data:top.reactionsLabel/></span>&#160;</td>
-            <td><iframe allowtransparency='true' class='reactions-iframe' expr:src='data:post.reactionsUrl' frameborder='0' name='reactions' scrolling='no'/></td>
-           </tr></table>
-        </b:if>
-      </span>
-
-      <span class='post-comment-link'>
-        <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                          and data:post.allowComments' data='post' name='comment_count_picker'/>
-      </span>
-
-       <!-- backlinks -->
-       <span class='post-backlinks post-comment-link'>
-         <b:if cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                      and data:post.showBacklinks'>
-           <a class='comment-link' expr:href='data:post.url + &quot;#links&quot;'><data:top.backlinkLabel/></a>
-         </b:if>
-       </span>
-
-      <span class='post-icons'>
-        <!-- email post links -->
-        <b:if cond='data:post.emailPostUrl'>
-          <span class='item-action'>
-          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-            <img alt='' class='icon-action' height='13' src='https://resources.blogblog.com/img/icon18_email.gif' width='18'/>
-          </a>
-          </span>
-        </b:if>
-
-        <!-- quickedit pencil -->
-        <b:include data='post' name='postQuickEdit'/>
-      </span>
-
-      <!-- share buttons -->
-      <div class='post-share-buttons goog-inline-block'>
-        <b:include cond='data:post.sharePostUrl' data='post' name='shareButtons'/>
-      </div>
-
-      </div>
-
-
-
-
-
-      <div class='post-footer-line post-footer-line-3'>
-      <span class='post-location'>
-        <b:if cond='data:top.showLocation and data:post.location'>
-          <data:postLocationLabel/>
-          <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
-        </b:if>
-      </span>
-      </div>
-      <b:if cond='data:post.authorAboutMe'>
-        <div>
-          <b:if cond='data:post.authorPhoto.url'>
-            <img expr:src='data:post.authorPhoto.url' width='50px'/>
-          </b:if>
-          <div>
-            <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-              <span itemprop='author'><data:post.author/></span>
-            </a>
-          </div>
-          <span itemprop='description'><data:post.authorAboutMe/></span>
-        </div>
-      </b:if>
-    </div>
-
-
 
 </b:if>
 <!-- end of extract post body on item page -->
@@ -3100,277 +3077,6 @@ body{background-color:#f5f5f5;}
       </div>
     </b:if>
 
-    <div class='post-footer'>
-    <div class='post-footer-line post-footer-line-1'>
-      <span class='post-author'>
-        <b:if cond='data:top.showAuthor'>
-          <data:top.authorLabel/>
-            <b:if cond='data:post.authorProfileUrl'>
-                <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
-                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                  <span><data:post.author/></span>
-                </a>
-            <b:else/>
-                <span><data:post.author/></span>
-            </b:if>
-        </b:if>
-      </span>
-
-      <span class='post-timestamp'>
-        <b:if cond='data:top.showTimestamp'>
-          <data:top.timestampLabel/>
-          <b:if cond='data:post.url'>
-            <meta expr:content='data:post.url.canonical' itemprop='url'/>
-            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-          </b:if>
-        </b:if>
-      </span>
-
-      <span class='reaction-buttons'>
-        <b:if cond='data:top.showReactions'>
-          <table border='0' cellpadding='0' cellspacing='0' width='100%'><tr>
-            <td class='reactions-label-cell' nowrap='nowrap' valign='top' width='1%'>
-              <span class='reactions-label'>
-              <data:top.reactionsLabel/></span>&#160;</td>
-            <td><iframe allowtransparency='true' class='reactions-iframe' expr:src='data:post.reactionsUrl' frameborder='0' name='reactions' scrolling='no'/></td>
-           </tr></table>
-        </b:if>
-      </span>
-
-      <span class='post-comment-link'>
-        <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                          and data:post.allowComments' data='post' name='comment_count_picker'/>
-      </span>
-
-       <!-- backlinks -->
-       <span class='post-backlinks post-comment-link'>
-         <b:if cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                      and data:post.showBacklinks'>
-           <a class='comment-link' expr:href='data:post.url + &quot;#links&quot;'><data:top.backlinkLabel/></a>
-         </b:if>
-       </span>
-
-      <span class='post-icons'>
-        <!-- email post links -->
-        <b:if cond='data:post.emailPostUrl'>
-          <span class='item-action'>
-          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-            <img alt='' class='icon-action' height='13' src='https://resources.blogblog.com/img/icon18_email.gif' width='18'/>
-          </a>
-          </span>
-        </b:if>
-
-        <!-- quickedit pencil -->
-        <b:include data='post' name='postQuickEdit'/>
-      </span>
-
-      <!-- share buttons -->
-      <div class='post-share-buttons goog-inline-block'>
-        <b:include cond='data:post.sharePostUrl' data='post' name='shareButtons'/>
-      </div>
-
-      </div>
-
-      <div class='post-footer-line post-footer-line-2'>
-
-
-<!-- labels -->
-
-
-
-
-      <span class='post-labels'>
-<b:if cond='data:top.showPostLabels and data:post.labels'>
-<data:postLabelsLabel/>
-<b:loop values='data:post.labels' var='label'>
-<b:if cond='data:label.name == &quot;win7&quot;'>
-<a expr:href='&quot;/search/label/Windows%207?max-results=50&quot;' rel='tag'>Windows 7</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win2k8r2&quot;'>
-<a expr:href='&quot;/search/label/Server%202008%20R2?max-results=50&quot;' rel='tag'>Server 2008 R2</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win81&quot;'>
-<a expr:href='&quot;/search/label/Windows%208.1?max-results=50&quot;' rel='tag'>Windows 8.1</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;win10&quot;'>
-<a expr:href='&quot;/search/label/Windows%2010?max-results=50&quot;' rel='tag'>Windows 10</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;winxp&quot;'>
-<a expr:href='&quot;/search/label/Windows%20XP?max-results=50&quot;' rel='tag'>Windows XP</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;office2010&quot;'>
-<a expr:href='&quot;/search/label/Office%202010?max-results=50&quot;' rel='tag'>Office 2010</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;office2013&quot;'>
-<a expr:href='&quot;/search/label/Office%202013?max-results=50&quot;' rel='tag'>Office 2013</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-office2016&quot;'>
-<a expr:href='&quot;/search/label/Office%202016?max-results=50&quot;' rel='tag'>Office 2016</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;adobereader11&quot;'>
-<a expr:href='&quot;/search/label/Adobe%20Reader%2011?max-results=50&quot;' rel='tag'>Adobe Reader 11</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-dism&quot;'>
-<a expr:href='&quot;/search/label/DISM?max-results=50&quot;' rel='tag'>DISM</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-sccm&quot;'>
-<a expr:href='&quot;/search/label/SCCM?max-results=50&quot;' rel='tag'>SCCM</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-python&quot;'>
-<a expr:href='&quot;/search/label/Python?max-results=50&quot;' rel='tag'>Python</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-zabbix&quot;'>
-<a expr:href='&quot;/search/label/Zabbix?max-results=50&quot;' rel='tag'>Zabbix</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-rpi&quot;'>
-<a expr:href='&quot;/search/label/Raspberry%20Pi?max-results=50&quot;' rel='tag'>Raspberry Pi</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;fix-wp&quot;'>
-<a expr:href='&quot;/search/label/WordPress?max-results=50&quot;' rel='tag'>WordPress</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;ie11&quot;'>
-<a expr:href='&quot;/search/label/Internet%20Explorer%2011?max-results=50&quot;' rel='tag'>Internet Explorer 11</a>
-<b:else/>
-<b:if cond='data:label.name == &quot;wsus&quot;'>
-<a expr:href='&quot;/search/label/Windows%20Updates?max-results=50&quot;' rel='tag'>Windows Updates</a>
-<b:else/>
-
-
-<b:if cond='data:label.name != &quot;detect&quot;'>
-<b:if cond='data:label.name != &quot;video&quot;'>
-<b:if cond='data:label.name != &quot;clean&quot;'>
-<b:if cond='data:label.name != &quot;msi&quot;'>
-<b:if cond='data:label.name != &quot;msiexec&quot;'>
-<b:if cond='data:label.name != &quot;compress&quot;'>
-<b:if cond='data:label.name != &quot;download&quot;'>
-<b:if cond='data:label.name != &quot;dl&quot;'>
-<b:if cond='data:label.name != &quot;iso&quot;'>
-<b:if cond='data:label.name != &quot;x86&quot;'>
-<b:if cond='data:label.name != &quot;x64&quot;'>
-<b:if cond='data:label.name != &quot;vhd&quot;'>
-<b:if cond='data:label.name != &quot;convert&quot;'>
-<b:if cond='data:label.name != &quot;headless&quot;'>
-<b:if cond='data:label.name != &quot;trial&quot;'>
-<b:if cond='data:label.name != &quot;integrate&quot;'>
-<b:if cond='data:label.name != &quot;unattended&quot;'>
-<b:if cond='data:label.name != &quot;offline&quot;'>
-<b:if cond='data:label.name != &quot;upgrade&quot;'>
-<b:if cond='data:label.name != &quot;install&quot;'>
-<b:if cond='data:label.name != &quot;remove&quot;'>
-<b:if cond='data:label.name != &quot;cmd&quot;'>
-<b:if cond='data:label.name != &quot;out&quot;'>
-<b:if cond='data:label.name != &quot;sh&quot;'>
-<b:if cond='data:label.name != &quot;base64&quot;'>
-<b:if cond='data:label.name != &quot;xml&quot;'>
-<b:if cond='data:label.name != &quot;i&quot;'>
-<b:if cond='data:label.name != &quot;reinstall&quot;'>
-<b:if cond='data:label.name != &quot;enterprise&quot;'>
-<b:if cond='data:label.name != &quot;serious&quot;'>
-<b:if cond='data:label.name != &quot;advanced&quot;'>
-<b:if cond='data:label.name != &quot;deploy&quot;'>
-<b:if cond='data:label.name != &quot;boot&quot;'>
-<b:if cond='data:label.name != &quot;linux&quot;'>
-<b:if cond='data:label.name != &quot;usb&quot;'>
-<b:if cond='data:label.name != &quot;slipstream&quot;'>
-<b:if cond='data:label.name != &quot;driver&quot;'>
-<b:if cond='data:label.name != &quot;start&quot;'>
-<b:if cond='data:label.name != &quot;Presentation&quot;'>
-
-
-<a expr:href='data:label.url + &quot;?max-results=50&quot;' rel='tag'><data:label.name/></a>
-<!--<b:if cond='not data:label.isLast'>,</b:if>-->
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-</b:loop>
-</b:if>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-      <div class='post-footer-line post-footer-line-3'>
-      <span class='post-location'>
-        <b:if cond='data:top.showLocation and data:post.location'>
-          <data:postLocationLabel/>
-          <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
-        </b:if>
-      </span>
-      </div>
-      <b:if cond='data:post.authorAboutMe'>
-        <div>
-          <b:if cond='data:post.authorPhoto.url'>
-            <img expr:src='data:post.authorPhoto.url' width='50px'/>
-          </b:if>
-          <div>
-            <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-              <span itemprop='author'><data:post.author/></span>
-            </a>
-          </div>
-          <span itemprop='description'><data:post.authorAboutMe/></span>
-        </div>
-      </b:if>
-    </div>
 
 </b:if>
 <!-- end of extract post body on item page -->
@@ -3663,131 +3369,6 @@ body{background-color:#f5f5f5;}
   </div>
 </b:includable>
             </b:widget>
-            <b:widget id='BlogSearch1' locked='false' title='Find' type='BlogSearch' version='1'>
-              <b:includable id='main'>
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
-
-
-    <!-- only display title if it's non-empty -->
-    <b:if cond='data:title != &quot;&quot;'>
-      <h2 class='title'/>
-    </b:if>
-
-    <div class='widget-content'>
-      <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
-        <form class='gsc-search-box' expr:action='data:blog.searchUrl' itemprop='potentialAction' itemscope='itemscope' itemtype='http://schema.org/SearchAction'>
-	      <meta expr:content='data:blog.searchUrl + &quot;?={q}&quot;' itemprop='target'/>
-          <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
-          <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
-            <tbody>
-              <tr>
-                <td class='gsc-input'>
-                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' itemprop='query-input' name='q' placeholder='' size='10' title='search' type='search'/>
-                </td>
-                <td class='gsc-search-button'>
-                  <input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
-      </div>
-    </div>
-
-    <b:include name='quickedit'/>
-
-</b:if>
-
-  </b:includable>
-            </b:widget>
-            <b:widget id='Label1' locked='false' title='' type='Label' version='1'>
-              <b:widget-settings>
-                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                <b:widget-setting name='display'>CLOUD</b:widget-setting>
-                <b:widget-setting name='selectedLabelsList'>.NET Framework,4K Video Downloader,7-Zip,ADFS,AWS,Acrobat Reader DC,Active Directory,ActivePresenter,Adobe Reader 11,Adobe Reader 9,Alexa,Apple,Audacity,AutoIt,BSOD,Batch File,BlogSpot Monitoring,Blogger JSON,Blogger SEO,CCleaner,CS50,CSS,Canon,CentOS 4,CentOS 6,CentOS 7,Chrome,Cisco AnyConnect,Cisco VPN,Citrix,Classic Shell,Command Line,DAEMON Tools,DISM,DOSBox,Debian,Deluge,DiskPart,Ditto,DokuWiki,Dropbox,Everything,Excel 2010,Excel 2016,Exchange,Expierence,File Type,Firefox,Flash Player,FreeMeter,FreeRip,GRUB,Gandalf,Gigabyte,Google,Google Apps,Google Drive,Gpg4win,Greenshot,Group Policy,Guidelines,HEAT,HP,HTTrack,HandBrake,HashMyFiles,Hiren,How not to do,HxD Hex Editor,ISP,ImgBurn,Interests,Internet Explorer 11,Java,JavaScript,Just Saying,K-Lite Codec Pack,KMSPico,KNOPPIX,KeePass,Kickstart,Kingston,LDAP,Launchy,Learn with Pics,MKVToolNix,MPlayer,MS Project,MS Visio,Mastering BlogSpot,Mastering Web,MicroSD,Microsoft Tools,MikroTik,Mozilla Thunderbird,Must Know,MySQL,NetSetMan,Network,NotepadPlusPlus,Office 2003,Office 2007,Office 2010,Office 2013,Office 2016,Office XP,Office2002,Opera,Outlook 2010,Outlook 2016,PDFCreator,PDFSaM,PSP,PXE boot,Paint.NET,PartedMagic,Partition Wizard,PhantomJS,PhotoShop,Picasa,PlayStation,PlayStation 2,PostgreSQL,PowerShell,Printer,Process Monitor,ProjectLibre,PuTTY,Puppy Linux,Python,RAM Disk,RHEL,Raspberry Pi 3 Workstation,Raspberry Pi Camera,Raspberry Pi Cooling,Raspberry Pi Internet,Raspberry Pi Management,Raspberry Pi Offline,Raspberry Pi SD Card,Raspberry Pi Server,Raspberry Pi VNC,Raspberry Pi WiFi,Raspberry Pi Zabbix,Recuva,RegEx,Registry,Remote Command,Remote Desktop,RetroPie,SCCM,SELinux,SNMP,Safari,Server 2003,Server 2008 R2,Server 2012 R2,Service,SharePoint,Silverlight,Skype,Slackware,Sony,Spacewalk,Spacewalk 2.8 CentOS 7.5,Squid,Subtitle Edit,Success,SumatraPDF,Super Nintendo,TeamViewer,Template,TightVNC,Tiny Core,Total Commander,Total Uninstall,TrueCrypt,Tweak,Universal USB Installer,VHD boot,VLC Media Player,VMware,VideoPad,Viewer,Virtual Machine Manager,VirtualBox,Visual Basic,Web Scraping,Win32DiskImager,WinDjView,WinPcap,WinSCP,Winamp,Windows 10,Windows 7,Windows 8.1,Windows 95,Windows Installer,Windows Updates,Windows XP,Wireshark,WordPress,YouTube,Zabbix,Zabbix API,Zabbix Debug,Zabbix LLD,Zabbix MySQL,Zabbix PDF Report,Zabbix PowerShell,Zabbix SNMP,Zabbix Security,Zabbix Web,adobereader11,advanced,awk,base64,bash,boot,certbot,clean,convert,cron,deploy,detect,download,driver,drivers,eParakstitajs,enterprise,flac,floppy,git,grep,headless,ie11,install,integrate,iso,msi,msiexec,nginx,non-Microsoft Binaries,office2010,office2013,office2016,offline,out,perl,reinstall,remove,sed,slipstream,snmpwalk,start,trial,txt,unattended,upgrade,usb,vbs,vhd,video,wget,win10,win2k3,win2k8r2,win7,win81,winxp,wsus,x86,xml,yum</b:widget-setting>
-                <b:widget-setting name='showType'>ALL</b:widget-setting>
-                <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
-
-
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-
-
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-
-
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
-
-
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-
-
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-
-<b:if cond='data:label.name == &quot;i&quot;'>
-<b:elseif cond='data:label.name == &quot;mp3&quot;'/>
-<b:elseif cond='data:label.name == &quot;mp4&quot;'/>
-<b:elseif cond='data:label.name == &quot;dataURI&quot;'/>
-<b:elseif cond='data:label.name == &quot;cmd&quot;'/>
-<b:elseif cond='data:label.name == &quot;xml&quot;'/>
-<b:elseif cond='data:label.name == &quot;sh&quot;'/>
-<b:elseif cond='data:label.name == &quot;py&quot;'/>
-<b:elseif cond='data:label.name == &quot;txt&quot;'/>
-<b:elseif cond='data:label.name == &quot;out&quot;'/>
-<b:elseif cond='data:label.name == &quot;MIB&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-dism&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-python&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-rpi&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-sccm&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-wp&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-zabbix&quot;'/>
-<b:elseif cond='data:label.name == &quot;fix-office2016&quot;'/>
-
-<b:else/>
-
-
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?max-results=50&quot;'><data:label.name/></a>
-
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-</b:if>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-
-</b:if>
-
-
-</b:includable>
-            </b:widget>
           </b:section>
         </div>
         </div>
@@ -3838,14 +3419,6 @@ body{background-color:#f5f5f5;}
     </div>
 
     <footer>
-    <div class='footer-outer'>
-    <div class='footer-cap-top cap-top'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    <div class='fauxborder-left footer-fauxborder-left'>
-    <div class='fauxborder-right footer-fauxborder-right'/>
-    <div class='region-inner footer-inner'>
       <macro:include id='footer-sections' name='sections'>
         <macro:param default='2' name='num' value='1'/>
         <macro:param default='footer' name='idPrefix'/>
@@ -3854,13 +3427,6 @@ body{background-color:#f5f5f5;}
       </macro:include>
       <!-- outside of the include in order to lock Attribution widget -->
       <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'/>
-    </div>
-    </div>
-    <div class='footer-cap-bottom cap-bottom'>
-      <div class='cap-left'/>
-      <div class='cap-right'/>
-    </div>
-    </div>
     </footer>
 
   <!-- content -->
@@ -3937,5 +3503,10 @@ var images=$(".post-body div img");$.each(images,function(){$(this).replaceWith(
     </macro:if>
   </macro:if>
 </macro:includable>
+
+
+
+
+
 
 <b:section-contents id='footer-1'/></html>
