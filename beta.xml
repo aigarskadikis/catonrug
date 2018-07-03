@@ -30,6 +30,8 @@
 <b:section id='blog'>
   <b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch' version='1'>
     <b:includable id='main'>
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
                                 <div class='widget-content'>
                                   <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
                                     <form class='gsc-search-box' expr:action='data:blog.searchUrl'>
@@ -50,6 +52,7 @@
                                   </div>
                                 </div>
                                 <b:include name='quickedit'/>
+</b:if>
                               </b:includable>
   </b:widget>
   <b:widget id='Label1' locked='false' title='' type='Label' version='1'>
