@@ -8,14 +8,16 @@
     <title>
       <data:view.title.escaped/>
     </title>
+
+
+  <link href='https://rawgit.com/catonrug/catonrug/master/1.css' rel='stylesheet' type='text/css'/>
+
 <b:skin><![CDATA[]]></b:skin>
 
     <b:include data='blog' name='all-head-content'/>
 
 
-<style text='text/css'>
-#cookieChoiceInfo {bottom:0;top:auto !important;display:none}
-</style>
+
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
       <script src='https://rawgit.com/catonrug/catonrug/master/another.js'/>
     </b:if>
@@ -31,7 +33,8 @@
       <b:widget-setting name='showDateHeader'>true</b:widget-setting>
       <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
       <b:widget-setting name='showShareButtons'>false</b:widget-setting>
-      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+      <b:widget-setting name='authorLabel'>By</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>false</b:widget-setting>
       <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
       <b:widget-setting name='showAuthor'>true</b:widget-setting>
       <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
@@ -818,11 +821,7 @@
     <div class='status-msg-body'>
       <data:navMessage/>
     </div>
-    <div class='status-msg-border'>
-      <div class='status-msg-bg'>
-        <div class='status-msg-hidden'><data:navMessage/></div>
-      </div>
-    </div>
+
   </div>
   <div style='clear: both;'/>
   </b:if>
