@@ -28,7 +28,7 @@
 <body>
 
 <b:section id='blog'>
-  <b:widget id='Label1' locked='false' title='' type='Label' version='1'>
+  <b:widget id='Label1' locked='false' title='Labels' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>CLOUD</b:widget-setting>
@@ -37,7 +37,6 @@
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
                                 <b:if cond='data:title != &quot;&quot;'>
                                   <h2>
                                     <data:title/>
@@ -91,7 +90,6 @@
                                   </b:if>
                                   <b:include name='quickedit'/>
                                 </div>
-</b:if>
                               </b:includable>
   </b:widget>
   <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='1'>
@@ -119,7 +117,6 @@
       <b:widget-setting name='showReactions'>false</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main' var='top'>
-<b:if cond='data:blog.url != data:blog.homepageUrl'>
   <b:if cond='!data:mobile'>
     <!-- posts -->
     <div class='blog-posts hfeed'>
@@ -172,7 +169,6 @@
   </b:if>
 
   <b:include cond='data:top.showPlusOne' name='googlePlusBootstrap'/>
-</b:if>
 </b:includable>
     <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
