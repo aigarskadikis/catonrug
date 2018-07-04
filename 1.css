@@ -9,4 +9,4 @@ div.blog-pager,div.blog-feeds,div.post-feeds,.post-author,.post-timestamp{displa
 div.c,div.center{text-align:center}
 div.widget,div.c,div.center,.entry-content ul,.entry-content ol{margin-bottom:1em}
 .b{border:1px solid #b8b8b8}
-pre.sha1,pre.md5{border:0;margin:0;padding:0}
+pre.sha1,pre.md5{border:0;margin:0;padding:0;background-color:white}
