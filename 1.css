@@ -3,7 +3,7 @@ html *{max-height:1000000px}
 body{font:normal normal 1.2em Arial,Tahoma,Helvetica,FreeSans,sans-serif;color:#444}
 .entry-content code{border:1px solid #ccc;background: #f5f5f5;padding:.1em .5em;border-radius:.25em}
 pre{color:#444;white-space:pre;overflow:auto;border:1px solid #ccc;background:#f5f5f5;border-radius:.25em}
-.entry-content pre code{border:0;background:#f9f9f9;padding:0;margin:0}
+.entry-content pre code{border:0;background:#f5f5f5;padding:0;margin:0}
 div.blog-pager,div.blog-feeds,div.post-feeds,.post-author,.post-timestamp{display:none}
 .blogger-comment-from-post{height:15em}
 div.c,div.center{text-align:center}
