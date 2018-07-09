@@ -712,11 +712,18 @@
 <b:else/>
 
 <h2 expr:itemprop='(data:blog.searchLabel ? &quot;&quot; : &quot;child&quot;)' expr:itemtype='(data:blog.searchLabel ? &quot;&quot; : &quot;http://data-vocabulary.org/Breadcrumb&quot;)' itemscope=''>
+
+<b:if cond='data:blog.searchLabel'>
+<data:label.name/>
+<b:else/>
 <a expr:href='data:label.url + &quot;?max-results=50&quot;' expr:itemprop='(data:blog.searchLabel ? &quot;&quot; : &quot;url&quot;)'>
 <span expr:itemprop='(data:blog.searchLabel ? &quot;&quot; : &quot;title&quot;)'>
 <data:label.name/>
 </span>
 </a>
+
+</b:if>
+
 </h2>
 
 <b:if cond='data:label.isLast != &quot;true&quot;'/>
@@ -883,49 +890,8 @@
 
 <b:loop values='data:post.labels' var='label'>
 
-<b:if cond='data:label.name == &quot;detect&quot;'>
-<b:elseif cond='data:label.name == &quot;video&quot;'/>
-<b:elseif cond='data:label.name == &quot;clean&quot;'/>
-<b:elseif cond='data:label.name == &quot;msi&quot;'/>
-<b:elseif cond='data:label.name == &quot;msiexec&quot;'/>
-<b:elseif cond='data:label.name == &quot;compress&quot;'/>
-<b:elseif cond='data:label.name == &quot;download&quot;'/>
-<b:elseif cond='data:label.name == &quot;dl&quot;'/>
-<b:elseif cond='data:label.name == &quot;iso&quot;'/>
-<b:elseif cond='data:label.name == &quot;x86&quot;'/>
-<b:elseif cond='data:label.name == &quot;video&quot;'/>
-<b:elseif cond='data:label.name == &quot;x64&quot;'/>
-<b:elseif cond='data:label.name == &quot;vhd&quot;'/>
-<b:elseif cond='data:label.name == &quot;convert&quot;'/>
-<b:elseif cond='data:label.name == &quot;headless&quot;'/>
-<b:elseif cond='data:label.name == &quot;trial&quot;'/>
-<b:elseif cond='data:label.name == &quot;integrate&quot;'/>
-<b:elseif cond='data:label.name == &quot;unattended&quot;'/>
-<b:elseif cond='data:label.name == &quot;offline&quot;'/>
-<b:elseif cond='data:label.name == &quot;upgrade&quot;'/>
-<b:elseif cond='data:label.name == &quot;install&quot;'/>
-<b:elseif cond='data:label.name == &quot;remove&quot;'/>
-<b:elseif cond='data:label.name == &quot;cmd&quot;'/>
-<b:elseif cond='data:label.name == &quot;sh&quot;'/>
-<b:elseif cond='data:label.name == &quot;out&quot;'/>
-<b:elseif cond='data:label.name == &quot;base64&quot;'/>
-<b:elseif cond='data:label.name == &quot;xml&quot;'/>
-<b:elseif cond='data:label.name == &quot;i&quot;'/>
-<b:elseif cond='data:label.name == &quot;reinstall&quot;'/>
-<b:elseif cond='data:label.name == &quot;enterprise&quot;'/>
-<b:elseif cond='data:label.name == &quot;serious&quot;'/>
-<b:elseif cond='data:label.name == &quot;advanced&quot;'/>
-<b:elseif cond='data:label.name == &quot;deploy&quot;'/>
-<b:elseif cond='data:label.name == &quot;boot&quot;'/>
-<b:elseif cond='data:label.name == &quot;linux&quot;'/>
-<b:elseif cond='data:label.name == &quot;usb&quot;'/>
-<b:elseif cond='data:label.name == &quot;slipstream&quot;'/>
-<b:elseif cond='data:label.name == &quot;driver&quot;'/>
-<b:elseif cond='data:label.name == &quot;start&quot;'/>
-<b:elseif cond='data:label.name == &quot;Presentation&quot;'/>
-<b:else/>
-<data:label.name/>
-</b:if>
+<b:include data='post' name='removeactions'/>
+
 
 
 </b:loop>
