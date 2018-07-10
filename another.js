@@ -54,7 +54,7 @@ function ac(t, e) {
 
 function out(t, e) {
     $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-		document.getElementById(t).appendChild("<textarea>" + decode64(t.entry.content.$t) + "</textarea>")
+		document.getElementById(t).appendChild(document.createTextNode("<textarea>" + decode64(t.entry.content.$t) + "</textarea>"))
     })
 }
 
