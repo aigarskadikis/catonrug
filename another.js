@@ -53,9 +53,16 @@ function out(t, e) {
     })
 }
 
+function outo(t, e) {
+    $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
+document.getElementById("&quot;" + t + "&quot;").innerHTML = "<textarea>" + decode64(t.entry.content.$t) + "</textarea>"
+    })
+}
+
 function mp3id(t, e) {
     $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
         $(e).append("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>")
+		
     })
 }
 
