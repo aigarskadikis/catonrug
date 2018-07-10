@@ -47,10 +47,11 @@ function ac(t, e) {
     })
 }
 
+document.getElementById('container').insertAdjacentHTML('beforeend', '<div id="idChild"> content html </div>');
 
 function out(t, e) {
     $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-		document.getElementById(t).innerHTML = "<textarea>" + decode64(t.entry.content.$t) + "</textarea>";
+		$(e).append("<textarea>" + decode64(t.entry.content.$t) + "</textarea>")
     })
 }
 
