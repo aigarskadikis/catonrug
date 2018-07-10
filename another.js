@@ -48,10 +48,8 @@ function ac(t, e) {
 }
 
 function out(t, e) {
-    isIE ? $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-        $(e).append("<textarea id='out' class='out expanding'>" + decode64(t.entry.content.$t) + "</textarea>")
-    }) : $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-        $(e).append("<textarea id='out' class='out expanding'>" + decode64(t.entry.content.$t) + "</textarea>")
+    $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
+        $(e).append("<textarea>" + decode64(t.entry.content.$t) + "</textarea>")
     })
 }
 
