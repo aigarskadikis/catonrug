@@ -50,7 +50,7 @@ function ac(t, e) {
 
 function out(t, e) {
     $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-		document.getElementById("&#34;" + t + "&#34;").innerHTML = "<textarea>" + decode64(t.entry.content.$t) + "</textarea>";
+		document.getElementById(t).innerHTML = "<textarea>" + decode64(t.entry.content.$t) + "</textarea>";
     })
 }
 
