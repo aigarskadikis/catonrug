@@ -47,9 +47,14 @@ function ac(t, e) {
     })
 }
 
+
+
+
+
+
 function out(t, e) {
     $.getJSON("/feeds/posts/default/" + t + "?alt=json", function(t) {
-        $(e).append("<textarea>" + decode64(t.entry.content.$t) + "</textarea>")
+		document.getElementById(t).appendChild("<textarea>" + decode64(t.entry.content.$t) + "</textarea>")
     })
 }
 
