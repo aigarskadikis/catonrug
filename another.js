@@ -1321,9 +1321,6 @@ if (typeof window.jQuery == "undefined") {
             // Set header so the called script knows that it's an XMLHttpRequest
             xml.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
-            // Make sure the browser sends the right content length
-            // if (xml.overrideMimeType) 
-            //    xml.setRequestHeader("Connection", "close");
 
             // Wait for a response to come back
             var onreadystatechange = function(istimeout) {
