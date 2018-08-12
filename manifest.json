@@ -1,0 +1,13 @@
+{
+  "name": "CatOnRug",
+  "short_name": "CatOnRug",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "solve, automate, speed up",
+  "icons": [{
+    "src": "https://catonrug.blogspot.com/favicon.ico",
+    "sizes": "16x16",
+    "type": "image/x-icon"
+  }]
+}
