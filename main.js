@@ -5,6 +5,7 @@ var $ = function(t) {
 	z = x+"<br /><textarea>",
     r = "/feeds/posts/default/",
 	l = "<source src='",
+	k = "' download='",
 	j = "?alt=json",
 	m = "</textarea>",
 	v = "<a href='",
@@ -54,7 +55,7 @@ function ac(t, e) {
     g(r + t + j, isIE ? function(t) {
         a(p + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     } : function(t) {
-        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
+        a(v+b + t.entry.content.$t + k + t.entry.title.$t + "'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     })
 }
 
@@ -65,7 +66,7 @@ function anchor(t, e) {
     g(r + t + j, isIE ? function(t) {
         a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + x, o)
     } : function(t) {
-        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + x, o)
+        a(v + t.entry.content.$t + k + t.entry.title.$t + "'>" + t.entry.title.$t + x, o)
     })
 }
 
