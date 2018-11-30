@@ -7,6 +7,7 @@ var $ = function(t) {
 	l = "<source src='",
 	k = "' download='",
 	j = "?alt=json",
+	h = "&quot;), &quot;",
 	m = "</textarea>",
 	v = "<a href='",
 	p = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
@@ -53,7 +54,7 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a(p + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
+        a(p + b + t.entry.content.$t + h + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     } : function(t) {
         a(v+b + t.entry.content.$t + k + t.entry.title.$t + "'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     })
@@ -64,7 +65,7 @@ function anchor(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + x, o)
+        a(p + t.entry.content.$t + h + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + x, o)
     } : function(t) {
         a(v + t.entry.content.$t + k + t.entry.title.$t + "'>" + t.entry.title.$t + x, o)
     })
