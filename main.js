@@ -1,7 +1,9 @@
 var $ = function(t) {
         return document.getElementById(t)
     },
-    r = "/feeds/posts/default/";
+    r = "/feeds/posts/default/",
+	j = "?alt=json",
+	m = "</textarea>";
 
 function d(t) {
     var e, n, r, o, a = "",
@@ -43,10 +45,10 @@ function ac(t, e) {
     if (!i(e)) return console.error("2"), !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", isIE ? function(t) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+    g(r + t + j, isIE ? function(t) {
+        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     } : function(t) {
-        a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+        a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     })
 }
 
@@ -54,7 +56,7 @@ function anchor(t, e) {
     if (!i(e)) return console.error("2"), !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", isIE ? function(t) {
+    g(r + t + j, isIE ? function(t) {
         a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
         a("<a href='" + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
@@ -65,7 +67,7 @@ function mp4id(t, e) {
     if (!i(e)) return console.error("2"), !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
+    g(r + t + j, function(t) {
         a("<source src='" + t.entry.content.$t + "' type='video/mp4'><a href='" + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
@@ -74,7 +76,7 @@ function mp3id(t, e) {
     if (!i(e)) return console.error("2"), !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
+    g(r + t + j, function(t) {
         a("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>", o)
     })
 }
@@ -83,8 +85,8 @@ function out(t, e) {
     if (!i(e)) return console.error("2"), !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
-        a("<textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+    g(r + t + j, function(t) {
+        a("<textarea>" + d(t.entry.content.$t) + m, o)
     })
 }
 var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
