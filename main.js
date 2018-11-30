@@ -4,7 +4,9 @@ var $ = function(t) {
     r = "/feeds/posts/default/",
 	j = "?alt=json",
 	m = "</textarea>",
-	p = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;";
+	p = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
+	b = "data:application/octet-stream;base64,",
+	v = "<a href='";
 
 function d(t) {
     var e, n, r, o, a = "",
@@ -47,9 +49,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a(p + "data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
+        a(p + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     } : function(t) {
-        a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
+        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     })
 }
 
@@ -60,7 +62,7 @@ function anchor(t, e) {
     g(r + t + j, isIE ? function(t) {
         a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
-        a("<a href='" + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
@@ -69,7 +71,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='video/mp4'><a href='" + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
