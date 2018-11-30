@@ -2,6 +2,7 @@ var $ = function(t) {
         return document.getElementById(t)
     },
 	x = "</a>",
+	z = x+"<br /><textarea>",
     r = "/feeds/posts/default/",
 	j = "?alt=json",
 	m = "</textarea>",
@@ -50,9 +51,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a(p + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
+        a(p + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     } : function(t) {
-        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
+        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
     })
 }
 
