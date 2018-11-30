@@ -4,6 +4,7 @@ var $ = function(t) {
 	x = "</a>",
 	z = x+"<br /><textarea>",
     r = "/feeds/posts/default/",
+	l = "<source src='",
 	j = "?alt=json",
 	m = "</textarea>",
 	v = "<a href='",
@@ -73,7 +74,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + x, o)
+        a(l + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + x, o)
     })
 }
 
@@ -82,7 +83,7 @@ function mp3id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>", o)
+        a(l + t.entry.content.$t + "' type='audio/mpeg'>", o)
     })
 }
 
