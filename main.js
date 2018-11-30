@@ -1,12 +1,13 @@
 var $ = function(t) {
         return document.getElementById(t)
     },
+	x = "</a>",
     r = "/feeds/posts/default/",
 	j = "?alt=json",
 	m = "</textarea>",
-	p = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
-	b = "data:application/octet-stream;base64,",
-	v = "<a href='";
+	v = "<a href='",
+	p = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
+	b = "data:application/octet-stream;base64,";
 
 function d(t) {
     var e, n, r, o, a = "",
@@ -60,9 +61,9 @@ function anchor(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
+        a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + x, o)
     } : function(t) {
-        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + x, o)
     })
 }
 
@@ -71,7 +72,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + x, o)
     })
 }
 
