@@ -3,7 +3,8 @@ var $ = function(t) {
     },
     r = "/feeds/posts/default/",
 	j = "?alt=json",
-	m = "</textarea>";
+	m = "</textarea>",
+	p = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;";
 
 function d(t) {
     var e, n, r, o, a = "",
@@ -46,7 +47,7 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
+        a(p + "data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     } : function(t) {
         a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + m, o)
     })
@@ -57,7 +58,7 @@ function anchor(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
+        a(p + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
         a("<a href='" + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
