@@ -4,7 +4,7 @@ var $ = function(t) {
     r = "/feeds/posts/default/",
 	b = "data:application/octet-stream;base64,",
 	v = "<a href='",
-	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
+	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(s(",
 	x = "' download='",
 	z = "?alt=json",
 	l = "<source src='",
@@ -20,7 +20,7 @@ function d(t) {
     return unescape(o)
 }
 
-function u(t) {
+function s(t) {
     for (var e = atob(t.split(",")[1]), n = t.split(",")[0].split(":")[1].split(";")[0], r = new ArrayBuffer(e.length), a = new Uint8Array(r), o = 0; o < e.length; o++) a[o] = e.charCodeAt(o);
     return new Blob([r], {
         type: n
