@@ -7,6 +7,7 @@ var $ = function(t) {
 	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
 	x = "' download='",
 	z = "?alt=json",
+	l = "<source src='",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
 	n = "</textarea>",
@@ -73,7 +74,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(l + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
@@ -82,7 +83,7 @@ function mp3id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>", o)
+        a(l + t.entry.content.$t + "' type='audio/mpeg'>", o)
     })
 }
 
