@@ -17,9 +17,7 @@ var $ = function(t) {
     isIE = !1;
 
 function d(t) {
-    var e, n, r, o, i = "",
-        a = "",
-        c = "",
+    var e, n, r, o, i, a, c = "",
         f = 0;
     for (/[^A-Za-z0-9\+\/\=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9\+\/\=]/g, ""); e = keyStr.indexOf(t.charAt(f++)) << 2 | (r = keyStr.indexOf(t.charAt(f++))) >> 4, n = (15 & r) << 4 | (o = keyStr.indexOf(t.charAt(f++))) >> 2, a = (3 & o) << 6 | (c = keyStr.indexOf(t.charAt(f++))), i += String.fromCharCode(e), 64 !== o && (i += String.fromCharCode(n)), 64 !== c && (i += String.fromCharCode(a)), e = n = a = "", r = o = c = "", f < t.length;);
     return unescape(i)
