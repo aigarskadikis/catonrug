@@ -1,4 +1,7 @@
-var $ = function (t) {
+
+
+
+var _ = function (t) {
     return document.getElementById(t)
   },
   x = '</a>',
@@ -16,6 +19,9 @@ var $ = function (t) {
   keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
   isIE = !1;
 
+  
+  
+  
 (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf('Edge') > -1) && (isIE = !0), typeof document.getElementsByClassName !== 'function' && (document.getElementsByClassName = function (t) {
   if (!t) return []
   for (var e = [], n = document.getElementsByTagName('*'), r = new RegExp('(^| )' + t + '( |$)'), o = 0; o < n.length; o++) r.test(n[o].className) && e.push(n[o])
@@ -59,7 +65,7 @@ function i (t) {
 function ac (t, e) {
   if (!i(e)) return console.error('2'), !1
   var n = e.replace('#', ''),
-    o = $(n)
+    o = _(n)
   g(r + t + j, isIE ? function (t) {
     a(p + b + t.entry.content.$t + h + t.entry.title.$t + f + t.entry.title.$t + z + d(t.entry.content.$t) + m, o)
   } : function (t) {
@@ -70,7 +76,7 @@ function ac (t, e) {
 function anchor (t, e) {
   if (!i(e)) return console.error('2'), !1
   var n = e.replace('#', ''),
-    o = $(n)
+    o = _(n)
   g(r + t + j, isIE ? function (t) {
     a(p + t.entry.content.$t + h + t.entry.title.$t + f + t.entry.title.$t + x, o)
   } : function (t) {
@@ -81,7 +87,7 @@ function anchor (t, e) {
 function mp4id (t, e) {
   if (!i(e)) return console.error('2'), !1
   var n = e.replace('#', ''),
-    o = $(n)
+    o = _(n)
   g(r + t + j, function (t) {
     a(l + t.entry.content.$t + "' type='video/mp4'>" + v + t.entry.content.$t + "'>" + t.entry.title.$t + x, o)
   })
@@ -90,7 +96,7 @@ function mp4id (t, e) {
 function mp3id (t, e) {
   if (!i(e)) return console.error('2'), !1
   var n = e.replace('#', ''),
-    o = $(n)
+    o = _(n)
   g(r + t + j, function (t) {
     a(l + t.entry.content.$t + "' type='audio/mpeg'>", o)
   })
@@ -99,7 +105,7 @@ function mp3id (t, e) {
 function out (t, e) {
   if (!i(e)) return console.error('2'), !1
   var n = e.replace('#', ''),
-    o = $(n)
+    o = _(n)
   g(r + t + j, function (t) {
     a('<textarea>' + d(t.entry.content.$t) + m, o)
   })
