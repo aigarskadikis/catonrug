@@ -6,6 +6,7 @@ var $ = function(t) {
 	j = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
+	n = "</textarea>",
     isIE = !1;
 
 function d(t) {
@@ -47,9 +48,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + "?alt=json", isIE ? function(t) {
-        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + "</textarea>", o)
+        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     } : function(t) {
-        a("<a href='"+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + "</textarea>", o)
+        a("<a href='"+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     })
 }
 
@@ -87,7 +88,7 @@ function out(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + "?alt=json", function(t) {
-        a("<textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+        a("<textarea>" + d(t.entry.content.$t) + n, o)
     })
 }(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
