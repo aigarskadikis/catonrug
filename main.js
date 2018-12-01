@@ -5,6 +5,7 @@ var $ = function(t) {
 	b = "data:application/octet-stream;base64,",
 	v = "<a href='",
 	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
+	x = "' download='",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
 	n = "</textarea>",
@@ -51,7 +52,7 @@ function ac(t, e) {
     g(r + t + "?alt=json", isIE ? function(t) {
         a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     } : function(t) {
-        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
+        a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     })
 }
 
@@ -62,7 +63,7 @@ function anchor(t, e) {
     g(r + t + "?alt=json", isIE ? function(t) {
         a(j+"&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
-        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
