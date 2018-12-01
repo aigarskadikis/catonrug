@@ -1,96 +1,95 @@
-var $ = function(id) {
-    return document.getElementById(id);
-};
-var r = "/feeds/posts/default/";
+var $ = function(t) {
+        return document.getElementById(t)
+    },
+    r = "/feeds/posts/default/",
+    keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    isIE = !1;
 
-function d(e) {
-    var t, n, o, r, a = "",
+function d(t) {
+    var e, n, r, a, o = "",
         i = "",
-        d = "",
-        c = 0;
-    for (/[^A-Za-z0-9\+\/\=]/g.exec(e) && alert("1"), e = e.replace(/[^A-Za-z0-9\+\/\=]/g, ""); t = keyStr.indexOf(e.charAt(c++)) << 2 | (o = keyStr.indexOf(e.charAt(c++))) >> 4, n = (15 & o) << 4 | (r = keyStr.indexOf(e.charAt(c++))) >> 2, i = (3 & r) << 6 | (d = keyStr.indexOf(e.charAt(c++))), a += String.fromCharCode(t), 64 != r && (a += String.fromCharCode(n)), 64 != d && (a += String.fromCharCode(i)), t = n = i = "", o = r = d = "", c < e.length;);
-    return unescape(a)
+        c = "",
+        u = 0;
+    for (/[^A-Za-z0-9\+\/\=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9\+\/\=]/g, ""); e = keyStr.indexOf(t.charAt(u++)) << 2 | (r = keyStr.indexOf(t.charAt(u++))) >> 4, n = (15 & r) << 4 | (a = keyStr.indexOf(t.charAt(u++))) >> 2, i = (3 & a) << 6 | (c = keyStr.indexOf(t.charAt(u++))), o += String.fromCharCode(e), 64 != a && (o += String.fromCharCode(n)), 64 != c && (o += String.fromCharCode(i)), e = n = i = "", r = a = c = "", u < t.length;);
+    return unescape(o)
 }
 
-function u(e) {
-    for (var t = atob(e.split(",")[1]), n = e.split(",")[0].split(":")[1].split(";")[0], o = new ArrayBuffer(t.length), r = new Uint8Array(o), a = 0; a < t.length; a++) r[a] = t.charCodeAt(a);
-    return new Blob([o], {
+function u(t) {
+    for (var e = atob(t.split(",")[1]), n = t.split(",")[0].split(":")[1].split(";")[0], r = new ArrayBuffer(e.length), a = new Uint8Array(r), o = 0; o < e.length; o++) a[o] = e.charCodeAt(o);
+    return new Blob([r], {
         type: n
     })
 }
 
-function g(e, t, n) {
-    var o = new XMLHttpRequest;
-    o.onreadystatechange = function() {
-        o.readyState === XMLHttpRequest.DONE && (200 === o.status ? "function" == typeof t && t(JSON.parse(o.responseText)) : "function" == typeof n && n(o))
-    }, o.open("GET", e, !0), o.send()
+function g(t, e, n) {
+    var r = new XMLHttpRequest;
+    r.onreadystatechange = function() {
+        r.readyState === XMLHttpRequest.DONE && (200 === r.status ? "function" == typeof e && e(JSON.parse(r.responseText)) : "function" == typeof n && n(r))
+    }, r.open("GET", t, !0), r.send()
 }
 
-function o(e) {
-    return "object" == typeof Node ? e instanceof Node : e && "object" == typeof e && "number" == typeof e.nodeType && "string" == typeof e.nodeName
+function o(t) {
+    return "object" == typeof Node ? t instanceof Node : t && "object" == typeof t && "number" == typeof t.nodeType && "string" == typeof t.nodeName
 }
 
-function a(e, t) {
-    if (o(e)) return t.appendChild(e);
-    t.innerHTML += e
+function a(t, e) {
+    if (o(t)) return e.appendChild(t);
+    e.innerHTML += t
 }
 
-function i(e) {
-    return 0 === (e = e.trim()).indexOf("#") && -1 === e.indexOf(".") && -1 === e.indexOf(">") && -1 === e.indexOf(" ")
+function i(t) {
+    return 0 === (t = t.trim()).indexOf("#") && -1 === t.indexOf(".") && -1 === t.indexOf(">") && -1 === t.indexOf(" ")
 }
 
-function ac(e, t) {
-    if (!i(t)) return console.error("2"), !1;
-    var n = t.replace("#", ""),
+function ac(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
         o = $(n);
-    g(r + e + "?alt=json", isIE ? function(e) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + e.entry.content.$t + "&quot;), &quot;" + e.entry.title.$t + "&quot;);'>" + e.entry.title.$t + "</a><br /><textarea>" + d(e.entry.content.$t) + "</textarea>", o)
-    } : function(e) {
-        a("<a href='data:application/octet-stream;base64," + e.entry.content.$t + "' download='" + e.entry.title.$t + "'>" + e.entry.title.$t + "</a><br /><textarea>" + d(e.entry.content.$t) + "</textarea>", o)
+    g(r + t + "?alt=json", isIE ? function(t) {
+        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+    } : function(t) {
+        a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
     })
 }
 
-function anchor(e, t) {
-    if (!i(t)) return console.error("2"), !1;
-    var n = t.replace("#", ""),
+function anchor(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
         o = $(n);
-    g(r + e + "?alt=json", isIE ? function(e) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;" + e.entry.content.$t + "&quot;), &quot;" + e.entry.title.$t + "&quot;);'>" + e.entry.title.$t + "</a>", o)
-    } : function(e) {
-        a("<a href='" + e.entry.content.$t + "' download='" + e.entry.title.$t + "'>" + e.entry.title.$t + "</a>", o)
+    g(r + t + "?alt=json", isIE ? function(t) {
+        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
+    } : function(t) {
+        a("<a href='" + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
-function mp4id(e, t) {
-    if (!i(t)) return console.error("2"), !1;
-    var n = t.replace("#", ""),
+function mp4id(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
         o = $(n);
-    g(r + e + "?alt=json", function(e) {
-        a("<source src='" + e.entry.content.$t + "' type='video/mp4'><a href='" + e.entry.content.$t + "'>" + e.entry.title.$t + "</a>", o)
+    g(r + t + "?alt=json", function(t) {
+        a("<source src='" + t.entry.content.$t + "' type='video/mp4'><a href='" + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
-function mp3id(e, t) {
-    if (!i(t)) return console.error("2"), !1;
-    var n = t.replace("#", ""),
+function mp3id(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
         o = $(n);
-    g(r + e + "?alt=json", function(e) {
-        a("<source src='" + e.entry.content.$t + "' type='audio/mpeg'>", o)
+    g(r + t + "?alt=json", function(t) {
+        a("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>", o)
     })
 }
 
-function out(e, t) {
-    if (!i(t)) return console.error("2"), !1;
-    var n = t.replace("#", ""),
+function out(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
         o = $(n);
-    g(r + e + "?alt=json", function(e) {
-        a("<textarea>" + d(e.entry.content.$t) + "</textarea>", o)
+    g(r + t + "?alt=json", function(t) {
+        a("<textarea>" + d(t.entry.content.$t) + "</textarea>", o)
     })
-}
-var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-    isIE = !1;
-(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(e) {
-    if (!e) return [];
-    for (var t = [], n = document.getElementsByTagName("*"), o = new RegExp("(^| )" + e + "( |$)"), r = 0; r < n.length; r++) o.test(n[r].className) && t.push(n[r]);
-    return t
+}(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
+    if (!t) return [];
+    for (var e = [], n = document.getElementsByTagName("*"), r = new RegExp("(^| )" + t + "( |$)"), a = 0; a < n.length; a++) r.test(n[a].className) && e.push(n[a]);
+    return e
 });
