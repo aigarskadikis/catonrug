@@ -2,6 +2,7 @@ var $ = function(t) {
         return document.getElementById(t)
     },
     r = "/feeds/posts/default/",
+	b = "data:application/octet-stream;base64,",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
     isIE = !1;
 
@@ -44,9 +45,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + "?alt=json", isIE ? function(t) {
-        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;data:application/octet-stream;base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+        a("<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
     } : function(t) {
-        a("<a href='data:application/octet-stream;base64," + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
+        a("<a href='"+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a><br /><textarea>" + d(t.entry.content.$t) + "</textarea>", o)
     })
 }
 
