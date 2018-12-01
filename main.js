@@ -2,8 +2,7 @@ var $ = function(t) {
         return document.getElementById(t)
     },
     x = "</a>",
-	d = "<textarea>",
-    z = x + "<br />"+d,
+    z = x + "<br /><textarea>",
     r = "/feeds/posts/default/",
     l = "<source src='",
     k = "' download='",
@@ -96,7 +95,7 @@ function out(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
-        a(d + d(t.entry.content.$t) + m, o)
+        a("<textarea>" + d(t.entry.content.$t) + m, o)
     })
 }(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
