@@ -10,7 +10,7 @@ var $ = function(t) {
 	l = "<source src='",
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
-	n = "</textarea>",
+	h = "</textarea>",
     isIE = !1;
 
 function d(t) {
@@ -52,9 +52,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, isIE ? function(t) {
-        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
+        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h, o)
     } : function(t) {
-        a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
+        a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h, o)
     })
 }
 
@@ -92,7 +92,7 @@ function out(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, function(t) {
-        a("<textarea>" + d(t.entry.content.$t) + n, o)
+        a("<textarea>" + d(t.entry.content.$t) + h, o)
     })
 }(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
