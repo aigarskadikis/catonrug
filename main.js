@@ -12,19 +12,21 @@ var $ = function(t) {
     m = "</textarea>",
     v = "<a href='",
     p = v + "javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
-    b = "data:application/octet-stream;base64,";
+    b = "data:application/octet-stream;base64,",
+    keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    isIE = !1;
 
 function d(t) {
-    var e, n, r, o, a = "",
-        i = "",
+    var e, n, r, o, i = "",
+        a = "",
         c = "",
         f = 0;
-    for (/[^A-Za-z0-9\+\/\=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9\+\/\=]/g, ""); e = keyStr.indexOf(t.charAt(f++)) << 2 | (r = keyStr.indexOf(t.charAt(f++))) >> 4, n = (15 & r) << 4 | (o = keyStr.indexOf(t.charAt(f++))) >> 2, i = (3 & o) << 6 | (c = keyStr.indexOf(t.charAt(f++))), a += String.fromCharCode(e), 64 !== o && (a += String.fromCharCode(n)), 64 !== c && (a += String.fromCharCode(i)), e = n = i = "", r = o = c = "", f < t.length;);
-    return unescape(a)
+    for (/[^A-Za-z0-9\+\/\=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9\+\/\=]/g, ""); e = keyStr.indexOf(t.charAt(f++)) << 2 | (r = keyStr.indexOf(t.charAt(f++))) >> 4, n = (15 & r) << 4 | (o = keyStr.indexOf(t.charAt(f++))) >> 2, a = (3 & o) << 6 | (c = keyStr.indexOf(t.charAt(f++))), i += String.fromCharCode(e), 64 !== o && (i += String.fromCharCode(n)), 64 !== c && (i += String.fromCharCode(a)), e = n = a = "", r = o = c = "", f < t.length;);
+    return unescape(i)
 }
 
 function u(t) {
-    for (var e = atob(t.split(",")[1]), n = t.split(",")[0].split(":")[1].split(";")[0], r = new ArrayBuffer(e.length), o = new Uint8Array(r), a = 0; a < e.length; a++) o[a] = e.charCodeAt(a);
+    for (var e = atob(t.split(",")[1]), n = t.split(",")[0].split(":")[1].split(";")[0], r = new ArrayBuffer(e.length), o = new Uint8Array(r), i = 0; i < e.length; i++) o[i] = e.charCodeAt(i);
     return new Blob([r], {
         type: n
     })
@@ -97,10 +99,7 @@ function out(t, e) {
     g(r + t + j, function(t) {
         a("<textarea>" + d(t.entry.content.$t) + m, o)
     })
-}
-var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-    isIE = !1;
-(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
+}(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
     for (var e = [], n = document.getElementsByTagName("*"), r = new RegExp("(^| )" + t + "( |$)"), o = 0; o < n.length; o++) r.test(n[o].className) && e.push(n[o]);
     return e
