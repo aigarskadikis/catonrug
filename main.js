@@ -12,12 +12,18 @@ var $ = function (t) {
   m = '</textarea>',
   v = "<a href='",
   p = v + "javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(&quot;",
-  b = 'data:application/octet-stream;base64,'
+  b = 'data:application/octet-stream;base64,',
+  keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
+  isIE = !1;
+
+(navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf('Edge') > -1) && (isIE = !0), typeof document.getElementsByClassName !== 'function' && (document.getElementsByClassName = function (t) {
+  if (!t) return []
+  for (var e = [], n = document.getElementsByTagName('*'), r = new RegExp('(^| )' + t + '( |$)'), o = 0; o < n.length; o++) r.test(n[o].className) && e.push(n[o])
+  return e
+})
 
 function d (t) {
-  var e, n, r, o, a = '',
-    i = '',
-    c = '',
+  var e, n, r, o, a, i, c = '',
     u = 0
   for (/[^A-Za-z0-9\+\/\=]/g.exec(t) && alert('1'), t = t.replace(/[^A-Za-z0-9\+\/\=]/g, ''); e = keyStr.indexOf(t.charAt(u++)) << 2 | (r = keyStr.indexOf(t.charAt(u++))) >> 4, n = (15 & r) << 4 | (o = keyStr.indexOf(t.charAt(u++))) >> 2, i = (3 & o) << 6 | (c = keyStr.indexOf(t.charAt(u++))), a += String.fromCharCode(e), o !== 64 && (a += String.fromCharCode(n)), c !== 64 && (a += String.fromCharCode(i)), e = n = i = '', r = o = c = '', u < t.length;);
   return unescape(a)
@@ -98,10 +104,3 @@ function out (t, e) {
     a('<textarea>' + d(t.entry.content.$t) + m, o)
   })
 }
-var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
-  isIE = !1;
-(navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || window.navigator.userAgent.indexOf('Edge') > -1) && (isIE = !0), typeof document.getElementsByClassName !== 'function' && (document.getElementsByClassName = function (t) {
-  if (!t) return []
-  for (var e = [], n = document.getElementsByTagName('*'), r = new RegExp('(^| )' + t + '( |$)'), o = 0; o < n.length; o++) r.test(n[o].className) && e.push(n[o])
-  return e
-})
