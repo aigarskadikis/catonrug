@@ -6,6 +6,7 @@ var $ = function(t) {
 	v = "<a href='",
 	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
 	x = "' download='",
+	z = "?alt=json",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
 	n = "</textarea>",
@@ -49,7 +50,7 @@ function ac(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", isIE ? function(t) {
+    g(r + t + z, isIE ? function(t) {
         a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     } : function(t) {
         a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
@@ -60,7 +61,7 @@ function anchor(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", isIE ? function(t) {
+    g(r + t + z, isIE ? function(t) {
         a(j+"&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
         a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
@@ -71,7 +72,7 @@ function mp4id(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
+    g(r + t + z, function(t) {
         a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
@@ -80,7 +81,7 @@ function mp3id(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
+    g(r + t + z, function(t) {
         a("<source src='" + t.entry.content.$t + "' type='audio/mpeg'>", o)
     })
 }
@@ -89,7 +90,7 @@ function out(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
-    g(r + t + "?alt=json", function(t) {
+    g(r + t + z, function(t) {
         a("<textarea>" + d(t.entry.content.$t) + n, o)
     })
 }(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
