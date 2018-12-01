@@ -3,7 +3,8 @@ var $ = function(t) {
     },
     r = "/feeds/posts/default/",
 	b = "data:application/octet-stream;base64,",
-	j = "<a href='javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
+	v = "<a href='",
+	j = v+"javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(u(",
     keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
 	n = "</textarea>",
@@ -50,7 +51,7 @@ function ac(t, e) {
     g(r + t + "?alt=json", isIE ? function(t) {
         a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     } : function(t) {
-        a("<a href='"+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
+        a(v+b + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + n, o)
     })
 }
 
@@ -61,7 +62,7 @@ function anchor(t, e) {
     g(r + t + "?alt=json", isIE ? function(t) {
         a(j+"&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
     } : function(t) {
-        a("<a href='" + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(v + t.entry.content.$t + "' download='" + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
@@ -70,7 +71,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + "?alt=json", function(t) {
-        a("<source src='" + t.entry.content.$t + "' type='video/mp4'><a href='" + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a("<source src='" + t.entry.content.$t + "' type='video/mp4'>"+v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
     })
 }
 
