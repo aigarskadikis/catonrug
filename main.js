@@ -52,7 +52,7 @@ function i(t) {
 }
 
 function ac(t, e) {
-    if (!i(e)) return console.error("2"), !1;
+    if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
@@ -63,7 +63,7 @@ function ac(t, e) {
 }
 
 function anchor(t, e) {
-    if (!i(e)) return console.error("2"), !1;
+    if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, isIE ? function(t) {
@@ -74,7 +74,7 @@ function anchor(t, e) {
 }
 
 function mp4id(t, e) {
-    if (!i(e)) return console.error("2"), !1;
+    if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
@@ -83,7 +83,7 @@ function mp4id(t, e) {
 }
 
 function mp3id(t, e) {
-    if (!i(e)) return console.error("2"), !1;
+    if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
@@ -92,7 +92,7 @@ function mp3id(t, e) {
 }
 
 function out(t, e) {
-    if (!i(e)) return console.error("2"), !1;
+    if (!i(e)) return !1;
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + j, function(t) {
