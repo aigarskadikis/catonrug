@@ -8,7 +8,7 @@ var $ = function(t) {
 	x = "' download='",
 	z = "?alt=json",
 	l = "<source src='",
-    keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+    k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
 	n = "</textarea>",
     isIE = !1;
@@ -16,7 +16,7 @@ var $ = function(t) {
 function d(t) {
     var e, n, r, a, o, i, c = "",
         u = 0;
-    for (/[^A-Za-z0-9+/=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9+/=]/g, ""); e = keyStr.indexOf(t.charAt(u++)) << 2 | (r = keyStr.indexOf(t.charAt(u++))) >> 4, n = (15 & r) << 4 | (a = keyStr.indexOf(t.charAt(u++))) >> 2, i = (3 & a) << 6 | (c = keyStr.indexOf(t.charAt(u++))), o += String.fromCharCode(e), 64 != a && (o += String.fromCharCode(n)), 64 != c && (o += String.fromCharCode(i)), e = n = i = "", r = a = c = "", u < t.length;);
+    for (/[^A-Za-z0-9+/=]/g.exec(t) && alert("1"), t = t.replace(/[^A-Za-z0-9+/=]/g, ""); e = k.indexOf(t.charAt(u++)) << 2 | (r = k.indexOf(t.charAt(u++))) >> 4, n = (15 & r) << 4 | (a = k.indexOf(t.charAt(u++))) >> 2, i = (3 & a) << 6 | (c = k.indexOf(t.charAt(u++))), o += String.fromCharCode(e), 64 != a && (o += String.fromCharCode(n)), 64 != c && (o += String.fromCharCode(i)), e = n = i = "", r = a = c = "", u < t.length;);
     return unescape(o)
 }
 
