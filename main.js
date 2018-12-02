@@ -96,7 +96,7 @@ function out(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, function(t) {
-        a("<textarea>" + d(t.entry.content.$t) + h, o)
+        a("<textarea>" + d(t.entry.content.$t) + "</textarea>", o)
     })
 }(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
