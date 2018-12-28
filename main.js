@@ -10,7 +10,8 @@ var $ = function(t) {
 	l = "<source src='",
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
 	m = "</a><br /><textarea>",
-	h = "</textarea><pre><code>curl -s \"https://catonrug.blogspot.com/feeds/posts/default/",
+	h = "</textarea>",
+	h2 = "<pre><code>curl -s \"https://catonrug.blogspot.com/feeds/posts/default/",
 	hm = "?alt=json\" | jq -r '.entry|.content|.\"$t\"' | base64 --decode > ",
 	he = "</code></pre>",
     isIE = !1;
@@ -56,9 +57,9 @@ function ac(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, isIE ? function(t) {
-        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h + n + hm +t.entry.title.$t+ he, o)
+        a(j+"&quot;"+b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h, o)
     } : function(t) {
-        a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h + n + hm +t.entry.title.$t+ he, o)
+        a(v+b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m + d(t.entry.content.$t) + h, o)
     })
 }
 
