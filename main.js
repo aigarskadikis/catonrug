@@ -68,9 +68,9 @@ function anchor(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, isIE ? function(t) {
-        a(j + "&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + "</a>", o)
+        a(j + "&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, o)
     } : function(t) {
-        a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, o)
     })
 }
 
@@ -79,7 +79,7 @@ function mp4id(t, e) {
     var n = e.replace("#", ""),
         o = $(n);
     g(r + t + z, function(t) {
-        a(l + t.entry.content.$t + "' type='video/mp4'>" + v + t.entry.content.$t + "'>" + t.entry.title.$t + "</a>", o)
+        a(l + t.entry.content.$t + "' type='video/mp4'>" + v + t.entry.content.$t + "'>" + t.entry.title.$t + m, o)
     })
 }
 
