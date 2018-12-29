@@ -12,7 +12,7 @@ var $ = function(t) {
     m = "</a>",
     h = "</textarea>",
     hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com/feeds/posts/default/",
-    hm = '?alt=json" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
+    hm = z+'" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
     he = "</small><br /><textarea>",
     isIE = !1;
 
