@@ -11,9 +11,9 @@ var $ = function(t) {
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
     m = "</a>",
     h = "</textarea>",
-    hs = "<small class='r'><code>curl -s \"https://catonrug.blogspot.com/feeds/posts/default/",
+    hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com/feeds/posts/default/",
     hm = '?alt=json" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
-    he = "</code></small><br /><textarea>",
+    he = "</small><br /><textarea>",
     isIE = !1;
 
 function d(t) {
