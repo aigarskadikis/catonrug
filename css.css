@@ -1,0 +1,131 @@
+#cookieChoiceInfo {
+  bottom: 0;
+  top: auto!important;
+  display: none
+}
+
+html * {
+  max-height: 1000000px
+}
+
+body {
+  font: normal normal 1.2em Montserrat, 'Helvetica Neue', sans-serif;
+  color: #000;
+  line-height: 1.3em
+}
+
+code,
+pre {
+  border: 1px solid #ccc;
+  background: #fee;
+  padding: .1em .5em;
+  border-radius: .25em
+}
+
+pre {
+  white-space: pre;
+  overflow: auto;
+  padding: .5em;
+  margin: 0 0 1em;
+  max-height: none\9
+}
+
+.sha1,
+.md5, .entry-content pre code {
+  border: 0;
+  background: #fee;
+  padding: 0;
+  margin: 0
+}
+
+.item-control,div.blog-pager,
+div.blog-feeds,
+div.post-feeds,
+.post-author,
+.post-timestamp {
+  display: none
+}
+
+.blogger-comment-from-post {
+  height: 15em
+}
+
+.c {
+  text-align: center
+}
+
+.widget,
+.c,
+ul,
+ol,
+textarea {
+  margin-bottom: 1em
+}
+
+.b {
+  border: 1px solid #aaa
+}
+
+.sha1,
+.md5 {
+  background: #fff
+}
+
+textarea {
+  min-height: 12em;
+  width: 99%
+}
+
+pre,
+textarea {
+  font-size: 1.1em
+}
+
+.user {
+  margin-right: .5em
+}
+
+
+
+.l {
+  white-space: nowrap
+}
+
+.r {
+  float: right;
+  margin-left: 1em
+}
+
+a {
+  color: #69a;
+  text-decoration: none;
+  border-bottom: 1px solid #69a
+}
+
+a:hover {
+  text-decoration: none;
+  color: #a20;
+  border-bottom: 1px solid #a20
+}
+
+.Label div a,
+h1 a,
+h3 a,
+h2 a {
+  color: #000;
+  border-bottom: 1px solid #bbb
+}
+
+.Label div a:hover {
+  color: #37e
+}
+
+img {
+  max-width: 100%;
+  height: auto!important
+}
+
+small {
+  font-size: 80%;
+  color: gray
+}
