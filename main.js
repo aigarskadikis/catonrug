@@ -11,8 +11,8 @@ var $ = function(t) {
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
     m = "</a>",
     h = "</textarea>",
-    hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com"+r,
-    hm = z+'" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
+    hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com" + r,
+    hm = z + '" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
     he = "</small><br /><textarea>",
     isIE = !1;
 
@@ -73,6 +73,18 @@ function anchor(t, e) {
         a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, o)
     })
 }
+
+function dl(t, e) {
+    if (!i(e)) return !1;
+    var n = e.replace("#", ""),
+        o = $(n);
+    g(r + t + z, isIE ? function(t) {
+        a(j + "&quot;" + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, o)
+    } : function(t) {
+        a(v + b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, o)
+    })
+}
+
 
 function mp4id(t, e) {
     if (!i(e)) return !1;
