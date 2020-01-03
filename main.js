@@ -63,28 +63,16 @@ function ac(t, e) {
     })
 }
 
-function anchor(t, e) {
-    if (!i(e)) return !1;
-    var n = e.replace("#", ""),
-        o = $(n);
+function dl(t, e, n) {
+    if (n = n || "application/octet-stream", !i(e)) return !1;
+    var o = e.replace("#", ""),
+        c = $(o);
     g(r + t + z, isIE ? function(t) {
-        a(j + "&quot;" + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, o)
+        a(j + "&quot;data:" + n + ";base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, c)
     } : function(t) {
-        a(v + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, o)
+        a(v + "data:" + n + ";base64," + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, c)
     })
 }
-
-function dl(t, e) {
-    if (!i(e)) return !1;
-    var n = e.replace("#", ""),
-        o = $(n);
-    g(r + t + z, isIE ? function(t) {
-        a(j + "&quot;" + b + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, o)
-    } : function(t) {
-        a(v + b + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, o)
-    })
-}
-
 
 function mp4id(t, e) {
     if (!i(e)) return !1;
