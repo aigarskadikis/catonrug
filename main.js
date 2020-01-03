@@ -2,7 +2,10 @@ var $ = function(t) {
         return document.getElementById(t)
     },
     r = "/feeds/posts/default/",
-    b = "data:application/octet-stream;base64,",
+    q = ";base64,",
+    w = "data:",
+    y = "application/octet-stream"
+    b = w + y + q,
     v = "<a href='",
     j = v + "javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(s(",
     x = "' download='",
@@ -12,7 +15,7 @@ var $ = function(t) {
     m = "</a>",
     h = "</textarea>",
     hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com" + r,
-    hm = z + '" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
+    hm = z + '"|jq -r \'.entry|.content|."$t"\'|base64 -d >',
     he = "</small><br /><textarea>",
     isIE = !1;
 
@@ -64,13 +67,13 @@ function ac(t, e) {
 }
 
 function dl(t, e, n) {
-    if (n = n || "application/octet-stream", !i(e)) return !1;
+    if (n = n || y, !i(e)) return !1;
     var o = e.replace("#", ""),
         c = $(o);
     g(r + t + z, isIE ? function(t) {
-        a(j + "&quot;data:" + n + ";base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, c)
+        a(j + "&quot;"+ w + n + q + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, c)
     } : function(t) {
-        a(v + "data:" + n + ";base64," + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, c)
+        a(v + w + n + q + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, c)
     })
 }
 
@@ -99,7 +102,9 @@ function out(t, e) {
     g(r + t + z, function(t) {
         a("<textarea>" + d(t.entry.content.$t) + h, o)
     })
-}(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
+}
+
+(-1 !== navigator.userAgent.indexOf("MSIE") || 0 < navigator.appVersion.indexOf("Trident/") || -1 < window.navigator.userAgent.indexOf("Edge")) && (isIE = !0), "function" != typeof document.getElementsByClassName && (document.getElementsByClassName = function(t) {
     if (!t) return [];
     for (var e = [], n = document.getElementsByTagName("*"), r = new RegExp("(^| )" + t + "( |$)"), o = 0; o < n.length; o++) r.test(n[o].className) && e.push(n[o]);
     return e
