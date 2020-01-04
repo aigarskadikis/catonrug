@@ -2,10 +2,7 @@ var $ = function(t) {
         return document.getElementById(t)
     },
     r = "/feeds/posts/default/",
-    q = ";base64,",
-    w = "data:",
-    y = "application/octet-stream"
-    b = w + y + q,
+    b = "data:application/octet-stream;base64,",
     v = "<a href='",
     j = v + "javascript:void(0);' onClick='javascript:window.navigator.msSaveBlob(s(",
     x = "' download='",
@@ -14,8 +11,8 @@ var $ = function(t) {
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
     m = "</a>",
     h = "</textarea>",
-    hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com" + r,
-    hm = z + '"|jq -r \'.entry|.content|."$t"\'|base64 -d >',
+    hs = "<small class='r'>curl -s \"https://dyrsm.blogspot.com" + r,
+    hm = z + '" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
     he = "</small><br /><textarea>",
     isIE = !1;
 
@@ -55,6 +52,7 @@ function i(t) {
     return 0 === (t = t.trim()).indexOf("#") && -1 === t.indexOf(".") && -1 === t.indexOf(">") && -1 === t.indexOf(" ")
 }
 
+/* this function encodes base64 content which is suposed to be a textual data. Allows to download the file */
 function ac(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
@@ -66,17 +64,19 @@ function ac(t, e) {
     })
 }
 
+/* this function allows to download file which is less than 1MB */
 function dl(t, e, n) {
-    if (n = n || y, !i(e)) return !1;
+    if (n = n || "application/octet-stream", !i(e)) return !1;
     var o = e.replace("#", ""),
         c = $(o);
     g(r + t + z, isIE ? function(t) {
-        a(j + "&quot;"+ w + n + q + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, c)
+        a(j + "&quot;data:" + n + ";base64," + t.entry.content.$t + "&quot;), &quot;" + t.entry.title.$t + "&quot;);'>" + t.entry.title.$t + m, c)
     } : function(t) {
-        a(v + w + n + q + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, c)
+        a(v + "data:" + n + ";base64," + t.entry.content.$t + x + t.entry.title.$t + "'>" + t.entry.title.$t + m, c)
     })
 }
 
+/* this function allows to embed an mp4 file on screen wich is less than 1MB */
 function mp4id(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
@@ -86,6 +86,7 @@ function mp4id(t, e) {
     })
 }
 
+/* this function allows to embed an mp3 file on screen wich is less than 1MB */
 function mp3id(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
@@ -95,6 +96,7 @@ function mp3id(t, e) {
     })
 }
 
+/* same as 'ac()' but without ability to download the file */
 function out(t, e) {
     if (!i(e)) return !1;
     var n = e.replace("#", ""),
