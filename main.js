@@ -13,7 +13,7 @@ var $ = function(e) {
     k = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
     m = "</a>",
     h = "</textarea>",
-    hs = "<small class='r'>curl -s \"https://dyrsm.blogspot.com" + r,
+    hs = "<small class='r'>curl -s \"https://catonrug.blogspot.com" + r,
     hm = z + '" | jq -r \'.entry|.content|."$t"\' | base64 --decode > ',
     he = "</small><br /><textarea>",
     isIE = !1;
