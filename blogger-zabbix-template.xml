@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-08-22T00:14:32Z</date>
+    <date>2020-08-22T20:21:47Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -33,6 +33,7 @@
                     <history>7d</history>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
+                    <description>IyEvYmluL2Jhc2gKCiNlYWNoIHBhZ2UgY29udGFpbnMgbXVsdGlwbGUgbXNnIGZpbGVzCiN0aGF0IGlzIHdoeSB3ZSBuZWVkIHRvIGNyZWF0ZSBhcnJheSB0byBwdXQgYWxsIHBhZ2UgbXNoIGludG8KZGVjbGFyZSAtYSBhcnJheQoKQkxPRz0kMQojZGVmaW5lIGVuZHBvaW50IGZvciB1cmwgZm9yIGV4YW1wbGUgaWYgdGhlIGlyIGlzCiNodHRwczovL2NhdG9ucnVnLmJsb2dzcG90LmNvbS9mZWVkcy9wb3N0cy9kZWZhdWx0Lz9hdG9tLnhtbD9yZWRpcmVjdD1mYWxzZSZzdGFydC1pbmRleD0xJm1heC1yZXN1bHRzPTUwCiN0aGVuIHRoZSBlbmRwb2ludCBpcyAibXVsdGltZWRpYSIKZW5kcG9pbnQ9Imh0dHBzOi8vJDEvZmVlZHMvcG9zdHMvZGVmYXVsdC8/YXRvbS54bWw/cmVkaXJlY3Q9ZmFsc2UmbWF4LXJlc3VsdHM9MSZzdGFydC1pbmRleD0iCgphcnI9MCAjIGFycmF5IHBvc2l0aW9uCmNvdW50X29mX2VsZW1lbnRzPTEgIyBjb3VudCB0aGUgZm91bmQgcG9zdHMKbnI9MCAjIC00OSs1MD0xIHdoaWNoIG1lYW5zIHRvIHN0YXJ0IGZyb20gcG9zdCAxCgojIHdoaWxlIHRoZSBhdG9tLnhtbCBmaWxlIGNvbnRhbnMgYXQgbGVhc3QgMSByZWNvcmQsIGNvbnRpbnVlIHRvIGdhdGhlciBkYXRhCndoaWxlIFsgIiRjb3VudF9vZl9lbGVtZW50cyIgLW5lICIwIiBdCmRvCgojIGFuYWxpemUgbmV4dCA1MCBwb3N0cwpucj0kKChucisxKSkKCiMgc3dpdGNoIHRvIG5leHQgc2xvdCBpbiBhcnJheQphcnI9JCgoYXJyKzEpKQoKIyBzZXQgZnVsbCB1cmwgbGluayB0byBhbmFseXplCnVybD0kKGVjaG8gIiRlbmRwb2ludCRuciIpCiNlY2hvICR1cmwKCiMgY2hlY2sgaWYgdXJsIGlzIGhlYWx0aHkKaHR0cGNvZGU9JChjdXJsIC1zIC1vIC9kZXYvbnVsbCAtdyAiJXtodHRwX2NvZGV9IiAiJHVybCIpCgppZiBbICIkY291bnRfb2ZfZWxlbWVudHMiIC1uZSAiMCIgXTsgdGhlbgpFTlRSWT0kKGN1cmwgLWtzTCAiJHVybCIpClVSTD0kKGVjaG8gIiRFTlRSWSIgfCBncmVwIC1FbyAtbTEgImh0dHBbYS16QS1aMC05XC86Li1dKyNjb21tZW50LWZvcm0iIHwgc2VkICJzfCMuKiR8fCIpCmlmIFsgISAteiAiJFVSTCIgXTsgdGhlbgpCTE9HX0FORF9QT1NUPSQoZWNobyAiJEVOVFJZIiB8IGdyZXAgLUVvICJibG9nLVswLTldK1wucG9zdC1bMC05XSsiKQpCTE9HSUQ9JChlY2hvICIkQkxPR19BTkRfUE9TVCIgfCBncmVwIC1FbyAiYmxvZy1bMC05XSsiIHwgZ3JlcCAtRW8gIlswLTldKyIpClBPU1RJRD0kKGVjaG8gIiRCTE9HX0FORF9QT1NUIiB8IGdyZXAgLUVvICJcLnBvc3QtWzAtOV0rIiB8IGdyZXAgLUVvICJbMC05XSsiKQoKQ0FURUdPUklFUz0kKGN1cmwgLXNrTCAiaHR0cHM6Ly8kQkxPRy9mZWVkcy9wb3N0cy9kZWZhdWx0LyRQT1NUSUQ/YWx0PWpzb24iIHwganEgJy5lbnRyeS5jYXRlZ29yeVtdLnRlcm0nIHwgc2VkICJzfF58e1wieyNDQVR9XCI6fDtzfCR8fSx8IiB8IHRyIC1jZCAnWzpwcmludDpdJyB8IHNlZCAic3wsJHxdfDtzfF58W3wiKQpFTEVNRU5UPSQoZWNobyAie1wieyNCTE9HfVwiOlwiJEJMT0dcIixcInsjQkxPR0lEfVwiOlwiJEJMT0dJRFwiLFwieyNQT1NUSUR9XCI6XCIkUE9TVElEXCIsXCJ7I1VSTH1cIjpcIiRVUkxcIixcInsjQ0FURUdPUklFU31cIjokQ0FURUdPUklFU30sIikKYXJyYXlbYXJyXT0kRUxFTUVOVApmaQpjb3VudF9vZl9lbGVtZW50cz0kKGVjaG8gIiRFTlRSWSIgfCBncmVwIC1FbyAiYmxvZy1bMC05XStcLnBvc3QtWzAtOV0rIiB8IHdjIC1sKQojZWNobyAkY291bnRfb2ZfZWxlbWVudHMKI2VjaG8gIiR7YXJyYXlbYXJyXX0iIAojZWxzZQojYXJyPSQoKGFyci0xKSkKZmkKCmRvbmUKCiNvdXRwdXQgYWxsIGFycmF5IGVsZW1lbnRzCiNyZXBsYWNlIHNwYWNlcyB3aXRoIG5ldyBsaW5lIGNoYXJhY3RlcnMKI2NvbnZlcnQgb3V0cHV0IHRvIEpTT04gZm9ybWF0IGZvciBaYWJiaXggTExEIGRpY292ZXIgcHJvdG90eXBlCmVjaG8gIiR7YXJyYXlbQF19IiB8IHRyIC1jZCAnWzpwcmludDpdJyB8IHNlZCAicy9eL3tcImRhdGFcIjpbLztzLywkL119LyIgCgo=</description>
                     <applications>
                         <application>
                             <name>Zabbix raw metrics</name>
@@ -71,12 +72,25 @@
                             </templates>
                             <macros>
                                 <macro>
+                                    <macro>{$BLOG}</macro>
+                                    <value>{#BLOG}</value>
+                                </macro>
+                                <macro>
                                     <macro>{$BLOGID}</macro>
                                     <value>{#BLOGID}</value>
                                 </macro>
                                 <macro>
+                                    <macro>{$CATEGORIES}</macro>
+                                    <value>{#CATEGORIES}</value>
+                                    <description>an array of post categories</description>
+                                </macro>
+                                <macro>
                                     <macro>{$POSTID}</macro>
                                     <value>{#POSTID}</value>
+                                </macro>
+                                <macro>
+                                    <macro>{$URL}</macro>
+                                    <value>{#URL}</value>
                                 </macro>
                             </macros>
                         </host_prototype>
@@ -112,6 +126,9 @@
                     <name>Blogger post published</name>
                 </application>
                 <application>
+                    <name>Blogger post size</name>
+                </application>
+                <application>
                     <name>Blogger post title</name>
                 </application>
                 <application>
@@ -125,6 +142,48 @@
                 </application>
             </applications>
             <items>
+                <item>
+                    <name>blogger.post.size[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>blogger.post.size[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <units>B</units>
+                    <applications>
+                        <application>
+                            <name>Blogger post size</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.content['$t']</params>
+                        </step>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return value.length;</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$POST.SIZE.LIMIT}</expression>
+                            <name>Size of post {$POSTID} is {ITEM.LASTVALUE}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>AVERAGE</priority>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
                 <item>
                     <name>categories[{$POSTID}]</name>
                     <type>DEPENDENT</type>
@@ -179,6 +238,12 @@
                             <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
                             <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
                         </trigger>
                     </triggers>
                 </item>
@@ -217,6 +282,12 @@
                             <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
                         </trigger>
                     </triggers>
                 </item>
@@ -372,6 +443,12 @@
                     </master_item>
                 </item>
             </items>
+            <macros>
+                <macro>
+                    <macro>{$POST.SIZE.LIMIT}</macro>
+                    <value>480K</value>
+                </macro>
+            </macros>
         </template>
     </templates>
 </zabbix_export>
