@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-08-21T23:29:18Z</date>
+    <date>2020-08-22T00:14:32Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -103,6 +103,9 @@
                     <name>Blogger count of categories</name>
                 </application>
                 <application>
+                    <name>Blogger count of comments</name>
+                </application>
+                <application>
                     <name>Blogger post modify data</name>
                 </application>
                 <application>
@@ -113,6 +116,9 @@
                 </application>
                 <application>
                     <name>Blogger post updated</name>
+                </application>
+                <application>
+                    <name>Blogger post url</name>
                 </application>
                 <application>
                     <name>Zabbix raw items</name>
@@ -148,9 +154,9 @@
                     <type>DEPENDENT</type>
                     <key>count.of.categories[{$POSTID}]</key>
                     <delay>0</delay>
-                    <history>0</history>
+                    <history>7d</history>
                     <trends>0</trends>
-                    <value_type>TEXT</value_type>
+                    <units>categories</units>
                     <inventory_link>SERIALNO_A</inventory_link>
                     <applications>
                         <application>
@@ -166,6 +172,53 @@
                     <master_item>
                         <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;2</expression>
+                            <name>More that 2 categories detected on {$POSTID}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>post.comments[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.comments[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <units>comments</units>
+                    <inventory_link>SOFTWARE_APP_C</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger count of comments</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.link[?(@.rel == 'replies' &amp;&amp; @.type == 'text/html')].title</params>
+                        </step>
+                        <step>
+                            <type>REGEX</type>
+                            <params>([0-9]+)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}=1</expression>
+                            <name>Count of comments has been changed on {$POSTID}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>post.header.json[{$POSTID}]</name>
@@ -278,6 +331,40 @@
                         <step>
                             <type>JSONPATH</type>
                             <params>$.entry.updated.['$t']</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>post.url[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.url[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>LOCATION</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger post url</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.link[?(@.rel == 'alternate' &amp;&amp; @.type == 'text/html')].href</params>
+                        </step>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>\/
+/</params>
+                        </step>
+                        <step>
+                            <type>REGEX</type>
+                            <params>(http.*html)
+\1</params>
                         </step>
                     </preprocessing>
                     <master_item>
