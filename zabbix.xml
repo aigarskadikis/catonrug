@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.2</version>
-    <date>2020-01-21T21:29:20Z</date>
+    <version>5.0</version>
+    <date>2020-09-09T11:15:54Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
         </group>
         <group>
-            <name>Web pages</name>
+            <name>tempo</name>
         </group>
     </groups>
     <templates>
         <template>
-            <template>blogger blogspot post discovery</template>
-            <name>blogger blogspot post discovery</name>
-            <description/>
+            <template>blogger blogspot monitoring</template>
+            <name>blogger blogspot monitoring</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -22,200 +21,89 @@
             </groups>
             <applications>
                 <application>
-                    <name>blogger post id raw</name>
-                </application>
-                <application>
-                    <name>blogger post link raw</name>
-                </application>
-                <application>
-                    <name>blogger post title raw</name>
+                    <name>Zabbix raw metrics</name>
                 </application>
             </applications>
             <items>
                 <item>
-                    <name>discover.posts[{HOST.HOST}]</name>
-                    <type>19</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>discover.posts[{HOST.HOST}]</key>
-                    <delay>30s</delay>
-                    <history>1h</history>
+                    <name>blogger.posts.json</name>
+                    <type>HTTP_AGENT</type>
+                    <key>blogger.posts.json</key>
+                    <delay>1d</delay>
+                    <history>7d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>21</type>
-                            <params>return value.replace(/..$/,&quot;&quot;).replace(/^............................/,&quot;&quot;);</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>12</type>
-                            <params>$.feed.entry[*]</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>21</type>
-                            <params>return value.replace(/tag:blogger.com,1999:blog-[0-9]+.post-/gm,&quot;&quot;)</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>21</type>
-                            <params>return value.replace(/https?:\\\/\\\/([a-z\.]+)\\\/([0-9]+)\\\/([0-9]+)\\\//gm, &quot;https:\/\/$1\/$2\/$3\/&quot;);</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url>https://{HOST.DNS}/feeds/posts/default/-/{HOST.HOST}?alt=json-in-script&amp;redirect=false&amp;start-index=1&amp;max-results=3</url>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <value_type>TEXT</value_type>
+                    <description>IyEvYmluL2Jhc2gKCiNlYWNoIHBhZ2UgY29udGFpbnMgbXVsdGlwbGUgbXNnIGZpbGVzCiN0aGF0IGlzIHdoeSB3ZSBuZWVkIHRvIGNyZWF0ZSBhcnJheSB0byBwdXQgYWxsIHBhZ2UgbXNoIGludG8KZGVjbGFyZSAtYSBhcnJheQoKQkxPRz0kMQojZGVmaW5lIGVuZHBvaW50IGZvciB1cmwgZm9yIGV4YW1wbGUgaWYgdGhlIGlyIGlzCiNodHRwczovL2NhdG9ucnVnLmJsb2dzcG90LmNvbS9mZWVkcy9wb3N0cy9kZWZhdWx0Lz9hdG9tLnhtbD9yZWRpcmVjdD1mYWxzZSZzdGFydC1pbmRleD0xJm1heC1yZXN1bHRzPTUwCiN0aGVuIHRoZSBlbmRwb2ludCBpcyAibXVsdGltZWRpYSIKZW5kcG9pbnQ9Imh0dHBzOi8vJDEvZmVlZHMvcG9zdHMvZGVmYXVsdC8/YXRvbS54bWw/cmVkaXJlY3Q9ZmFsc2UmbWF4LXJlc3VsdHM9MSZzdGFydC1pbmRleD0iCgphcnI9MCAjIGFycmF5IHBvc2l0aW9uCmNvdW50X29mX2VsZW1lbnRzPTEgIyBjb3VudCB0aGUgZm91bmQgcG9zdHMKbnI9MCAjIC00OSs1MD0xIHdoaWNoIG1lYW5zIHRvIHN0YXJ0IGZyb20gcG9zdCAxCgojIHdoaWxlIHRoZSBhdG9tLnhtbCBmaWxlIGNvbnRhbnMgYXQgbGVhc3QgMSByZWNvcmQsIGNvbnRpbnVlIHRvIGdhdGhlciBkYXRhCndoaWxlIFsgIiRjb3VudF9vZl9lbGVtZW50cyIgLW5lICIwIiBdCmRvCgojIGFuYWxpemUgbmV4dCA1MCBwb3N0cwpucj0kKChucisxKSkKCiMgc3dpdGNoIHRvIG5leHQgc2xvdCBpbiBhcnJheQphcnI9JCgoYXJyKzEpKQoKIyBzZXQgZnVsbCB1cmwgbGluayB0byBhbmFseXplCnVybD0kKGVjaG8gIiRlbmRwb2ludCRuciIpCiNlY2hvICR1cmwKCiMgY2hlY2sgaWYgdXJsIGlzIGhlYWx0aHkKaHR0cGNvZGU9JChjdXJsIC1zIC1vIC9kZXYvbnVsbCAtdyAiJXtodHRwX2NvZGV9IiAiJHVybCIpCgppZiBbICIkY291bnRfb2ZfZWxlbWVudHMiIC1uZSAiMCIgXTsgdGhlbgpFTlRSWT0kKGN1cmwgLWtzTCAiJHVybCIpClVSTD0kKGVjaG8gIiRFTlRSWSIgfCBncmVwIC1FbyAtbTEgImh0dHBbYS16QS1aMC05XC86Li1dKyNjb21tZW50LWZvcm0iIHwgc2VkICJzfCMuKiR8fCIpCmlmIFsgISAteiAiJFVSTCIgXTsgdGhlbgpCTE9HX0FORF9QT1NUPSQoZWNobyAiJEVOVFJZIiB8IGdyZXAgLUVvICJibG9nLVswLTldK1wucG9zdC1bMC05XSsiKQpCTE9HSUQ9JChlY2hvICIkQkxPR19BTkRfUE9TVCIgfCBncmVwIC1FbyAiYmxvZy1bMC05XSsiIHwgZ3JlcCAtRW8gIlswLTldKyIpClBPU1RJRD0kKGVjaG8gIiRCTE9HX0FORF9QT1NUIiB8IGdyZXAgLUVvICJcLnBvc3QtWzAtOV0rIiB8IGdyZXAgLUVvICJbMC05XSsiKQoKQ0FURUdPUklFUz0kKGN1cmwgLXNrTCAiaHR0cHM6Ly8kQkxPRy9mZWVkcy9wb3N0cy9kZWZhdWx0LyRQT1NUSUQ/YWx0PWpzb24iIHwganEgJy5lbnRyeS5jYXRlZ29yeVtdLnRlcm0nIHwgc2VkICJzfF58e1wieyNDQVR9XCI6fDtzfCR8fSx8IiB8IHRyIC1jZCAnWzpwcmludDpdJyB8IHNlZCAic3wsJHxdfDtzfF58W3wiKQpFTEVNRU5UPSQoZWNobyAie1wieyNCTE9HfVwiOlwiJEJMT0dcIixcInsjQkxPR0lEfVwiOlwiJEJMT0dJRFwiLFwieyNQT1NUSUR9XCI6XCIkUE9TVElEXCIsXCJ7I1VSTH1cIjpcIiRVUkxcIixcInsjQ0FURUdPUklFU31cIjokQ0FURUdPUklFU30sIikKYXJyYXlbYXJyXT0kRUxFTUVOVApmaQpjb3VudF9vZl9lbGVtZW50cz0kKGVjaG8gIiRFTlRSWSIgfCBncmVwIC1FbyAiYmxvZy1bMC05XStcLnBvc3QtWzAtOV0rIiB8IHdjIC1sKQojZWNobyAkY291bnRfb2ZfZWxlbWVudHMKI2VjaG8gIiR7YXJyYXlbYXJyXX0iIAojZWxzZQojYXJyPSQoKGFyci0xKSkKZmkKCmRvbmUKCiNvdXRwdXQgYWxsIGFycmF5IGVsZW1lbnRzCiNyZXBsYWNlIHNwYWNlcyB3aXRoIG5ldyBsaW5lIGNoYXJhY3RlcnMKI2NvbnZlcnQgb3V0cHV0IHRvIEpTT04gZm9ybWF0IGZvciBaYWJiaXggTExEIGRpY292ZXIgcHJvdG90eXBlCmVjaG8gIiR7YXJyYXlbQF19IiB8IHRyIC1jZCAnWzpwcmludDpdJyB8IHNlZCAicy9eL3tcImRhdGFcIjpbLztzLywkL119LyIgCgo=</description>
+                    <applications>
+                        <application>
+                            <name>Zabbix raw metrics</name>
+                        </application>
+                    </applications>
+                    <url>https://zbx.catonrug.net/blogger.posts.json</url>
                 </item>
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>posts</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>post.discovery[{HOST.HOST}]</key>
+                    <name>Discover blogger posts</name>
+                    <type>DEPENDENT</type>
+                    <key>blogger.posts</key>
                     <delay>0</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions/>
-                    </filter>
                     <lifetime>0</lifetime>
-                    <description/>
-                    <item_prototypes/>
-                    <trigger_prototypes/>
-                    <graph_prototypes/>
                     <host_prototypes>
                         <host_prototype>
-                            <host>{#POST}</host>
-                            <name>{#POST}</name>
-                            <status>0</status>
+                            <host>b{#BLOGID}.p{#POSTID}</host>
+                            <name>{#POSTID}</name>
                             <group_links>
                                 <group_link>
                                     <group>
-                                        <name>Web pages</name>
+                                        <name>tempo</name>
                                     </group>
                                 </group_link>
                             </group_links>
-                            <group_prototypes/>
+                            <group_prototypes>
+                                <group_prototype>
+                                    <name>{#BLOGID}</name>
+                                </group_prototype>
+                            </group_prototypes>
                             <templates>
                                 <template>
-                                    <name>blogger blogspot post manage</name>
+                                    <name>blogger post monitoring</name>
                                 </template>
                             </templates>
+                            <macros>
+                                <macro>
+                                    <macro>{$BLOG}</macro>
+                                    <value>{#BLOG}</value>
+                                </macro>
+                                <macro>
+                                    <macro>{$BLOGID}</macro>
+                                    <value>{#BLOGID}</value>
+                                </macro>
+                                <macro>
+                                    <macro>{$CATEGORIES}</macro>
+                                    <value>{#CATEGORIES}</value>
+                                    <description>an array of post categories</description>
+                                </macro>
+                                <macro>
+                                    <macro>{$POSTID}</macro>
+                                    <value>{#POSTID}</value>
+                                </macro>
+                                <macro>
+                                    <macro>{$URL}</macro>
+                                    <value>{#URL}</value>
+                                </macro>
+                            </macros>
                         </host_prototype>
                     </host_prototypes>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <lld_macro_paths>
-                        <lld_macro_path>
-                            <lld_macro>{#POST}</lld_macro>
-                            <path>$.id.['$t']</path>
-                        </lld_macro_path>
-                        <lld_macro_path>
-                            <lld_macro>{#LINK}</lld_macro>
-                            <path>$.link[?(@.rel == 'alternate')].href</path>
-                        </lld_macro_path>
-                        <lld_macro_path>
-                            <lld_macro>{#TITLE}</lld_macro>
-                            <path>$.title.['$t']</path>
-                        </lld_macro_path>
-                    </lld_macro_paths>
-                    <preprocessing/>
                     <master_item>
-                        <key>discover.posts[{HOST.HOST}]</key>
+                        <key>blogger.posts.json</key>
                     </master_item>
                 </discovery_rule>
             </discovery_rules>
-            <httptests/>
-            <macros/>
-            <templates/>
-            <screens/>
-            <tags/>
         </template>
         <template>
-            <template>blogger blogspot post manage</template>
-            <name>blogger blogspot post manage</name>
-            <description/>
+            <template>blogger post monitoring</template>
+            <name>blogger post monitoring</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -223,40 +111,31 @@
             </groups>
             <applications>
                 <application>
-                    <name>blogger post categories</name>
+                    <name>Blogger categories</name>
                 </application>
                 <application>
-                    <name>blogger post content</name>
+                    <name>Blogger count of categories</name>
                 </application>
                 <application>
-                    <name>blogger post external url</name>
+                    <name>Blogger count of comments</name>
                 </application>
                 <application>
-                    <name>blogger post links</name>
+                    <name>Blogger post modify data</name>
                 </application>
                 <application>
-                    <name>blogger post published</name>
+                    <name>Blogger post published</name>
                 </application>
                 <application>
-                    <name>blogger post title</name>
+                    <name>Blogger post size</name>
                 </application>
                 <application>
-                    <name>blogger post updated</name>
+                    <name>Blogger post title</name>
                 </application>
                 <application>
-                    <name>blogger post url</name>
+                    <name>Blogger post updated</name>
                 </application>
                 <application>
-                    <name>categories</name>
-                </application>
-                <application>
-                    <name>published</name>
-                </application>
-                <application>
-                    <name>updated</name>
-                </application>
-                <application>
-                    <name>url</name>
+                    <name>Blogger post url</name>
                 </application>
                 <application>
                     <name>Zabbix raw items</name>
@@ -264,636 +143,348 @@
             </applications>
             <items>
                 <item>
-                    <name>blogger.post.categories[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.categories[{HOST.HOST}]</key>
+                    <name>blogger.post.size[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>blogger.post.size[{$POSTID}]</key>
                     <delay>0</delay>
-                    <history>90d</history>
+                    <history>7d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <units>B</units>
                     <applications>
                         <application>
-                            <name>blogger post categories</name>
+                            <name>Blogger post size</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.entry.category[*].term</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <params>$.entry.content['$t']</params>
+                        </step>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return value.length;</params>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
-                        <key>postid[{HOST.HOST}]</key>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$POST.SIZE.LIMIT}</expression>
+                            <name>Size of post {$POSTID} is {ITEM.LASTVALUE}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>AVERAGE</priority>
+                            <description>{$URL}</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>categories[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>categories[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <inventory_link>TAG</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger categories</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.[&quot;category&quot;].[*].term</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
                 </item>
                 <item>
-                    <name>blogger.post.content[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.content[{HOST.HOST}]</key>
+                    <name>count.of.categories[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>count.of.categories[{$POSTID}]</key>
                     <delay>0</delay>
-                    <history>90d</history>
+                    <history>7d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <units>categories</units>
+                    <inventory_link>SERIALNO_A</inventory_link>
                     <applications>
                         <application>
-                            <name>blogger post content</name>
+                            <name>Blogger count of categories</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.entry.content.['$t']</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <params>$.entry.[&quot;category&quot;].[*].term.length()</params>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
-                        <key>postid[{HOST.HOST}]</key>
+                        <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;2</expression>
+                            <name>More that 2 categories detected on {$POSTID}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>WARNING</priority>
+                            <description>{$URL}</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
-                    <name>blogger.post.published[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.published[{HOST.HOST}]</key>
+                    <name>post.comments[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.comments[{$POSTID}]</key>
                     <delay>0</delay>
-                    <history>90d</history>
+                    <history>7d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <units>comments</units>
+                    <inventory_link>SOFTWARE_APP_C</inventory_link>
                     <applications>
                         <application>
-                            <name>blogger post published</name>
+                            <name>Blogger count of comments</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
+                            <type>JSONPATH</type>
+                            <params>$.entry.link[?(@.rel == 'replies' &amp;&amp; @.type == 'text/html')].title</params>
+                        </step>
+                        <step>
+                            <type>REGEX</type>
+                            <params>([0-9]+)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}=1</expression>
+                            <name>Count of comments has been changed on {$POSTID}</name>
+                            <url>https://www.blogger.com/blog/post/edit/{$BLOGID}/{$POSTID}</url>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>PostID</tag>
+                                    <value>{$POSTID}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>post.published.str[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.published.str[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>SOFTWARE_APP_A</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger post published</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
                             <params>$.entry.published.['$t']</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
-                        <key>postid[{HOST.HOST}]</key>
+                        <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
                 </item>
                 <item>
-                    <name>blogger.post.title[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.title[{HOST.HOST}]</key>
+                    <name>post.published.unixtime[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.published.unixtime[{$POSTID}]</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <units>unixtime</units>
                     <applications>
                         <application>
-                            <name>blogger post title</name>
+                            <name>Blogger post published</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.entry.title.['$t']</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <params>$.entry.published.['$t']</params>
+                        </step>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var t = new Date(Date.parse(value));
+var localOffset = (-1) * t.getTimezoneOffset() * 60000;
+return Math.round((t.getTime() + localOffset) / 1000);</params>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
-                        <key>postid[{HOST.HOST}]</key>
+                        <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
                 </item>
                 <item>
-                    <name>blogger.post.updated[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.updated[{HOST.HOST}]</key>
-                    <delay>0</delay>
-                    <history>90d</history>
+                    <name>post.raw.item[{$POSTID}]</name>
+                    <type>HTTP_AGENT</type>
+                    <key>post.raw.item[{$POSTID}]</key>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>blogger post updated</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>12</type>
-                            <params>$.entry.updated.['$t']</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item>
-                        <key>postid[{HOST.HOST}]</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>blogger.post.url[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>blogger.post.url[{HOST.HOST}]</key>
-                    <delay>0</delay>
-                    <history>90d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>blogger post url</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>12</type>
-                            <params>$.entry.link[?(@.rel == 'alternate')].href</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>21</type>
-                            <params>return value.match(/http.*\.html/);</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>21</type>
-                            <params>return value.replace(/\\/g,&quot;&quot;)</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item>
-                        <key>postid[{HOST.HOST}]</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>postid[{HOST.HOST}]</name>
-                    <type>19</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>postid[{HOST.HOST}]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
+                    <value_type>TEXT</value_type>
                     <applications>
                         <application>
                             <name>Zabbix raw items</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url>https://{HOST.DNS}/feeds/posts/default/{HOST.HOST}?alt=json</url>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <timeout>1m</timeout>
+                    <url>https://catonrug.blogspot.com/feeds/posts/default/{$POSTID}</url>
+                    <query_fields>
+                        <query_field>
+                            <name>alt</name>
+                            <value>json</value>
+                        </query_field>
+                    </query_fields>
+                    <request_method>POST</request_method>
                 </item>
-            </items>
-            <discovery_rules>
-                <discovery_rule>
-                    <name>discover.links.on.page[{HOST.HOST}]</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>discover.links.on.page[{HOST.HOST}]</key>
+                <item>
+                    <name>post.title[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.title[{$POSTID}]</key>
                     <delay>0</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions/>
-                    </filter>
-                    <lifetime>30d</lifetime>
-                    <description/>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>external.url[{#URL}]</name>
-                            <type>19</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>external.url[{#URL}]</key>
-                            <delay>30s</delay>
-                            <history>90d</history>
-                            <trends>0</trends>
-                            <status>0</status>
-                            <value_type>4</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>blogger post external url</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url>{#URL}</url>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes/>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>1</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
-                            <master_item/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes/>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <lld_macro_paths/>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <inventory_link>NAME</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger post title</name>
+                        </application>
+                    </applications>
                     <preprocessing>
                         <step>
-                            <type>21</type>
-                            <params>return value.match(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.\/_?&amp;=]+/gm).reduce(function(a,b){if(a.indexOf(b)&lt; 0)a.push(b);return a;},[]).join(&quot;\n&quot;)
-</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
-                        </step>
-                        <step>
-                            <type>21</type>
-                            <params>var lld = [];
-var lines = value.split(&quot;\n&quot;);
-var lines_num = lines.length;
-for (i = 0; i &lt; lines_num; i++)
-{
-  var row = {};
-  row[&quot;{#URL}&quot;] = lines[i]
-  lld.push(row);
-}
-return JSON.stringify(lld);
-</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <params>$.entry.title['$t']</params>
                         </step>
                     </preprocessing>
                     <master_item>
-                        <key>blogger.post.content[{HOST.HOST}]</key>
+                        <key>post.raw.item[{$POSTID}]</key>
                     </master_item>
-                </discovery_rule>
-            </discovery_rules>
-            <httptests/>
-            <macros/>
-            <templates/>
-            <screens/>
-            <tags/>
+                </item>
+                <item>
+                    <name>post.updated.str[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.updated.str[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>SOFTWARE_APP_B</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger post updated</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.updated.['$t']</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>post.updated.unixtime[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.updated.unixtime[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <units>unixtime</units>
+                    <applications>
+                        <application>
+                            <name>Blogger post updated</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.updated.['$t']</params>
+                        </step>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var t = new Date(Date.parse(value));
+var localOffset = (-1) * t.getTimezoneOffset() * 60000;
+return Math.round((t.getTime() + localOffset) / 1000);</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>post.url[{$POSTID}]</name>
+                    <type>DEPENDENT</type>
+                    <key>post.url[{$POSTID}]</key>
+                    <delay>0</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>LOCATION</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Blogger post url</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.entry.link[?(@.rel == 'alternate' &amp;&amp; @.type == 'text/html')].href</params>
+                        </step>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>\/
+/</params>
+                        </step>
+                        <step>
+                            <type>REGEX</type>
+                            <params>(http.*html)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>post.raw.item[{$POSTID}]</key>
+                    </master_item>
+                </item>
+            </items>
+            <macros>
+                <macro>
+                    <macro>{$POST.SIZE.LIMIT}</macro>
+                    <value>480K</value>
+                </macro>
+            </macros>
         </template>
     </templates>
 </zabbix_export>
