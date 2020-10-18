@@ -1,4 +1,3 @@
-
 var req = new CurlHttpRequest();
 
 var lld = [];
@@ -6,7 +5,7 @@ var url = "";
 var resp = "";
 
 // loop starts
-for (var step = 1; step < 9; step++) {
+for (var step = 1; step <= value ; step++) {
 
 // define an empty roe
 var row = {};
@@ -21,8 +20,11 @@ resp = req.Get(url);
 
 // post identification. analyze incomming data for the first time
 row["{#ENTRY}"] = resp.match(/(blog-[0-9]+\.post-[0-9]+)/)[0];
+row["{#PUBLISHED}"] = resp.match(/<\/id><published>(.*)<\/published><updated>/)[0];
+row["{#URL}"] = resp.match(/href=.(\S+)#comment-form..title=/)[0];
 
-// add this to array
+
+// add this row to array
 lld.push(row);
 
 }
