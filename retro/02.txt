@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="<$BlogLanguageDirection$>">
+   <head>
+      <title><$BlogPageTitle$></title>
+      <$BlogMetaData$>
+   </head>
+   <body>
+      <!-- Begin #content - Centers all content and provides edges for floated columns -->
+      <div id="content">
+         <!-- Begin #main - Contains main-column blog content -->
+         <div id="main">
+            <div id="main2">
+               <div id="main3">
+                  <Blogger>
+                     <!-- Begin .post -->
+                     <div class="post">
+                        <BlogItemTitle>
+                           <$BlogItemTitle$>
+                        </BlogItemTitle>
+                        <div class="post-body">
+                           <pre>
+                              <$BlogItemBody$>
+                           </pre>
+                        </div>
+                        <p class="post-footer">
+                           <em><$I18NPostedByAuthorNickname$> @ <a href="<$BlogItemPermalinkUrl$>" title="permanent link"><$BlogItemDateTime$></a></em> &nbsp;
+                           <BlogItemCommentsEnabled>
+                              <a class="comment-link" href="<$BlogItemCommentCreate$>"<$BlogItemCommentFormOnclick$>><span style="text-transform:lowercase"><$I18NNumComments$></span></a>
+                           </BlogItemCommentsEnabled>
+                           <$BlogItemControl$>
+                        </p>
+                     </div>
+                     <!-- End .post -->
+                     <!-- Begin #comments -->
+                     <ItemPage>
+                        <div id="comments">
+                           <BlogItemCommentsEnabled>
+                              <a name="comments"></a>
+                              <h4><$I18NNumComments$>:</h4>
+                              <dl id="comments-block">
+                                 <$CommentPager$>
+                                 <BlogItemComments>
+                                    <dt class="comment-data" id="<$BlogCommentAnchorName$>"><a name="<$BlogCommentAnchorName$>"></a>
+                                       <$I18NAtCommentTimeWithPermalink$>,
+                                       <$I18NCommentAuthorSaid$>
+                                    </dt>
+                                    <dd class="comment-body">
+                                       <p><$BlogCommentBody$></p>
+                                       <$BlogCommentDeleteIcon$>
+                                    </dd>
+                                 </BlogItemComments>
+                                 <$CommentPager$>
+                              </dl>
+                              <p class="comment-timestamp">
+                                 <$BlogItemCreate$>
+                              </p>
+                              <p id="postfeeds"><$BlogItemFeedLinks$></p>
+                           </BlogItemCommentsEnabled>
+                           <p style="padding-left:20px;">
+                              <a href="<$BlogURL$>">&lt;&lt; <$I18NHome$></a>
+                           </p>
+                        </div>
+                     </ItemPage>
+                     <!-- End #comments -->
+                  </Blogger>
+               </div>
+            </div>
+         </div>
+         <!-- End #main -->
+         <!-- Begin #sidebar -->
+         <!-- End #sidebar -->
+         <!-- Begin #footer -->
+
+         <!-- End #footer -->
+      </div>
+      <!-- End #content -->
+   </body>
+</html>

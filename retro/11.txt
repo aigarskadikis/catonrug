@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html b:cookies='false' b:css='false' b:js='false' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+	
+   <head><script>cookieChoices={};</script><meta content='initial-scale=1.0' name='viewport'/><style>.blogger-labels,#navbar-iframe-container{display:none}pre{margin:0;padding:1em}</style>
+      <title><$BlogPageTitle$></title>
+      <$BlogMetaData$>
+   </head>
+   <body>
+	  <pre><Blogger># <$BlogItemTitle$><$BlogItemBody$><br /></Blogger></pre>
+   </body>
+</html>
+
+
